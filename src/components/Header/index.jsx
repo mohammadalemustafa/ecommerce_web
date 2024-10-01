@@ -1,6 +1,5 @@
 import React from "react";
 import Item from "./Item/inde";
-import { FaAngleDown } from "react-icons/fa";
 import { GiRecycle } from "react-icons/gi";
 import { GoHeart } from "react-icons/go";
 import { IoCartOutline } from "react-icons/io5";
@@ -8,9 +7,11 @@ import { LuUser } from "react-icons/lu";
 
 import styles from "./index.module.css";
 import Container from "../../ui/Container";
-import { leftMenu } from "../../data/header";
+import { countries, currency, language, leftMenu } from "../../data/header";
 import logo from "../../assets/logo.svg";
 import Icon from "../../ui/Icon";
+import Select2 from "../../widgets/Select2";
+import Location from "../../widgets/Location";
 
 const icons = [
   { id: 1, name: "Compare", counter: "3", icon: <GiRecycle size={30} /> },
@@ -18,6 +19,40 @@ const icons = [
   { id: 3, name: "Cart", counter: "2", icon: <IoCartOutline size={30} /> },
   { id: 4, name: "Account", counter: null, icon: <LuUser size={30} /> },
 ];
+
+const colourStyles = {
+  control: (styles) => ({
+    ...styles,
+    backgroundColor: "white",
+    minHeight: "30 !important",
+    minWidth: 120,
+  }),
+  option: (styles, { isSelected }) => {
+    return { ...styles, backgroundColor: isSelected ? "#3bb77e" : "white" };
+  },
+};
+
+const dot = (color = "transparent") => ({
+  alignItems: "center",
+  display: "flex",
+
+  ":before": {
+    borderRadius: 10,
+    content: '"📍"',
+    display: "block",
+    marginRight: 8,
+  },
+});
+
+const colourStylesLocation = {
+  control: (styles) => ({
+    ...styles,
+    backgroundColor: "white",
+    minHeight: "30 !important",
+    minWidth: 250,
+  }),
+  singleValue: (styles, { data }) => ({ ...styles, ...dot() }),
+};
 
 const Header = () => {
   return (
@@ -32,8 +67,26 @@ const Header = () => {
           <p>Trendy 25silver jewelry, save up 35% off today</p>
           <ul className={styles.right}>
             <Item name="Need help? Call Us:" value="+ 1800 900" />
-            <Item name="English" value={<FaAngleDown />} />
-            <Item name="USD" value={<FaAngleDown />} />
+            <Item
+              name={
+                <Select2
+                  colourStyles={colourStyles}
+                  options={language}
+                  isSearchable={false}
+                  defaultValue={language[0]}
+                />
+              }
+            />
+            <Item
+              name={
+                <Select2
+                  colourStyles={colourStyles}
+                  options={currency}
+                  isSearchable={false}
+                  defaultValue={currency[0]}
+                />
+              }
+            />
           </ul>
         </div>
         <div className={styles.content}>
@@ -41,7 +94,12 @@ const Header = () => {
             <img src={logo} alt="logo" />
           </div>
           <div></div>
-          <div></div>
+          <Location
+            colourStyles={colourStylesLocation}
+            options={countries}
+            isSearchable={false}
+            defaultValue={countries[1]}
+          />
           <div className={styles.iconCont}>
             {icons.map((it) => (
               <Icon key={it.id} counter={it.counter} name={it.name}>

@@ -11,10 +11,10 @@ const Item = ({ to, name, value }) => {
           <span className={styles.span1}>{name}</span>
         </Link>
       ) : (
-        <p>
+        <div>
           <span className={styles.span1}>{name}</span>
           <span className={styles.span2}>{value}</span>
-        </p>
+        </div>
       )}
     </li>
   );

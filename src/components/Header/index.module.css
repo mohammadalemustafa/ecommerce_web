@@ -1,5 +1,5 @@
 .li > a,
-.li > p {
+.li > div {
   text-decoration: none;
   color: #7e7e7e;
   font-weight: 500;
@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.li > p > .span2 {
+.li > div > .span2 {
   color: #3bb77e;
 }
 

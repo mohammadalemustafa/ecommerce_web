@@ -12,6 +12,7 @@ import logo from "../../assets/logo.svg";
 import Icon from "../../ui/Icon";
 import Select2 from "../../widgets/Select2";
 import Location from "../../widgets/Location";
+import SearchBar from "../SearchBar";
 
 const icons = [
   { id: 1, name: "Compare", counter: "3", icon: <GiRecycle size={30} /> },
@@ -93,7 +94,7 @@ const Header = () => {
           <div>
             <img src={logo} alt="logo" />
           </div>
-          <div></div>
+          <SearchBar />
           <Location
             colourStyles={colourStylesLocation}
             options={countries}

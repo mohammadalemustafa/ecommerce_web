@@ -3,6 +3,7 @@ import Container from "../../ui/Container";
 import Banner from "../../components/Banner";
 import banner1 from "../../assets/Banner/img1.png";
 import banner2 from "../../assets/Banner/img2.png";
+import FeatureCategories from "../../components/FeatureCategories";
 
 const bannerData = [
   {
@@ -25,6 +26,7 @@ const Home = () => {
   return (
     <Container>
       <Banner data={bannerData} />
+      <FeatureCategories />
     </Container>
   );
 };

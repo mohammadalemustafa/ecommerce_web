@@ -1,5 +1,7 @@
 :root {
   --primaryColor: #3bb77e;
+  --textColor: #253d4e;
+  --typoColor: #7e7e7e;
 }
 
 * {
@@ -8,6 +10,11 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   font-size: 16px;
+}
+
+img {
+  height: 100%;
+  width: 100%;
 }
 
 .select__indicator-separator {

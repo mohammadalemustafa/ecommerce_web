@@ -19,9 +19,9 @@ const responsive = {
 
 const Banner = ({ data }) => {
   return (
-    <MultiCarousel infinite={true} showDots={true} autoPlay={false} responsive={responsive}>
+    <MultiCarousel infinite={true} showDots={true} autoPlay={true} responsive={responsive}>
       {data.map((it) => {
-        return <div className={styles.banner} style={{ backgroundImage: `url(${it.img})` }}></div>;
+        return <div key={it.id} className={styles.banner} style={{ backgroundImage: `url(${it.img})` }}></div>;
       })}
     </MultiCarousel>
   );

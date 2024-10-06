@@ -1,29 +1,29 @@
 import React from "react";
-import MultiCarousel from "../../shared/Carousel";
 import styles from "./index.module.css";
+import Newsletter from "../../ui/Newsletter";
+import Button from "../../widgets/Button";
+import { FaArrowRight } from "react-icons/fa6";
+import ShopBtn from "../../ui/ShopBtn";
 
-const responsive = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 1,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 1,
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-  },
-};
-
-const Banner = ({ data }) => {
+const Banner = ({ it, module, additionalStyle }) => {
   return (
-    <MultiCarousel infinite={true} showDots={true} autoPlay={true} responsive={responsive}>
-      {data.map((it) => {
-        return <div key={it.id} className={styles.banner} style={{ backgroundImage: `url(${it.img})` }}></div>;
-      })}
-    </MultiCarousel>
+    <div key={it.id} className={styles.banner} style={{ backgroundImage: `url(${it.img})`, ...additionalStyle }}>
+      <div className={styles.content}>
+        <div className={styles.top}>
+          {it.title ? (
+            <h4>{it.title}</h4>
+          ) : (
+            <h2>
+              {it.title1}
+              <br />
+              {it.title2}
+            </h2>
+          )}
+          {it.desc && <p>{it.desc}</p>}
+        </div>
+        {module === "banner" ? <Newsletter /> : <ShopBtn name="Shop Now" />}
+      </div>
+    </div>
   );
 };
 

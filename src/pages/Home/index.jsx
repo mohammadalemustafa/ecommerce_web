@@ -4,6 +4,9 @@ import Banner from "../../components/Banner";
 import banner1 from "../../assets/Banner/img1.png";
 import banner2 from "../../assets/Banner/img2.png";
 import FeatureCategories from "../../components/FeatureCategories";
+import MultiCarousel from "../../shared/Carousel";
+import SubBanner from "../../components/SubBanner";
+import PopularProducts from "../../components/PopularProducts";
 
 const bannerData = [
   {
@@ -22,11 +25,32 @@ const bannerData = [
   },
 ];
 
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 1,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 1,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};
+
 const Home = () => {
   return (
     <Container>
-      <Banner data={bannerData} />
+      <MultiCarousel infinite={true} showDots={true} autoPlay={true} responsive={responsive}>
+        {bannerData.map((it) => {
+          return <Banner key={it.id} it={it} module="banner" />;
+        })}
+      </MultiCarousel>
       <FeatureCategories />
+      <SubBanner />
+      <PopularProducts />
     </Container>
   );
 };

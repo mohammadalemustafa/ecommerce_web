@@ -4,9 +4,9 @@ import { BsCart3 } from "react-icons/bs";
 
 import styles from "./index.module.css";
 
-const CartBtn = ({ name }) => {
+const CartBtn = ({ name, className }) => {
   return (
-    <Button className={styles.cart}>
+    <Button className={`${styles.cart} ${className}`}>
       <BsCart3 /> {name}
     </Button>
   );

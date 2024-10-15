@@ -7,6 +7,8 @@ import FeatureCategories from "../../components/FeatureCategories";
 import MultiCarousel from "../../shared/Carousel";
 import SubBanner from "../../components/SubBanner";
 import PopularProducts from "../../components/PopularProducts";
+import DailyBS from "../../components/DailyBS";
+import DealsOfTheYear from "../../components/DealsOfTheYear";
 
 const bannerData = [
   {
@@ -51,6 +53,8 @@ const Home = () => {
       <FeatureCategories />
       <SubBanner />
       <PopularProducts />
+      <DailyBS />
+      <DealsOfTheYear />
     </Container>
   );
 };

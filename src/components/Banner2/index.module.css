@@ -1,0 +1,11 @@
+.banner2cont {
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 500px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 1px solid var(--typoColor);
+    border-radius: 10px;
+    margin: 10px;
+}

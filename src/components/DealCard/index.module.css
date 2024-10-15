@@ -10,6 +10,7 @@
   position: absolute;
   bottom: -100px;
   left: 50%;
+  /* height: 350px; */
   transform: translateX(-50%);
   width: calc(100% - 30px);
   transition: all 0.3s ease-in;
@@ -31,7 +32,7 @@
   border-radius: 10px;
 }
 
-.productImg > img {
+.productImg>img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -45,6 +46,7 @@
   color: var(--textColor);
   transition: 0.3s ease-out;
 }
+
 .contentCont h4:hover {
   color: var(--primaryColor);
 }
@@ -87,7 +89,7 @@
   margin-bottom: 10px;
 }
 
-.time > div {
+.time>div {
   height: 80px;
   background-color: white;
   display: flex;
@@ -99,13 +101,13 @@
   box-shadow: var(--shadow);
 }
 
-.time > div > span:first-child {
+.time>div>span:first-child {
   font-size: 24px;
   font-weight: bold;
   color: #3bb77e;
 }
 
-.time > div > span:last-child {
+.time>div>span:last-child {
   font-size: 22px;
   color: var(--textColor);
 }

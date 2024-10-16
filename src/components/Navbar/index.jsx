@@ -1,20 +1,96 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from './index.module.css';
 import Container from "../../ui/Container";
 import hicon from '../../assets/nav/icon-headphone.svg'
 import { FaAngleDown } from "react-icons/fa";
 import { HiOutlineSquares2X2 } from "react-icons/hi2";
+import DropCard from "../browseDropCard";
+import { Browsdropdata } from "../../data/Browsdropdata";
+import { IoAddCircleOutline } from "react-icons/io5";
+import icon1 from '../../assets/drowdown/icon-1.svg'
+import icon2 from '../../assets/drowdown/icon-2.svg'
+import icon3 from '../../assets/drowdown/icon-3.svg'
+import icon4 from '../../assets/drowdown/icon-4.svg'
+import { PiMinusCircle } from "react-icons/pi";
+import { mega } from "../../data/Megadropdata";
+import banner from '../../assets/drowdown/banner-menu.png';
+import Manubanner from "../Manubanner";
+import { pageslist } from "../../data/pageslist";
+export const additionaldata = [
+    { id: 11, name: "Milks and Dairies", logo: icon1 },
+    { id: 12, name: "Milks and Dairies", logo: icon2 },
+    {
+        id: 13, name: "Wines & Drink", logo: icon3
+    },
+    { id: 14, name: "Fresh Seafood", logo: icon4 },
+]
+const manuBannerData = {
+    id: 1, img: banner, title: "Hot deals", about: "Don't miss Trending", desc: "Save to 50%"
+}
 const Navbar = () => {
+    const [click, setClick] = useState(false);
+    const [data, setAdditioonaldata] = useState(Browsdropdata);
+    const [set, setSet] = useState(false);
+    const [mouse, setMouse] = useState(false);
+    const [hoveronpages, setHover] = useState(false);
+
+    const adddata = () => {
+        setSet(!set);
+        var data1 = additionaldata.map((item) => {
+            return (
+                item
+            )
+        })
+        setAdditioonaldata([...data, ...data1])
+    }
+    const Subdata = () => {
+        setAdditioonaldata(data.slice(0, 10))
+        setSet(!set);
+    }
+    const handleMouse = () => {
+        setMouse(true)
+    }
+    const onmouseleave = () => {
+        setMouse(false);
+    }
+    const handleMouse1 = () => {
+        setHover(true)
+    }
+    const onmouseleave1 = () => {
+        setHover(false)
+    }
     return <Container>
         <div className={styles.navBarCont}>
             <div className={styles.navlistcont}>
-                <div className={styles.dropdown}>
+                <div onClick={() => setClick(!click)} className={styles.dropdown}>
                     <span><HiOutlineSquares2X2 color="white" size="20px" fontWeight={800} /></span>
-                    <span>
-                        browse all categories
-                    </span>
-                    <span> <FaAngleDown size="10px"></FaAngleDown></span>
+                    <div >
+                        <span >
+                            browse all categories
+                        </span>
+                        <span> <FaAngleDown size="10px"></FaAngleDown></span>
+                    </div>
                 </div>
+                {
+                    click && <div className={styles.browsedro}>
+                        {
+                            data.map((item, index) => {
+                                return (
+                                    <DropCard key={index} name={item.name} logo={item.logo} />
+                                )
+                            })
+                        }
+                        <div className={styles.showMore}>
+                            {
+                                !set ? <span><IoAddCircleOutline size={20} /></span> :
+                                    <span><PiMinusCircle size={20} /></span>
+                            }
+                            {
+                                set ? <span onClick={Subdata}>show less</span> : <span onClick={adddata}>show more</span>
+                            }
+                        </div>
+                    </div>
+                }
                 <ul>
                     <li>deals</li>
                     <li>
@@ -32,24 +108,119 @@ const Navbar = () => {
                     </li> <li>
                         <span>Vendors</span>
                         <span> <FaAngleDown size="10px"></FaAngleDown></span>
-
                     </li> <li>
-                        <span> Mega menu</span>
-                        <span> <FaAngleDown size="10px"></FaAngleDown></span>
+                        <span onMouseLeave={onmouseleave} className={styles.megamanu} onMouseEnter={handleMouse}> Mega menu
+                            {
+                                mouse && <div className={styles.megadrop}>
+                                    <div className={styles.left}>
+                                        {
+                                            mega.map((item) => {
+                                                <h1>Fruit & Vegetables</h1>
+                                                if (item.cat === "Fruit & Vegetables") {
+                                                    return (
+                                                        <div className={styles.cont}>
+                                                            <h1>Fruit & Vegetables
+                                                            </h1>
+                                                            <div>
+                                                                <span>{item.d1}</span>
+                                                                <span>{item.d2}</span>
+                                                                <span>{item.d3}</span>
+                                                                <span>{item.d4}</span>
+                                                                <span>{item.d5}</span>
+                                                                <span>{item.d6}</span>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                }
+                                            })
+                                        }
+                                        {
+                                            mega.map((item) => {
+                                                if (item.cat === "Breakfast & Dairy") {
+                                                    return (
+                                                        <div className={styles.cont}>
+                                                            <h1>Breakfast & Dairy
+                                                            </h1>
+                                                            <div>
+                                                                <span>{item.d1}</span>
+                                                                <span>{item.d2}</span>
+                                                                <span>{item.d3}</span>
+                                                                <span>{item.d4}</span>
+                                                                <span>{item.d5}</span>
+                                                                <span>{item.d6}</span>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                }
+                                            })
+                                        }
+                                        {
+                                            mega.map((item) => {
+                                                if (item.cat === "Meat & Seafoo") {
+                                                    return (
+                                                        <div className={styles.cont}>
+                                                            <h1>Meat & Seafood
+                                                            </h1>
+                                                            <div>
+                                                                <span>{item.d1}</span>
+                                                                <span>{item.d2}</span>
+                                                                <span>{item.d3}</span>
+                                                                <span>{item.d4}</span>
+                                                                <span>{item.d5}</span>
+                                                                <span>{item.d6}</span>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                }
+                                            })
+                                        }
+                                    </div>
 
+
+                                    <Manubanner data={manuBannerData} />
+
+
+                                </div>
+                            }
+                        </span>
+                        <span> <FaAngleDown size="10px"></FaAngleDown></span>
                     </li>
                     <li>
                         <span>Blog</span>
                         <span> <FaAngleDown size="10px"></FaAngleDown></span>
-
                     </li>
                     <li>
-                        <span>Pages</span>
-                        <span> <FaAngleDown size="10px"></FaAngleDown></span>
+                        <span className={styles.pagesnav} onMouseEnter={handleMouse1} onMouseLeave={onmouseleave1}>Pages
 
-                    </li> <li>
+                            {hoveronpages && <div className={styles.pasesdrop}>
+                                {
+                                    pageslist.map((item) => {
+                                        return (
+                                            <div className={styles.pages}>
+                                                <span>{item.p1}</span>
+                                                <span>{item.p2}</span>
+                                                <span>{item.p3}</span>
+                                                <span>{item.p4}</span>
+                                                <span>{item.p5}</span>
+                                                <span>{item.p6}</span>
+                                                <span>{item.p7}</span>
+                                                <span>{item.p8}</span>
+                                                <span>{item.p9}</span>
+                                                <span>{item.p10}</span>
+                                                <span>{item.p11}</span>
+                                            </div>
+                                        )
+                                    })
+                                }
+
+                            </div>
+                            }
+                        </span>
+                        <span > <FaAngleDown size="10px"></FaAngleDown></span>
+                    </li>
+                    <li>
                         <span>Contact</span>
-                        <span></span>
+                        <span> </span>
                     </li>
                 </ul>
             </div>
@@ -61,7 +232,7 @@ const Navbar = () => {
                 </div>
             </div>
         </div>;
-    </Container>
+    </Container >
 
 };
 

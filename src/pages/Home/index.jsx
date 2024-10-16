@@ -53,7 +53,7 @@ const responsive = {
 const Home = () => {
   return (
     <Container>
-      <MultiCarousel infinite={true} showDots={true} autoPlay={true} responsive={responsive}>
+      <MultiCarousel arrows={false} infinite={true} showDots={true} autoPlay={true} responsive={responsive}>
         {bannerData.map((it) => {
           return <Banner key={it.id} it={it} module="banner" />;
         })}
@@ -66,8 +66,8 @@ const Home = () => {
       <HotProducts productsdata={products} />
       <Banner2 it={{
         id: 1,
-        title1: "Don’t miss amazing",
-        title2: "grocery deals",
+        title1: "Stay home & get your daily needs from our shop",
+        title2: "Start You'r Daily Shopping with   Nest Mart",
         desc: "Sign up for the daily newsletter",
         img: banner,
       }} />

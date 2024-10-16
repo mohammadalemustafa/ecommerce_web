@@ -5,7 +5,33 @@
     height: 500px;
     object-fit: cover;
     margin-bottom: 20px;
-    border: 1px solid var(--typoColor);
     border-radius: 10px;
     margin: 10px;
+    position: relative;
+    background-color: wheat;
+    display: flex;
+}
+
+.content {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 40%;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+
+}
+
+.content .top>h2 {
+    font-family: Quicksand, sans-serif;
+    font-size: 40px !important;
+    color: rgb(37, 61, 78);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.top>p {
+    color: var(--typoColor);
+    font-size: large;
 }

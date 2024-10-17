@@ -289,16 +289,16 @@ const Navbar = () => {
                                         return (
                                             <div className={styles.pages}>
                                                 <span>{item.p1}</span>
-                                                {/* <Link to="/contact"> */}
+
                                                 <span onClick={() => OnNavigate('/contact')}>{item.p2}</span>
-                                                {/* </Link> */}
+
                                                 <span>{item.p3}</span>
-                                                {/* <Link to="/login"> */}
+
                                                 <span onClick={() => OnNavigate('/login')} >{item.p4}</span>
-                                                {/* </Link> */}
-                                                <span>{item.p5}</span>
-                                                <span>{item.p6}</span>
-                                                <span>{item.p7}</span>
+
+                                                <span onClick={() => OnNavigate('/register')}>{item.p5}</span>
+                                                <span onClick={() => OnNavigate('/forgotpass')}>{item.p6}</span>
+                                                <span onClick={() => OnNavigate('/resetpass')}>{item.p7}</span>
                                                 <span>{item.p8}</span>
                                                 <span>{item.p9}</span>
                                                 <span>{item.p10}</span>

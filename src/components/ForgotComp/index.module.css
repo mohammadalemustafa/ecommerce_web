@@ -1,32 +1,11 @@
 .cont {
     display: flex;
-    width: 70%;
+    width: 50%;
     margin: 50px auto;
     gap: 40px;
-}
-
-.left {
+    height: 100vh;
     display: flex;
-    width: 40%;
-    flex-direction: column;
-    border-width: 1px;
-    border: 1px solid whitesmoke;
-    height: 500px;
-    border-radius: 10px;
-    padding: 20px;
-    justify-content: space-between;
-    height: 350px;
-}
-
-.p {
-    font-size: small;
-    color: var(--typeColor) !important;
-}
-
-.left div {
-    width: 80%;
-    margin: 0 auto;
-    border-radius: 10px;
+    align-items: center;
 }
 
 .right {
@@ -45,19 +24,16 @@
     font-weight: 500;
 }
 
-
-
-.rememberpass>span {
+.rememberpass {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    color: var(--typoColor);
 }
 
-.s {
-    color: #253D4E !important;
-    font-size: 16x;
-    font-weight: 800;
+.rememberpass>div {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
 }
 
 .right input {
@@ -120,18 +96,26 @@
     align-items: center;
 }
 
+.imgCont {
+    width: 100px;
+}
+
 .right button {
     font-size: 17px;
     font-weight: 500;
     padding: 20px 40px;
-    width: 50%;
+    width: 60%;
     color: #ffffff;
     border: none;
-    background-color: var(--primaryColor);
+    background-color: #253D4E;
     border-radius: 10px;
     font-family: "Quicksand", sans-serif;
-}
+    position: relative;
+    bottom: -10px;
+    transition: all .3s ease-in-out;
 
-.l {
-    color: var(--primaryColor);
+    &:hover {
+        bottom: -5px;
+        background: var(--primaryColor);
+    }
 }

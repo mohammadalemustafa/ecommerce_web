@@ -52,6 +52,7 @@ const RegisterComp = () => {
                     </span>
                 </div>
                 <button>submit & register </button>
+                <p className={styles.p}>Note:Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy</p>
             </div>
             <div className={styles.left}>
                 <Rfrom bg="#1877f2" from="continue with facebook" logo={<FaFacebookSquare size="30px" />} />

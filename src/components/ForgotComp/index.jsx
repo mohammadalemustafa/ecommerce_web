@@ -1,21 +1,18 @@
 import React from "react";
 import styles from './index.module.css';
 import Container from '../../ui/Container';
-import img from '../../assets/login-1.png'
-import { Link } from "react-router-dom";
-const LoginComp = () => {
+import pass from '../../assets/forgot_password.svg'
+const Forgotpass = () => {
     return <Container>
         <div className={styles.cont}>
-            <div className={styles.left}>
-                <img src={img} alt="" />
-            </div>
             <div className={styles.right}>
-                <h1>Login</h1>
-                <Link to="/register">
-                    <p>Don't have an account?   <span>Create here</span></p>
-                </Link>
+                <div className={styles.imgCont}>
+
+                    <img src={pass} alt="" />
+                </div>
+                <h1>Forgot Password?</h1>
+                <p>Not to worry, we got you! Let’s get you a new password. Please enter your email address or your Username.</p>
                 <input type="email" name="email" id="" placeholder="Enter Email or Username" />
-                <input type="password" name="" id="password" placeholder="password" />
                 <div className={styles.securityCode}>
                     <input type="text" name="" id="" placeholder="security code" />
                     <div className={styles.code}>
@@ -28,17 +25,17 @@ const LoginComp = () => {
                 <div className={styles.rememberpass}>
                     <div>
                         <span><input type="checkbox" /></span>
-                        <span> Remember me</span>
+                        <span>I agree to terms & Policy.</span>
                     </div>
                     <div>
-                        <spaxn>Forgot Password</spaxn>
+                        <spaxn>learn</spaxn>
                     </div>
 
                 </div>
-                <button> Log In</button>
+                <button> reset password</button>
             </div>
         </div>
     </Container>
 };
 
-export default LoginComp;
+export default Forgotpass;

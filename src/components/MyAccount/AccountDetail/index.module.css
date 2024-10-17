@@ -1,0 +1,48 @@
+.namecontent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+    width: 100%;
+}
+.firstname{
+    width: 50%;
+
+}
+.lastname{
+    width: 50%;
+
+}
+span{
+    cursor: pointer;
+}
+h2{
+    font-size: 30px;
+    margin-bottom: 25px;
+
+}
+p{
+    font-size: medium;
+    margin-bottom: 25px;
+}
+
+.Outeinput{
+    width: 100%;
+    padding: 15px 15px ;
+    border-radius: 10px;
+    min-width: 500px;
+    border: 1px solid lightgray;
+    margin-bottom: 20px;
+
+}
+.innerinput{
+    width: 100%;
+    padding: 15px 15px ;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    margin-bottom: 20px;
+
+}
+input:focus{
+outline: none;
+}

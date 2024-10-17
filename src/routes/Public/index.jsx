@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 const Public = ({ element }) => {
   return (
@@ -8,6 +9,7 @@ const Public = ({ element }) => {
       <Header />
       <Navbar />
       {element}
+      <Footer />
     </main>
   );
 };

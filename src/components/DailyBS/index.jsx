@@ -57,6 +57,7 @@ const DailyBS = () => {
             autoPlaySpeed={2000}
             autoPlay={true}
             responsive={responsive}
+            arrows={false}
           >
             {pProducts.map((it, index) => (
               <div key={index} className={styles.cardP}>

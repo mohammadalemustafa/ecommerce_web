@@ -12,7 +12,6 @@ import DailyBS from "../../components/DailyBS";
 import DealsOfTheYear from "../../components/DealsOfTheYear";
 import HotProducts from '../../components/HotProducts';
 import { products } from '../../data/Hotp.js'
-import Footer from "../../components/Footer/index.jsx";
 import Secondlast from "../../components/Secondlast/index.jsx";
 import { secondlastdata } from "../../data/Secondlast.js";
 import AboutpCart from "../../components/aboutproduct/index.jsx";
@@ -34,7 +33,6 @@ const bannerData = [
     img: banner2,
   },
 ];
-
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -49,7 +47,6 @@ const responsive = {
     items: 1,
   },
 };
-
 const Home = () => {
   return (
     <Container>
@@ -73,9 +70,7 @@ const Home = () => {
       }} />
       <AboutpCart cartdata={carddata} />
       <Secondlast productsdata={secondlastdata} />
-      <Footer />
     </Container>
   );
 };
-
 export default Home;

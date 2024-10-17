@@ -2,6 +2,7 @@ import React from "react";
 import styles from './index.module.css';
 import Container from '../../ui/Container';
 import img from '../../assets/login-1.png'
+import { Link } from "react-router-dom";
 const LoginComp = () => {
     return <Container>
         <div className={styles.cont}>
@@ -10,7 +11,10 @@ const LoginComp = () => {
             </div>
             <div className={styles.right}>
                 <h1>Login</h1>
-                <p>Don't have an account? <span>Create here</span></p>
+                <Link to="/register">
+
+                    <p>Don't have an account?   <span>Create here</span></p>
+                </Link>
                 <input type="email" name="email" id="" placeholder="Enter Email or Username" />
                 <input type="password" name="" id="password" placeholder="password" />
                 <div className={styles.securityCode}>

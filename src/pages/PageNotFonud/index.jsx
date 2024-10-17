@@ -10,7 +10,7 @@ import banner from "../../assets/banner-13.png";
 import ForgotComp from '../../components/ForgotComp'
 import ResetComp from "../../components/ResetCom";
 import PagesNoTFound from "../../components/PageNOT";
-const PageNoTFound = () => {
+const ResetPass = () => {
     return <Container>
         <div>
             <PagesNoTFound />
@@ -26,4 +26,4 @@ const PageNoTFound = () => {
         </div>;
     </Container>;
 };
-export default PageNoTFound;
+export default ResetPass;

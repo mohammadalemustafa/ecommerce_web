@@ -4,8 +4,8 @@ import SubmitButton from '../../../widgets/SubmitButton/Index'
 const Account = () => {
   return (
     <>
-     <h2>Account Details</h2>
-     <p>Already have an account? <span>Log in instead!</span></p>
+     <h2 className={styles.accountheading}>Account Details</h2>
+     <p className={styles.accountpara}>Already have an account? <span className={styles.accountspan}>Log in instead!</span></p>
      <div className={styles.formcontainer}>
         <div className={styles.namecontent}>
             <div className={styles.firstname}>

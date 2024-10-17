@@ -1,10 +1,11 @@
 import React from 'react'
 import styles from './index.module.css'
+import { orderdata } from '../../../data/orderdata'
 const Orders = () => {
   return (
     <>
      <div className={styles.ordercontainer}>
-        <h2>Your Orders</h2>
+        <h2 className={styles.orderheading}>Your Orders</h2>
         <table>
             <thead>
                 <tr>
@@ -16,27 +17,20 @@ const Orders = () => {
                 </tr>
             </thead>
             <tbody>
-            <tr>
-                    <td>#1357</td>
-                    <td>March 45, 2020</td>
-                    <td>Processing</td>
-                    <td>$125.00 for 2 item</td>
-                    <td>view</td>
-                </tr>
-                <tr>
-                    <td>#1357</td>
-                    <td>March 45, 2020</td>
-                    <td>Processing</td>
-                    <td>$125.00 for 2 item</td>
-                    <td>view</td>
-                </tr>
-                <tr>
-                    <td>#1357</td>
-                    <td>March 45, 2020</td>
-                    <td>Processing</td>
-                    <td>$125.00 for 2 item</td>
-                    <td>view</td>
-                </tr>
+                
+               {
+                orderdata.map(item=>{
+                    return(
+                        <tr>
+                    <td>{item.order}</td>
+                    <td>{item.date}</td>
+                    <td>{item.status}</td>
+                    <td>{item.total}</td>
+                    <td>{item.action}</td>
+                     </tr>
+                    )
+                })
+               }
             </tbody>
         </table>
     </div> 

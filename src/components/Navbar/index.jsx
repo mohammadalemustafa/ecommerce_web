@@ -263,12 +263,12 @@ const Navbar = () => {
                                     blogData.map((item) => {
                                         return (
                                             <div className={styles.pages}>
-                                                <span>{item.p1}</span>
+                                                <span onClick={() => OnNavigate('/BlogCategoryGrid')} >{item.p1}</span>
                                                 <span>{item.p2}</span>
                                                 <span>{item.p3}</span>
                                                 <span>{item.p4}</span>
-                                                <span>{item.p5}</span>
-                                                <span>{item.p6}</span>
+                                                <span onClick={() => OnNavigate('/SinglePostRight')}>{item.p5}</span>
+                                                <span >{item.p6}</span>
 
                                             </div>
                                         )
@@ -292,7 +292,7 @@ const Navbar = () => {
 
                                                 <span onClick={() => OnNavigate('/contact')}>{item.p2}</span>
 
-                                                <span>{item.p3}</span>
+                                                <span onClick={() => OnNavigate('/myprofile')} >{item.p3}</span>
 
                                                 <span onClick={() => OnNavigate('/login')} >{item.p4}</span>
 

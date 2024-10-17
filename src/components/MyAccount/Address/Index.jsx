@@ -30,13 +30,13 @@ const Address = () => {
         data.map(it=>{
             return(
                 <ul>
-                    <h2>{it.li1}</h2>
-                    <li>{it.li2}</li>
-                    <li>{it.li3}</li>
-                    <li>{it.li4}</li>
-                    <li>{it.li5}</li>
-                    <li>{it.li6}</li>
-                    <li>{it.li7}</li>
+                    <h2 className={styles.addressheading}>{it.li1}</h2>
+                    <li className={styles.list}>{it.li2}</li>
+                    <li className={styles.list}>{it.li3}</li>
+                    <li className={styles.list}>{it.li4}</li>
+                    <li className={styles.list}>{it.li5}</li>
+                    <li className={styles.list}>{it.li6}</li>
+                    <li className={styles.list}>{it.li7}</li>
                 </ul>
             )
         })

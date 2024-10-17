@@ -13,7 +13,7 @@ const RightCard = ({clientpic,name,time,star,about,reply}) => {
               </div>
               <div className={styles.about}>
                 <div className={styles.timestar}>
-                  <span>{time}</span>
+                  <span className={styles.commentname}>{time}</span>
                   <div className={styles.star}>
                   {
                         [1,2,3,4,5].map(it=>{

@@ -6,18 +6,18 @@
 ul{
     list-style-type: none;
 }
-li{
+.list{
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 5px;
 }
-li:nth-child(6){
+.list:nth-child(6){
     color: var(--typoColor);
 }
-li:nth-child(7){
+.list:nth-child(7){
     color: var(--primaryColor);
     cursor: pointer;
 }
-li:nth-child(7):hover{
+.list:nth-child(7):hover{
     color: var(--yellowColor);
 }

@@ -4,6 +4,8 @@ import Banner from "../../components/Banner";
 import banner1 from "../../assets/Banner/img1.png";
 import banner2 from "../../assets/Banner/img2.png";
 import banner from "../../assets/banner-9.png";
+import bannerbg from "../../assets/banner10.png";
+
 import FeatureCategories from "../../components/FeatureCategories";
 import MultiCarousel from "../../shared/Carousel";
 import SubBanner from "../../components/SubBanner";
@@ -67,6 +69,7 @@ const Home = () => {
         title2: "Start You'r Daily Shopping with   Nest Mart",
         desc: "Sign up for the daily newsletter",
         img: banner,
+        img2:bannerbg
       }} />
       <AboutpCart cartdata={carddata} />
       <Secondlast productsdata={secondlastdata} />

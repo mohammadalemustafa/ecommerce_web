@@ -24,7 +24,7 @@ const RightSideBar = ({blog19,blog21,blog20}) => {
             <img src={blog19} className={styles.img} alt="" />
           </div>
           <div className={styles.content}>
-            <p >Helping everyone live happier, healthier lives at home through their kitchen. Kitchn is a daily food magazine on the Web celebrating life in the kitchen through home cooking and kitchen intelligence.</p>
+            <p className={styles.para}>Helping everyone live happier, healthier lives at home through their kitchen. Kitchn is a daily food magazine on the Web celebrating life in the kitchen through home cooking and kitchen intelligence.</p>
           <p>We've reviewed and ranked all of the best smartwatches on the market right now, and we've made a definitive list of the top 10 devices you can buy today. One of the 10 picks below may just be your perfect next smartwatch.</p>
           <p>Those top-end wearables span from the Apple Watch to Fitbits, Garmin watches to Tizen-sporting Samsung watches. There's also Wear OS which is Google's own wearable operating system in the vein of Apple's watchOS - you’ll see it show up in a lot of these devices.</p>
          <h3 className={styles.SinglepostHeading}>Lorem ipsum dolor sit amet consectetur.</h3>
@@ -58,7 +58,7 @@ const RightSideBar = ({blog19,blog21,blog20}) => {
             <div className={styles.authorpiccontainer}>
               <img src={author} alt="authorpic" className={styles.authorpic}/>
               <div>
-              <span>Barbara Cartland</span>
+              <span className={styles.authorname}>Barbara Cartland</span>
               <p>
                 <span>306 posts</span>
                 <span>Since 2012</span>
@@ -70,7 +70,7 @@ const RightSideBar = ({blog19,blog21,blog20}) => {
             </div>
           </div>
           <div className={styles.leavecomment}>
-            <h2>Leave A Comment</h2>
+            <h2 className={styles.leave}>Leave A Comment</h2>
             <div className={styles.star}>
             <FaStar color="gray"/>
             <FaStar color="gray"/>

@@ -13,15 +13,19 @@
     width: 50%;
 
 }
-span{
+.accountspan{
     cursor: pointer;
+    color: var(--primaryColor);
 }
-h2{
+.accountspan:hover{
+    color: var(--yellowColor);
+}
+.accountheading{
     font-size: 30px;
     margin-bottom: 25px;
 
 }
-p{
+.accountpara{
     font-size: medium;
     margin-bottom: 25px;
 }

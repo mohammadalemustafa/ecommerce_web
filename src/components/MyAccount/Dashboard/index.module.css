@@ -1,15 +1,15 @@
-span{
+.dashboardspan{
     color: var(--primaryColor);
 }
-span:hover{
+.dashboardspan:hover{
     color: var(--yellowColor);
 }
-h2{
+.dashboardheading{
     font-size: 30px;
     margin-bottom: 25px;
 
 }
-p{
+.dashboardpara{
     font-size: medium;
     padding: 0%;
     margin: 0%;

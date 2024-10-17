@@ -20,6 +20,8 @@
 }
 .comments:hover .reply{
     visibility: visible;
+    color: var(--yellowColor);
+    
 }
 .timestar{
     display: flex;
@@ -37,4 +39,10 @@
 }
 .authorpic>div{
     width: 100%;
+}
+.commentname{
+    color: var(--primaryColor);
+}
+.commentname:hover{
+    color: var(--yellowColor);
 }

@@ -14,12 +14,12 @@ const SinglePost = () => {
     <Container>
       <div className={styles.singlepost}>
       <div className={styles.leftcontainer}>
-        <span>Recipes</span>
-        <h2>Best smartwatch 2024: the top wearables you can buy today</h2>
+        <span className={styles.singlepostspan}>Recipes</span>
+        <h2 className={styles.singlepostheading}>Best smartwatch 2024: the top wearables you can buy today</h2>
         <div className={styles.profile}>
         <div className={styles.authorcontainer}>
           <span><img src={author} alt=""  className={styles.author}/></span>
-          <span>By Sugar Rosie</span>
+          <span>By <span className={styles.authorspan}>Sugar Rosie</span></span>
           <span>2 hours ago</span>
           <span>8 mins read</span>
         </div>

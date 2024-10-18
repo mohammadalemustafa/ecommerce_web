@@ -6,7 +6,7 @@ import AboutpCart from "../../components/aboutproduct";
 import Secondlast from "../../components/Secondlast";
 import { carddata } from "../../data/aboutpCartdata";
 import { secondlastdata } from "../../data/Secondlast";
-import banner from "../../assets/banner-2.png";
+import banner from "../../assets/banner2.png";
 import Banner2 from "../../components/Banner2";
 const Public = ({ element }) => {
   return (
@@ -26,5 +26,4 @@ const Public = ({ element }) => {
     </main>
   );
 };
-
 export default Public;

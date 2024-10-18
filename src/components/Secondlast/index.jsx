@@ -9,16 +9,12 @@ import { IoIosTime } from "react-icons/io";
 import img1 from '../../assets/slogo/app-store.jpg'
 import img2 from '../../assets/slogo/google-play.jpg'
 import payment from '../../assets/slogo/payment.png'
-
-
 const Secondlast = ({ productsdata }) => {
     return <>
         <div className={styles.productsCont}>
             <div className={styles.main}>
                 <div style={{ backgroundImage: `url(${logo})` }} className={styles.logoCont}>
-
                 </div>
-
                 <div className={styles.list}>
                     <span>Awesome grocery store website <br />template</span>
                     <p>

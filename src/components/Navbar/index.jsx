@@ -124,8 +124,8 @@ const Navbar = () => {
                         <span></span>
 
                     </li>
-                    <li>
-                        <span className={styles.pagesnav} onMouseEnter={shop} onMouseLeave={shop}>Shop
+                    <li onMouseEnter={shop} onMouseLeave={shop}>
+                        <span className={styles.pagesnav} >Shop
 
                             {shophover && <div className={styles.pasesdrop}>
                                 {
@@ -154,8 +154,8 @@ const Navbar = () => {
                         </span>
                         <span > <FaAngleDown size="10px"></FaAngleDown></span>
                     </li>
-                    <li>
-                        <span className={styles.pagesnav} onMouseEnter={Vendors} onMouseLeave={Vendors}>Vendors
+                    <li onMouseEnter={Vendors} onMouseLeave={Vendors}>
+                        <span className={styles.pagesnav} >Vendors
 
                             {vendor && <div className={styles.pasesdrop}>
                                 {
@@ -180,8 +180,8 @@ const Navbar = () => {
                         <span > <FaAngleDown size="10px"></FaAngleDown></span>
                     </li>
 
-                    <li>
-                        <span onMouseLeave={onmouseleave} className={styles.megamanu} onMouseEnter={handleMouse}> Mega menu
+                    <li onMouseLeave={onmouseleave} onMouseEnter={handleMouse} >
+                        <span className={styles.megamanu} > Mega menu
                             {
                                 mouse && <div className={styles.megadrop}>
                                     <div className={styles.left}>
@@ -228,7 +228,7 @@ const Navbar = () => {
                                         }
                                         {
                                             mega.map((item) => {
-                                                if (item.cat === "Meat & Seafoo") {
+                                                if (item.cat === "Meat & Seafood") {
                                                     return (
                                                         <div className={styles.cont}>
                                                             <h1>Meat & Seafood
@@ -248,15 +248,13 @@ const Navbar = () => {
                                         }
                                     </div>
                                     <Manubanner data={manuBannerData} />
-
-
                                 </div>
                             }
                         </span>
                         <span> <FaAngleDown size="10px"></FaAngleDown></span>
                     </li>
-                    <li>
-                        <span className={styles.pagesnav} onMouseEnter={blog} onMouseLeave={blog}>Blog
+                    <li onMouseEnter={blog} onMouseLeave={blog}>
+                        <span className={styles.pagesnav} >Blog
 
                             {blogHover && <div className={styles.pasesdrop}>
                                 {
@@ -280,8 +278,8 @@ const Navbar = () => {
                         </span>
                         <span > <FaAngleDown size="10px"></FaAngleDown></span>
                     </li>
-                    <li>
-                        <span className={styles.pagesnav} onMouseEnter={handleMouse1} onMouseLeave={onmouseleave1}>Pages
+                    <li onMouseEnter={handleMouse1} onMouseLeave={onmouseleave1}>
+                        <span className={styles.pagesnav} >Pages
 
                             {hoveronpages && <div className={styles.pasesdrop}>
                                 {

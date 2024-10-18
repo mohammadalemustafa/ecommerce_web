@@ -12,18 +12,9 @@ import ResetComp from "../../components/ResetCom";
 import PagesNoTFound from "../../components/PageNOT";
 const ResetPass = () => {
     return <Container>
-        <div>
-            <PagesNoTFound />
-            <Banner2 it={{
-                id: 1,
-                title1: "Stay home & get your daily neds from our shop",
-                title2: "Start You'r Daily Shopping with   Nest Mart",
-                desc: "Sign up for the daily newsletter",
-                img: banner,
-            }} />
-            <AboutpCart cartdata={carddata} />
-            <Secondlast productsdata={secondlastdata} />
-        </div>;
+
+        <PagesNoTFound />
+
     </Container>;
 };
 export default ResetPass;

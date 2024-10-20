@@ -8,6 +8,7 @@ import Register from "./pages/Register";
 import Forgotpass from "./pages/Forgotpassword";
 import ResetPass from "./pages/Resetpass";
 import PageNoTFound from "./pages/Resetpass";
+import About from "./pages/About";
 function App() {
   const [count, setCount] = useState(0);
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/forgotpass" element={<Public element={<Forgotpass></Forgotpass>} />} />
       <Route path="/resetpass" element={<Public element={<ResetPass></ResetPass>} />} />
       <Route path="*" element={<Public element={<PageNoTFound></PageNoTFound>} />} />
+      <Route path="about" element={<Public element={<About></About>} />} />
     </Routes>
   );
 }

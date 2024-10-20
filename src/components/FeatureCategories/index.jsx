@@ -158,7 +158,7 @@ const FeatureCategories = () => {
           </li>
         </ul>
       </div>
-      <MultiCarousel infinite={true} autoPlaySpeed={2000} autoPlay={true} responsive={responsive}>
+      <MultiCarousel arrows={false} infinite={true} autoPlaySpeed={2000} autoPlay={true} responsive={responsive}>
         {data.map((it) => {
           return <FCard key={it.id} bg={it.bg} title={it.name} src={it.img} items={it.items} />;
         })}

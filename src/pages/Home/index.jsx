@@ -7,7 +7,10 @@ import FeatureCategories from "../../components/FeatureCategories";
 import MultiCarousel from "../../shared/Carousel";
 import SubBanner from "../../components/SubBanner";
 import PopularProducts from "../../components/PopularProducts";
-
+import DailyBS from "../../components/DailyBS";
+import DealsOfTheYear from "../../components/DealsOfTheYear";
+import HotProducts from '../../components/HotProducts';
+import { products } from '../../data/Hotp.js'
 const bannerData = [
   {
     id: 1,
@@ -24,7 +27,6 @@ const bannerData = [
     img: banner2,
   },
 ];
-
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -39,11 +41,10 @@ const responsive = {
     items: 1,
   },
 };
-
 const Home = () => {
   return (
     <Container>
-      <MultiCarousel infinite={true} showDots={true} autoPlay={true} responsive={responsive}>
+      <MultiCarousel arrows={false} infinite={true} showDots={true} autoPlay={true} responsive={responsive}>
         {bannerData.map((it) => {
           return <Banner key={it.id} it={it} module="banner" />;
         })}
@@ -51,8 +52,10 @@ const Home = () => {
       <FeatureCategories />
       <SubBanner />
       <PopularProducts />
+      <DailyBS />
+      <DealsOfTheYear />
+      <HotProducts productsdata={products} />
     </Container>
   );
 };
-
 export default Home;

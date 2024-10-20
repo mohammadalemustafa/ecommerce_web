@@ -2,6 +2,7 @@
   --primaryColor: #3bb77e;
   --textColor: #253d4e;
   --typoColor: #7e7e7e;
+  --shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 * {
@@ -10,6 +11,16 @@
   box-sizing: border-box;
   font-family: "Quicksand", sans-serif;
   font-size: 16px;
+
+}
+
+::selection {
+  color: #3bb77e !important;
+  font-weight: 500 !important;
+}
+
+*>a {
+  text-decoration: none;
 }
 
 img {

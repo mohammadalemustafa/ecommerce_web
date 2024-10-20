@@ -22,7 +22,7 @@ const ContactComp = () => {
                     </div>
 
                     <textarea placeholder="message" name="" id=""></textarea>
-                    <button>Send Message</button>
+                    <button className={styles.button}>Send Message</button>
                 </div>
             </div>
             <di className={styles.right}>

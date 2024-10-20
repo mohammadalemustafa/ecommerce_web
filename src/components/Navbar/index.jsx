@@ -116,17 +116,16 @@ const Navbar = () => {
                 <ul>
                     <li>deals</li>
                     <li>
-                        <span>Home</span>
+                        <span onClick={() => OnNavigate('/home')}>Home</span>
                         <span> <FaAngleDown size="10px"></FaAngleDown></span>
                     </li>
                     <li>
-                        <span>About</span>
+                        <span onClick={() => OnNavigate('/about')}>About</span>
                         <span></span>
 
                     </li>
                     <li onMouseEnter={shop} onMouseLeave={shop}>
                         <span className={styles.pagesnav} >Shop
-
                             {shophover && <div className={styles.pasesdrop}>
                                 {
                                     shopdata.map((item) => {
@@ -286,7 +285,7 @@ const Navbar = () => {
                                     pageslist.map((item) => {
                                         return (
                                             <div className={styles.pages}>
-                                                <span>{item.p1}</span>
+                                                <span onClick={() => OnNavigate('/about')}>{item.p1}</span>
 
                                                 <span onClick={() => OnNavigate('/contact')}>{item.p2}</span>
 
@@ -300,7 +299,6 @@ const Navbar = () => {
                                                 <span>{item.p8}</span>
                                                 <span>{item.p9}</span>
                                                 <span>{item.p10}</span>
-                                                <span>{item.p11}</span>
                                             </div>
                                         )
                                     })
@@ -312,7 +310,7 @@ const Navbar = () => {
                         <span > <FaAngleDown size="10px"></FaAngleDown></span>
                     </li>
                     <li>
-                        <span>Contact</span>
+                        <span onClick={() => OnNavigate('/contact')}>Contact</span>
                         <span> </span>
                     </li>
                 </ul>

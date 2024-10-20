@@ -38,22 +38,23 @@
     justify-content: space-between;
     align-items: center;
     list-style-type: none;
-    gap: 30px;
+    gap: 20px;
     top: 20px;
     height: 10px;
     text-transform: capitalize;
     font-family: Quicksand, sans-serif;
-    color: var(--textColor) !important;
+    color: rgb(37, 61, 78) !important;
+
 
 }
 
 .navlistcont ul li {
-    color: var(--textColor) !important;
+    color: rgb(37, 61, 78) !important;
+
     display: flex;
     justify-content: center;
     padding: 2px;
     height: 70px;
-
     align-items: center;
     font-weight: 600 !important;
     gap: 5px;
@@ -63,9 +64,6 @@
     }
 }
 
-.navlistcont ul li span:last-child {
-    color: #7e7e7e;
-}
 
 .dropdown {
     width: 250px;
@@ -86,6 +84,7 @@
     position: relative;
     top: 2px;
     font-size: large;
+
 }
 
 .iconCont {
@@ -96,12 +95,15 @@
 
 .iconCont>span:first-child {
     font-size: x-large;
-    color: #3bb77e;
+    color: #3bb77e !important;
+    font-weight: 700;
+    color: var(--typoColor);
+
 }
 
 .iconCont>span:last-child {
     font-size: small;
-    color: #7e7e7e;
+    color: var(--typoColor);
 }
 
 .right {
@@ -144,7 +146,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    /* position: relative; */
+    color: var(--typoColor);
 }
 
 .megadrop {
@@ -158,7 +160,6 @@
     position: absolute;
     top: 100%;
     left: 20px;
-
     border-radius: 10px;
     z-index: 1;
 }
@@ -193,7 +194,7 @@
 
 .cont>div span {
     margin: 5px;
-    color: #7E7E7E;
+    color: var(--typoColor);
 }
 
 .pages {

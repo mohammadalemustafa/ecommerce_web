@@ -68,16 +68,24 @@
     width: 100%;
 }
 
-button {
+.button {
     font-size: 17px;
     font-weight: 500;
     padding: 20px 40px;
-    width: 50%;
+    width: 40%;
     color: #ffffff;
     border: none;
     background-color: #253D4E;
     border-radius: 10px;
     font-family: "Quicksand", sans-serif;
+    position: relative;
+    bottom: -20px;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        background-color: var(--primaryColor);
+        bottom: -15px;
+    }
 }
 
 textarea {

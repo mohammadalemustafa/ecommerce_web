@@ -8,18 +8,22 @@ import { carddata } from "../../data/aboutpCartdata";
 import { secondlastdata } from "../../data/Secondlast";
 import banner from "../../assets/banner2.png";
 import Banner2 from "../../components/Banner2";
+import Modal from "../../Modal";
 const Public = ({ element }) => {
   return (
     <main>
       <Header />
       <Navbar />
       {element}
-      <Banner2 it={{
-        id: 1,
-        title1: "Stay home & get your daily neds from our shop",
-        desc: "Sign up for the daily newsletter",
-        img: banner,
-      }} />
+      <Banner2
+        it={{
+          id: 1,
+          title1: "Stay home & get your daily neds from our shop",
+          desc: "Sign up for the daily newsletter",
+          img: banner,
+        }}
+      />
+      {/* <Modal /> */}
       <AboutpCart cartdata={carddata} />
       <Secondlast productsdata={secondlastdata} />
       <Footer />

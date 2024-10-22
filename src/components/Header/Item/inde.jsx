@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import styles from "../index.module.css";
-
 const Item = ({ to, name, value }) => {
   return (
     <li className={styles.li}>

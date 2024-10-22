@@ -12,6 +12,7 @@ import About from "./pages/About";
 function App() {
 
 
+
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/home" />} />

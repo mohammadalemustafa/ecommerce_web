@@ -10,19 +10,6 @@ import ResetPass from "./pages/Resetpass";
 import PageNoTFound from "./pages/Resetpass";
 import About from "./pages/About";
 function App() {
-  const reducer = (state, action) => {
-    switch (action.type) {
-      case "ACCOUNTHOVER": return { ...state, accountHover: !state.accountHover }
-      // case "default": return { ...state }
-    }
-  }
-
-  const onHover = () => {
-    alert("yes")
-    dispatch({ type: "ACCOUNTHOVER" });
-  }
-  const [state, dispatch] = useReducer(reducer, { accountHover: false });
-  alert(state.accountHover)
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/home" />} />

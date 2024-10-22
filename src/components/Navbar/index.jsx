@@ -16,6 +16,10 @@ import { mega } from "../../data/Megadropdata";
 import banner from '../../assets/drowdown/banner-menu.png';
 import Manubanner from "../Manubanner";
 import { pageslist } from "../../data/pageslist";
+import { blogData } from "../../data/blog";
+import { vendorsdata } from "../../data/vendors";
+import { shopdata } from "../../data/shop";
+import { Link, useNavigate } from "react-router-dom";
 export const additionaldata = [
     { id: 11, name: "Milks and Dairies", logo: icon1 },
     { id: 12, name: "Milks and Dairies", logo: icon2 },
@@ -33,7 +37,10 @@ const Navbar = () => {
     const [set, setSet] = useState(false);
     const [mouse, setMouse] = useState(false);
     const [hoveronpages, setHover] = useState(false);
-
+    const [blogHover, setBloghover] = useState(false);
+    const [vendor, setVendor] = useState(false);
+    const [shophover, setshopHover] = useState(false);
+    const navigate = useNavigate();
     const adddata = () => {
         setSet(!set);
         var data1 = additionaldata.map((item) => {
@@ -59,6 +66,21 @@ const Navbar = () => {
     const onmouseleave1 = () => {
         setHover(false)
     }
+    const blog = () => {
+        setBloghover(!blogHover)
+    }
+    const Vendors = () => {
+        setVendor(!vendor);
+    }
+    const shop = () => {
+        setshopHover(!shophover);
+    }
+    const OnNavigate = (n) => {
+        navigate(n);
+        setHover(false);
+    }
+
+
     return <Container>
         <div className={styles.navBarCont}>
             <div className={styles.navlistcont}>
@@ -101,14 +123,64 @@ const Navbar = () => {
                         <span>About</span>
                         <span></span>
 
-                    </li> <li>
-                        <span>Shop</span>
-                        <span> <FaAngleDown size="10px"></FaAngleDown></span>
+                    </li>
+                    <li>
+                        <span className={styles.pagesnav} onMouseEnter={shop} onMouseLeave={shop}>Shop
 
-                    </li> <li>
-                        <span>Vendors</span>
-                        <span> <FaAngleDown size="10px"></FaAngleDown></span>
-                    </li> <li>
+                            {shophover && <div className={styles.pasesdrop}>
+                                {
+                                    shopdata.map((item) => {
+                                        return (
+                                            <div className={styles.pages}>
+                                                <span>{item.p1}</span>
+                                                <span>{item.p2}</span>
+                                                <span>{item.p3}</span>
+                                                <span>{item.p4}</span>
+                                                <span>{item.p5}</span>
+                                                <span>{item.p6}</span>
+                                                <span>{item.p7}</span>
+                                                <span>{item.p8}</span>
+                                                <span>{item.p9}</span>
+                                                <span>{item.p10}</span>
+                                                <span>{item.p11}</span>
+
+                                            </div>
+                                        )
+                                    })
+                                }
+
+                            </div>
+                            }
+                        </span>
+                        <span > <FaAngleDown size="10px"></FaAngleDown></span>
+                    </li>
+                    <li>
+                        <span className={styles.pagesnav} onMouseEnter={Vendors} onMouseLeave={Vendors}>Vendors
+
+                            {vendor && <div className={styles.pasesdrop}>
+                                {
+                                    vendorsdata.map((item) => {
+                                        return (
+                                            <div className={styles.pages}>
+                                                <span>{item.p1}</span>
+                                                <span>{item.p2}</span>
+                                                <span>{item.p3}</span>
+                                                <span>{item.p4}</span>
+                                                <span>{item.p5}</span>
+                                                <span>{item.p6}</span>
+
+                                            </div>
+                                        )
+                                    })
+                                }
+
+                            </div>
+                            }
+                        </span>
+                        <span > <FaAngleDown size="10px"></FaAngleDown></span>
+                    </li>
+
+                    <li>
                         <span onMouseLeave={onmouseleave} className={styles.megamanu} onMouseEnter={handleMouse}> Mega menu
                             {
                                 mouse && <div className={styles.megadrop}>
@@ -175,8 +247,6 @@ const Navbar = () => {
                                             })
                                         }
                                     </div>
-
-
                                     <Manubanner data={manuBannerData} />
 
 
@@ -186,8 +256,29 @@ const Navbar = () => {
                         <span> <FaAngleDown size="10px"></FaAngleDown></span>
                     </li>
                     <li>
-                        <span>Blog</span>
-                        <span> <FaAngleDown size="10px"></FaAngleDown></span>
+                        <span className={styles.pagesnav} onMouseEnter={blog} onMouseLeave={blog}>Blog
+
+                            {blogHover && <div className={styles.pasesdrop}>
+                                {
+                                    blogData.map((item) => {
+                                        return (
+                                            <div className={styles.pages}>
+                                                <span onClick={() => OnNavigate('/BlogCategoryGrid')} >{item.p1}</span>
+                                                <span>{item.p2}</span>
+                                                <span>{item.p3}</span>
+                                                <span>{item.p4}</span>
+                                                <span onClick={() => OnNavigate('/SinglePostRight')}>{item.p5}</span>
+                                                <span >{item.p6}</span>
+
+                                            </div>
+                                        )
+                                    })
+                                }
+
+                            </div>
+                            }
+                        </span>
+                        <span > <FaAngleDown size="10px"></FaAngleDown></span>
                     </li>
                     <li>
                         <span className={styles.pagesnav} onMouseEnter={handleMouse1} onMouseLeave={onmouseleave1}>Pages
@@ -198,12 +289,16 @@ const Navbar = () => {
                                         return (
                                             <div className={styles.pages}>
                                                 <span>{item.p1}</span>
-                                                <span>{item.p2}</span>
-                                                <span>{item.p3}</span>
-                                                <span>{item.p4}</span>
-                                                <span>{item.p5}</span>
-                                                <span>{item.p6}</span>
-                                                <span>{item.p7}</span>
+
+                                                <span onClick={() => OnNavigate('/contact')}>{item.p2}</span>
+
+                                                <span onClick={() => OnNavigate('/myprofile')} >{item.p3}</span>
+
+                                                <span onClick={() => OnNavigate('/login')} >{item.p4}</span>
+
+                                                <span onClick={() => OnNavigate('/register')}>{item.p5}</span>
+                                                <span onClick={() => OnNavigate('/forgotpass')}>{item.p6}</span>
+                                                <span onClick={() => OnNavigate('/resetpass')}>{item.p7}</span>
                                                 <span>{item.p8}</span>
                                                 <span>{item.p9}</span>
                                                 <span>{item.p10}</span>
@@ -233,7 +328,6 @@ const Navbar = () => {
             </div>
         </div>;
     </Container >
-
 };
 
 export default Navbar;

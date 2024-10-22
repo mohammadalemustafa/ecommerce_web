@@ -1,6 +1,6 @@
 .banner {
-    width: 500px;
-    height: 300px;
+    width: 400px;
+    height: 250px;
     border-radius: 5px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -14,7 +14,7 @@
     width: 130px;
     gap: 20px;
     left: 30px;
-    top: 20%;
+    top: 10%;
     position: absolute;
 }
 
@@ -36,6 +36,7 @@
     font-weight: 700;
     color: #ffffff;
     border-radius: 26px;
+    width: 100%;
     padding: 12px 22px 14px;
     background-color: #3BB77E;
     border: none;

@@ -4,6 +4,8 @@ import Banner from "../../components/Banner";
 import banner1 from "../../assets/Banner/img1.png";
 import banner2 from "../../assets/Banner/img2.png";
 import banner from "../../assets/banner-9.png";
+import bannerbg from "../../assets/banner10.png";
+
 import FeatureCategories from "../../components/FeatureCategories";
 import MultiCarousel from "../../shared/Carousel";
 import SubBanner from "../../components/SubBanner";
@@ -12,7 +14,6 @@ import DailyBS from "../../components/DailyBS";
 import DealsOfTheYear from "../../components/DealsOfTheYear";
 import HotProducts from '../../components/HotProducts';
 import { products } from '../../data/Hotp.js'
-import Footer from "../../components/Footer/index.jsx";
 import Secondlast from "../../components/Secondlast/index.jsx";
 import { secondlastdata } from "../../data/Secondlast.js";
 import AboutpCart from "../../components/aboutproduct/index.jsx";
@@ -34,7 +35,6 @@ const bannerData = [
     img: banner2,
   },
 ];
-
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -49,7 +49,6 @@ const responsive = {
     items: 1,
   },
 };
-
 const Home = () => {
   return (
     <Container>
@@ -70,12 +69,11 @@ const Home = () => {
         title2: "Start You'r Daily Shopping with   Nest Mart",
         desc: "Sign up for the daily newsletter",
         img: banner,
+        img2:bannerbg
       }} />
       <AboutpCart cartdata={carddata} />
       <Secondlast productsdata={secondlastdata} />
-      <Footer />
     </Container>
   );
 };
-
 export default Home;

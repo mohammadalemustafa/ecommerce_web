@@ -4,6 +4,12 @@
   column-gap: 2px;
 }
 
+.icon>div:last-child {
+  position: relative;
+  transition: all .3s ease-in-out;
+
+}
+
 .left {
   position: relative;
   display: flex;

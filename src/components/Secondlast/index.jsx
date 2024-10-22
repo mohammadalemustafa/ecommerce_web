@@ -42,9 +42,9 @@ const Secondlast = ({ productsdata }) => {
             <div className={styles.main}>
                 <h2> About Us</h2>
                 {
-                    productsdata.map((item) => {
+                    productsdata.map((item, index) => {
                         if (item.name === "About Us") {
-                            return <div className={styles.list}>
+                            return <div key={index} className={styles.list}>
                                 <span>{item.s1}</span>
                                 <span>{item.s2}</span>
                                 <span>{item.s3}</span>
@@ -61,9 +61,9 @@ const Secondlast = ({ productsdata }) => {
             </div> <div className={styles.main}>
                 <h2>Account</h2>
                 {
-                    productsdata.map((item) => {
+                    productsdata.map((item, index) => {
                         if (item.name === "Account") {
-                            return <div className={styles.list}>
+                            return <div key={index} className={styles.list}>
                                 <span>{item.s1}</span>
                                 <span>{item.s2}</span>
                                 <span>{item.s3}</span>
@@ -80,9 +80,9 @@ const Secondlast = ({ productsdata }) => {
             </div> <div className={styles.main}>
                 <h2> Corporate</h2>
                 {
-                    productsdata.map((item) => {
+                    productsdata.map((item, index) => {
                         if (item.name === "Corporate") {
-                            return <div className={styles.list}>
+                            return <div key={index} className={styles.list}>
                                 <span>{item.s1}</span>
                                 <span>{item.s2}</span>
                                 <span>{item.s3}</span>
@@ -99,9 +99,9 @@ const Secondlast = ({ productsdata }) => {
             </div> <div className={styles.main}>
                 <h2>Popular</h2>
                 {
-                    productsdata.map((item) => {
+                    productsdata.map((item, index) => {
                         if (item.name === "Popular") {
-                            return <div className={styles.list}>
+                            return <div key={index} className={styles.list}>
                                 <span>{item.s1}</span>
                                 <span>{item.s2}</span>
                                 <span>{item.s3}</span>

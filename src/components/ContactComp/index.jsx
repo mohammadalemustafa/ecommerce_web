@@ -25,9 +25,9 @@ const ContactComp = () => {
                     <button className={styles.button}>Send Message</button>
                 </div>
             </div>
-            <di className={styles.right}>
+            <div className={styles.right}>
                 <img src={img} alt="" />
-            </di>
+            </div>
         </div>;
     </Container>
 };

@@ -129,9 +129,9 @@ const Navbar = () => {
 
                             {shophover && <div className={styles.pasesdrop}>
                                 {
-                                    shopdata.map((item) => {
+                                    shopdata.map((item, index) => {
                                         return (
-                                            <div className={styles.pages}>
+                                            <div key={index} className={styles.pages}>
                                                 <span>{item.p1}</span>
                                                 <span>{item.p2}</span>
                                                 <span>{item.p3}</span>
@@ -159,9 +159,9 @@ const Navbar = () => {
 
                             {vendor && <div className={styles.pasesdrop}>
                                 {
-                                    vendorsdata.map((item) => {
+                                    vendorsdata.map((item, index) => {
                                         return (
-                                            <div className={styles.pages}>
+                                            <div key={index} className={styles.pages}>
                                                 <span>{item.p1}</span>
                                                 <span>{item.p2}</span>
                                                 <span>{item.p3}</span>
@@ -186,11 +186,11 @@ const Navbar = () => {
                                 mouse && <div className={styles.megadrop}>
                                     <div className={styles.left}>
                                         {
-                                            mega.map((item) => {
-                                                <h1>Fruit & Vegetables</h1>
+                                            mega.map((item, index) => {
+                                                <h1 key={index}>Fruit & Vegetables</h1>
                                                 if (item.cat === "Fruit & Vegetables") {
                                                     return (
-                                                        <div className={styles.cont}>
+                                                        <div key={index} className={styles.cont}>
                                                             <h1>Fruit & Vegetables
                                                             </h1>
                                                             <div>
@@ -207,10 +207,10 @@ const Navbar = () => {
                                             })
                                         }
                                         {
-                                            mega.map((item) => {
+                                            mega.map((item, index) => {
                                                 if (item.cat === "Breakfast & Dairy") {
                                                     return (
-                                                        <div className={styles.cont}>
+                                                        <div key={index} className={styles.cont}>
                                                             <h1>Breakfast & Dairy
                                                             </h1>
                                                             <div>
@@ -227,10 +227,10 @@ const Navbar = () => {
                                             })
                                         }
                                         {
-                                            mega.map((item) => {
+                                            mega.map((item, index) => {
                                                 if (item.cat === "Meat & Seafoo") {
                                                     return (
-                                                        <div className={styles.cont}>
+                                                        <div key={index} className={styles.cont}>
                                                             <h1>Meat & Seafood
                                                             </h1>
                                                             <div>
@@ -260,9 +260,9 @@ const Navbar = () => {
 
                             {blogHover && <div className={styles.pasesdrop}>
                                 {
-                                    blogData.map((item) => {
+                                    blogData.map((item, index) => {
                                         return (
-                                            <div className={styles.pages}>
+                                            <div key={index} className={styles.pages}>
                                                 <span onClick={() => OnNavigate('/BlogCategoryGrid')} >{item.p1}</span>
                                                 <span>{item.p2}</span>
                                                 <span>{item.p3}</span>
@@ -285,9 +285,9 @@ const Navbar = () => {
 
                             {hoveronpages && <div className={styles.pasesdrop}>
                                 {
-                                    pageslist.map((item) => {
+                                    pageslist.map((item, index) => {
                                         return (
-                                            <div className={styles.pages}>
+                                            <div key={index} className={styles.pages}>
                                                 <span>{item.p1}</span>
 
                                                 <span onClick={() => OnNavigate('/contact')}>{item.p2}</span>

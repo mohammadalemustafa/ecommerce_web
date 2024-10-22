@@ -82,7 +82,7 @@ const DealCard = ({ it }) => {
           <p className={styles.cat}>{it.name}</p>
           <h4>{it.itemName}</h4>
           <p className={styles.rating}>
-            {[1, 2, 3, 4, 5].map((itm) => (itm <= it.rating ? <FaStar color="#FDC040" /> : <BiStar />))}
+            {[1, 2, 3, 4, 5].map((itm, index) => (itm <= it.rating ? <FaStar key={index} color="#FDC040" /> : <BiStar key={index} />))}
             <span>({it.rating})</span>
           </p>
           <p className={styles.comp}>

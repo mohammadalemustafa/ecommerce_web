@@ -6,9 +6,9 @@ const AboutpCart = ({ cartdata }) => {
     return <Container>
         <div className={styles.cont}>
             {
-                cartdata.map((it) => {
+                cartdata.map((it, index) => {
                     return (
-                        <Cart data={it} />
+                        <Cart key={index} data={it} />
                     )
                 })
             }

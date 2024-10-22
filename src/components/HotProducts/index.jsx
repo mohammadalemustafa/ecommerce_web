@@ -8,9 +8,9 @@ const HotProducts = ({ productsdata }) => {
         <div className={styles.main}>
             <div>top Selling</div>
             {
-                productsdata.map((item) => {
+                productsdata.map((item, index) => {
                     if (item.category === "topSelling") {
-                        return <div className={styles.list}>
+                        return <div key={index} className={styles.list}>
                             <div className={styles.imgcont}> <img src={item.img} alt="" /></div>
                             <div className={styles.right}>
                                 <h2>{item.name}</h2>
@@ -48,10 +48,10 @@ const HotProducts = ({ productsdata }) => {
 
             {
 
-                productsdata.map((item) => {
+                productsdata.map((item, index) => {
 
                     if (item.category === "trendingProducts") {
-                        return <div className={styles.list}>
+                        return <div key={index} className={styles.list}>
                             <div className={styles.imgcont}> <img src={item.img} alt="" /></div>
                             <div className={styles.right}>
                                 <h2>{item.name}</h2>
@@ -59,10 +59,10 @@ const HotProducts = ({ productsdata }) => {
 
                                     <span>
                                         {
-                                            [1, 2, 3, 4, 5].map((it) => {
+                                            [1, 2, 3, 4, 5].map((it, index) => {
                                                 if (it <= item.rating) {
                                                     return (
-                                                        <IoStar color="rgb(253, 192, 64)" />
+                                                        <IoStar key={index} color="rgb(253, 192, 64)" />
                                                     )
                                                 }
                                                 else {
@@ -89,9 +89,9 @@ const HotProducts = ({ productsdata }) => {
             <div>recently Added</div>
 
             {
-                productsdata.map((item) => {
+                productsdata.map((item, index) => {
                     if (item.category === "recentlyAdded") {
-                        return <div className={styles.list}>
+                        return <div key={index} className={styles.list}>
                             <div className={styles.imgcont}> <img src={item.img} alt="" /></div>
                             <div className={styles.right}>
                                 <h2>{item.name}</h2>
@@ -99,10 +99,10 @@ const HotProducts = ({ productsdata }) => {
 
                                     <span>
                                         {
-                                            [1, 2, 3, 4, 5].map((it) => {
+                                            [1, 2, 3, 4, 5].map((it, index) => {
                                                 if (it <= item.rating) {
                                                     return (
-                                                        <IoStar color="rgb(253, 192, 64)" />
+                                                        <IoStar key={index} color="rgb(253, 192, 64)" />
                                                     )
                                                 }
                                                 else {
@@ -128,9 +128,9 @@ const HotProducts = ({ productsdata }) => {
         <div className={styles.main}>
             <div>top Added</div>
             {
-                productsdata.map((item) => {
+                productsdata.map((item, index) => {
                     if (item.category === "topAdded") {
-                        return <div className={styles.list}>
+                        return <div key={index} className={styles.list}>
                             <div className={styles.imgcont}> <img src={item.img} alt="" /></div>
                             <div className={styles.right}>
                                 <h2>{item.name}</h2>
@@ -138,10 +138,10 @@ const HotProducts = ({ productsdata }) => {
 
                                     <span>
                                         {
-                                            [1, 2, 3, 4, 5].map((it) => {
+                                            [1, 2, 3, 4, 5].map((it, index) => {
                                                 if (it <= item.rating) {
                                                     return (
-                                                        <IoStar color="rgb(253, 192, 64)" />
+                                                        <IoStar key={index} color="rgb(253, 192, 64)" />
                                                     )
                                                 }
                                                 else {

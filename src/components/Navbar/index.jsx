@@ -116,16 +116,17 @@ const Navbar = () => {
                 <ul>
                     <li>deals</li>
                     <li>
-                        <span onClick={() => OnNavigate('/home')}>Home</span>
+                        <span>Home</span>
                         <span> <FaAngleDown size="10px"></FaAngleDown></span>
                     </li>
                     <li>
-                        <span onClick={() => OnNavigate('/about')}>About</span>
+                        <span>About</span>
                         <span></span>
 
                     </li>
-                    <li onMouseEnter={shop} onMouseLeave={shop}>
-                        <span className={styles.pagesnav} >Shop
+                    <li>
+                        <span className={styles.pagesnav} onMouseEnter={shop} onMouseLeave={shop}>Shop
+
                             {shophover && <div className={styles.pasesdrop}>
                                 {
                                     shopdata.map((item) => {
@@ -153,8 +154,8 @@ const Navbar = () => {
                         </span>
                         <span > <FaAngleDown size="10px"></FaAngleDown></span>
                     </li>
-                    <li onMouseEnter={Vendors} onMouseLeave={Vendors}>
-                        <span className={styles.pagesnav} >Vendors
+                    <li>
+                        <span className={styles.pagesnav} onMouseEnter={Vendors} onMouseLeave={Vendors}>Vendors
 
                             {vendor && <div className={styles.pasesdrop}>
                                 {
@@ -179,8 +180,8 @@ const Navbar = () => {
                         <span > <FaAngleDown size="10px"></FaAngleDown></span>
                     </li>
 
-                    <li onMouseLeave={onmouseleave} onMouseEnter={handleMouse} >
-                        <span className={styles.megamanu} > Mega menu
+                    <li>
+                        <span onMouseLeave={onmouseleave} className={styles.megamanu} onMouseEnter={handleMouse}> Mega menu
                             {
                                 mouse && <div className={styles.megadrop}>
                                     <div className={styles.left}>
@@ -227,7 +228,7 @@ const Navbar = () => {
                                         }
                                         {
                                             mega.map((item) => {
-                                                if (item.cat === "Meat & Seafood") {
+                                                if (item.cat === "Meat & Seafoo") {
                                                     return (
                                                         <div className={styles.cont}>
                                                             <h1>Meat & Seafood
@@ -247,58 +248,28 @@ const Navbar = () => {
                                         }
                                     </div>
                                     <Manubanner data={manuBannerData} />
+
+
                                 </div>
                             }
                         </span>
                         <span> <FaAngleDown size="10px"></FaAngleDown></span>
                     </li>
-                    <li onMouseEnter={blog} onMouseLeave={blog}>
-                        <span className={styles.pagesnav} >Blog
+                    <li>
+                        <span className={styles.pagesnav} onMouseEnter={blog} onMouseLeave={blog}>Blog
 
                             {blogHover && <div className={styles.pasesdrop}>
                                 {
                                     blogData.map((item) => {
                                         return (
                                             <div className={styles.pages}>
-                                                <span>{item.p1}</span>
+                                                <span onClick={() => OnNavigate('/BlogCategoryGrid')} >{item.p1}</span>
                                                 <span>{item.p2}</span>
                                                 <span>{item.p3}</span>
                                                 <span>{item.p4}</span>
-                                                <span>{item.p5}</span>
-                                                <span>{item.p6}</span>
+                                                <span onClick={() => OnNavigate('/SinglePostRight')}>{item.p5}</span>
+                                                <span >{item.p6}</span>
 
-                                            </div>
-                                        )
-                                    })
-                                }
-
-                            </div>
-                            }
-                        </span>
-                        <span > <FaAngleDown size="10px"></FaAngleDown></span>
-                    </li>
-                    <li onMouseEnter={handleMouse1} onMouseLeave={onmouseleave1}>
-                        <span className={styles.pagesnav} >Pages
-
-                            {hoveronpages && <div className={styles.pasesdrop}>
-                                {
-                                    pageslist.map((item) => {
-                                        return (
-                                            <div className={styles.pages}>
-                                                <span onClick={() => OnNavigate('/about')}>{item.p1}</span>
-
-                                                <span onClick={() => OnNavigate('/contact')}>{item.p2}</span>
-
-                                                <span>{item.p3}</span>
-
-                                                <span onClick={() => OnNavigate('/login')} >{item.p4}</span>
-
-                                                <span onClick={() => OnNavigate('/register')}>{item.p5}</span>
-                                                <span onClick={() => OnNavigate('/forgotpass')}>{item.p6}</span>
-                                                <span onClick={() => OnNavigate('/resetpass')}>{item.p7}</span>
-                                                <span>{item.p8}</span>
-                                                <span>{item.p9}</span>
-                                                <span>{item.p10}</span>
                                             </div>
                                         )
                                     })
@@ -310,7 +281,40 @@ const Navbar = () => {
                         <span > <FaAngleDown size="10px"></FaAngleDown></span>
                     </li>
                     <li>
-                        <span onClick={() => OnNavigate('/contact')}>Contact</span>
+                        <span className={styles.pagesnav} onMouseEnter={handleMouse1} onMouseLeave={onmouseleave1}>Pages
+
+                            {hoveronpages && <div className={styles.pasesdrop}>
+                                {
+                                    pageslist.map((item) => {
+                                        return (
+                                            <div className={styles.pages}>
+                                                <span>{item.p1}</span>
+
+                                                <span onClick={() => OnNavigate('/contact')}>{item.p2}</span>
+
+                                                <span onClick={() => OnNavigate('/myprofile')} >{item.p3}</span>
+
+                                                <span onClick={() => OnNavigate('/login')} >{item.p4}</span>
+
+                                                <span onClick={() => OnNavigate('/register')}>{item.p5}</span>
+                                                <span onClick={() => OnNavigate('/forgotpass')}>{item.p6}</span>
+                                                <span onClick={() => OnNavigate('/resetpass')}>{item.p7}</span>
+                                                <span>{item.p8}</span>
+                                                <span>{item.p9}</span>
+                                                <span>{item.p10}</span>
+                                                <span>{item.p11}</span>
+                                            </div>
+                                        )
+                                    })
+                                }
+
+                            </div>
+                            }
+                        </span>
+                        <span > <FaAngleDown size="10px"></FaAngleDown></span>
+                    </li>
+                    <li>
+                        <span>Contact</span>
                         <span> </span>
                     </li>
                 </ul>

@@ -14,12 +14,14 @@ const Public = ({ element, onHover }) => {
       <Header onHover={onHover} />
       <Navbar />
       {element}
-      <Banner2 it={{
-        id: 1,
-        title1: "Stay home & get your daily neds from our shop",
-        desc: "Sign up for the daily newsletter",
-        img: banner,
-      }} />
+      <Banner2
+        it={{
+          id: 1,
+          title1: "Stay home & get your daily neds from our shop",
+          desc: "Sign up for the daily newsletter",
+          img: banner,
+        }}
+      />
       <AboutpCart cartdata={carddata} />
       <Secondlast productsdata={secondlastdata} />
       <Footer />

@@ -55,7 +55,7 @@ const colourStylesLocation = {
   singleValue: (styles, { data }) => ({ ...styles, ...dot() }),
 };
 
-const Header = () => {
+const Header = ({ onHover }) => {
   return (
     <header className={styles.header}>
       <Container>
@@ -103,7 +103,7 @@ const Header = () => {
           />
           <div className={styles.iconCont}>
             {icons.map((it) => (
-              <Icon key={it.id} counter={it.counter} name={it.name}>
+              <Icon onHover={onHover} key={it.id} counter={it.counter} name={it.name}>
                 {it.icon}
               </Icon>
             ))}

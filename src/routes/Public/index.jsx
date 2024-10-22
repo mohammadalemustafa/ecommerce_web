@@ -8,11 +8,10 @@ import { carddata } from "../../data/aboutpCartdata";
 import { secondlastdata } from "../../data/Secondlast";
 import banner from "../../assets/banner2.png";
 import Banner2 from "../../components/Banner2";
-import Modal from "../../Modal";
-const Public = ({ element }) => {
+const Public = ({ element, onHover }) => {
   return (
     <main>
-      <Header />
+      <Header onHover={onHover} />
       <Navbar />
       {element}
       <Banner2
@@ -23,7 +22,6 @@ const Public = ({ element }) => {
           img: banner,
         }}
       />
-      {/* <Modal /> */}
       <AboutpCart cartdata={carddata} />
       <Secondlast productsdata={secondlastdata} />
       <Footer />

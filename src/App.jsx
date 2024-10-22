@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useReducer, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Public from "./routes/Public";
 import Home from "./pages/Home";
@@ -10,11 +10,23 @@ import ResetPass from "./pages/Resetpass";
 import PageNoTFound from "./pages/Resetpass";
 import About from "./pages/About";
 function App() {
-  const [count, setCount] = useState(0);
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case "ACCOUNTHOVER": return { ...state, accountHover: !state.accountHover }
+      // case "default": return { ...state }
+    }
+  }
+
+  const onHover = () => {
+    alert("yes")
+    dispatch({ type: "ACCOUNTHOVER" });
+  }
+  const [state, dispatch] = useReducer(reducer, { accountHover: false });
+  alert(state.accountHover)
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/home" />} />
-      <Route path="/home" element={<Public element={<Home />} />} />
+      <Route path="/home" element={<Public onHover={onHover} element={<Home />} />} />
       <Route path="/contact" element={<Public element={<Contact></Contact>} />} />
       <Route path="/login" element={<Public element={<Login></Login>} />} />
       <Route path="/register" element={<Public element={<Register></Register>} />} />

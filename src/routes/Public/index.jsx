@@ -8,11 +8,13 @@ import { carddata } from "../../data/aboutpCartdata";
 import { secondlastdata } from "../../data/Secondlast";
 import banner from "../../assets/banner2.png";
 import Banner2 from "../../components/Banner2";
+import Modal from "../../Modal";
 const Public = ({ element, onHover }) => {
   return (
     <main>
       <Header onHover={onHover} />
       <Navbar />
+      <Modal />
       {element}
       <Banner2
         it={{

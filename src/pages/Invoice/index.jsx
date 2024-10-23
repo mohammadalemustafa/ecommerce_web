@@ -63,8 +63,38 @@ const Invoice = () => {
                 </table>
               </div>
               <div className={styles.botCont}>
-                {/* Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptatibus, mollitia! */}
+                <div className={styles.bot_row}>
+                  <div>
+                    <ul className={styles.ul_Note}>
+                      <li className={styles.note}>Important Note</li>
+                      <li className={styles.Im_li}>
+                        All amounts shown on this invoice are in US dollars
+                      </li>
+                      <li className={styles.Im_li}>
+                        finance charge of 1.5% will be made on unpaid balances
+                        after 30 days.
+                      </li>
+                      <li className={styles.Im_li}>
+                        Once order done, money can't refund
+                      </li>
+                      <li className={styles.Im_li}>
+                        Delivery might delay due to some external dependency
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>Thank you for your business</h4>
+                    <p>AliThemes JSC</p>
+                    <div className={styles.follow}>
+                      <span>folloe us</span>
+                      <ul>
+                        <li>ins</li>
+                        <li>trr</li>
+                        <li>trr</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

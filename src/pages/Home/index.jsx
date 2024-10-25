@@ -63,16 +63,7 @@ const Home = () => {
       <DailyBS />
       <DealsOfTheYear />
       <HotProducts productsdata={products} />
-      <Banner2 it={{
-        id: 1,
-        title1: "Stay home & get your daily needs from our shop",
-        title2: "Start You'r Daily Shopping with   Nest Mart",
-        desc: "Sign up for the daily newsletter",
-        img: banner,
-        img2:bannerbg
-      }} />
-      <AboutpCart cartdata={carddata} />
-      <Secondlast productsdata={secondlastdata} />
+      
     </Container>
   );
 };

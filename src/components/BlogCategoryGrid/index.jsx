@@ -15,7 +15,6 @@ import AboutpCart from "../aboutproduct";
 import Secondlast from "../Secondlast";
 import { carddata } from "../../data/aboutpCartdata";
 import { secondlastdata } from "../../data/Secondlast";
-import banner from "../../assets/banner-13.png";
 import bannerbg from "../../assets/banner10.png";
 
 let data = [
@@ -96,16 +95,7 @@ const BlogCatGrid = () => {
        <RightSearch/>         
         </div>
         <RightSideBar/>
-        <Banner2 it={{
-        id: 1,
-        title1: "Stay home & get your daily needs from our shop",
-        title2: "Start You'r Daily Shopping with   Nest Mart",
-        desc: "Sign up for the daily newsletter",
-        img: banner,
-        img2:bannerbg
-      }} />
-      <AboutpCart cartdata={carddata} />
-      <Secondlast productsdata={secondlastdata} />
+        
       </Container>
     </>
   );

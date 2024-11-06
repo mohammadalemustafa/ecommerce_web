@@ -5,7 +5,7 @@ import PagesNoTFound from "../../components/PageNOT";
 const PageNoTFound = () => {
     return <Container>
         <div>
-            <PagesNoTFound />
+            <ResetComp />
         </div>;
     </Container>;
 };

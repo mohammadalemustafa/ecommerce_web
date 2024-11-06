@@ -17,8 +17,8 @@ function App() {
   return (
     <Routes>
       <Route path="/myprofile" element={<Public element={<MyProfile />} />} />
-      <Route path="/BlogCategoryGrid" element={<Public element={<BlogCatGrid/>} />} />
-      <Route path="/SinglePostRight" element={<Public element={<SinglePostRight/>} />} />
+      <Route path="/BlogCategoryGrid" element={<Public element={<BlogCatGrid />} />} />
+      <Route path="/SinglePostRight" element={<Public element={<SinglePostRight />} />} />
       <Route path="/" element={<Navigate to="/home" />} />
       <Route path="/home" element={<Public element={<Home />} />} />
       <Route path="/contact" element={<Public element={<Contact></Contact>} />} />

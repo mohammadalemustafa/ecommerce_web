@@ -86,11 +86,11 @@ const Navbar = () => {
             <div className={styles.navlistcont}>
                 <div onClick={() => setClick(!click)} className={styles.dropdown}>
                     <span><HiOutlineSquares2X2 color="white" size="20px" fontWeight={800} /></span>
-                    <div >
-                        <span >
+                    <div>
+                        <span>
                             browse all categories
                         </span>
-                        <span> <FaAngleDown size="10px"></FaAngleDown></span>
+                        <span > <FaAngleDown size="10px"></FaAngleDown></span>
                     </div>
                 </div>
                 {
@@ -302,7 +302,6 @@ const Navbar = () => {
                                                 <span>{item.p8}</span>
                                                 <span>{item.p9}</span>
                                                 <span>{item.p10}</span>
-                                                <span>{item.p11}</span>
                                             </div>
                                         )
                                     })

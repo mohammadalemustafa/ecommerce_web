@@ -11,11 +11,13 @@ import banner from "../../assets/banner-9.png";
 import bannerbg from "../../assets/banner10.png";
 
 import Banner2 from "../../components/Banner2";
+import Modal from "../../Modal";
 const Public = ({ element, onHover }) => {
   return (
     <main>
       <Header onHover={onHover} />
       <Navbar />
+      <Modal />
       {element}
       <Banner2 it={{
         id: 1,

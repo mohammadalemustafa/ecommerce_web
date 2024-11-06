@@ -136,9 +136,6 @@ const FeatureCategories = () => {
     setActive(n);
     setData(filteredData);
   };
-
-  console.log(active);
-
   return (
     <Container>
       <div className={styles.featureCategories}>

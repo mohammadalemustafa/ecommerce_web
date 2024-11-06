@@ -9,8 +9,11 @@ import SubBanner from "../../components/SubBanner";
 import PopularProducts from "../../components/PopularProducts";
 import DailyBS from "../../components/DailyBS";
 import DealsOfTheYear from "../../components/DealsOfTheYear";
-import HotProducts from '../../components/HotProducts';
-import { products } from '../../data/Hotp.js'
+import HotProducts from "../../components/HotProducts";
+import { products } from "../../data/Hotp.js";
+import Modal from "../../Modal/index.jsx";
+import Mainportal from "../../Modal/mainportal.jsx";
+import { useSelector } from "react-redux";
 
 const bannerData = [
   {
@@ -42,21 +45,30 @@ const responsive = {
     items: 1,
   },
 };
+
 const Home = () => {
+  const isModalOpen = useSelector((state) => state.ui.modalOpen);
   return (
-    <Container>
-      <MultiCarousel arrows={false} infinite={true} showDots={true} autoPlay={true} responsive={responsive}>
-        {bannerData.map((it) => {
-          return <Banner key={it.id} it={it} module="banner" />;
-        })}
-      </MultiCarousel>
-      <FeatureCategories />
-      <SubBanner />
-      <PopularProducts />
-      <DailyBS />
-      <DealsOfTheYear />
-      <HotProducts productsdata={products} />
-    </Container>
+    <>
+      {isModalOpen && (
+        <Mainportal>
+          <Modal />
+        </Mainportal>
+      )}
+      <Container>
+        <MultiCarousel arrows={false} infinite={true} showDots={true} autoPlay={true} responsive={responsive}>
+          {bannerData.map((it) => {
+            return <Banner key={it.id} it={it} module="banner" />;
+          })}
+        </MultiCarousel>
+        <FeatureCategories />
+        <SubBanner />
+        <PopularProducts />
+        <DailyBS />
+        <DealsOfTheYear />
+        <HotProducts productsdata={products} />
+      </Container>
+    </>
   );
 };
 export default Home;

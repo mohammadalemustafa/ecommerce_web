@@ -23,12 +23,8 @@ const Modal = () => {
                         <div className={styles.box}>
                           <div className={styles.price}>{it.item3}</div>
                           <div>
-                            <div className={styles.price_mini_1}>
-                              {it.item4}
-                            </div>
-                            <div className={styles.price_mini_2}>
-                              {it.item5}
-                            </div>
+                            <div className={styles.price_mini_1}>{it.item4}</div>
+                            <div className={styles.price_mini_2}>{it.item5}</div>
                           </div>
                         </div>
                       </div>

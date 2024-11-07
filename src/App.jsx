@@ -12,8 +12,11 @@ import Register from "./pages/Register";
 import Forgotpass from "./pages/Forgotpassword";
 import ResetPass from "./pages/Resetpass";
 import PageNoTFound from "./pages/Resetpass";
+import PrivacyPolicy from "./pages/Privacy";
+import TermsAndConditions from "./pages/Terms";
+import Invoice from "./pages/Invoice";
+
 function App() {
-  const [count, setCount] = useState(0);
   return (
     <Routes>
       <Route path="/myprofile" element={<Public element={<MyProfile />} />} />
@@ -27,6 +30,9 @@ function App() {
       <Route path="/forgotpass" element={<Public element={<Forgotpass></Forgotpass>} />} />
       <Route path="/resetpass" element={<Public element={<ResetPass></ResetPass>} />} />
       <Route path="*" element={<Public element={<PageNoTFound></PageNoTFound>} />} />
+      <Route path="/privacy" element={<Public element={<PrivacyPolicy />} />} />
+      <Route path="/TemsAndCondition" element={<Public element={<TermsAndConditions />} />} />
+      <Route path="/invoice" element={<Public element={<Invoice />} />} />
     </Routes>
   );
 }

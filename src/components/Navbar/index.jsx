@@ -81,11 +81,9 @@ const Navbar = () => {
   };
   const OnNavigate = (n) => {
     console.log(n);
-
     navigate(n);
     setHover(false);
   };
-
   return (
     <Container>
       <div className={styles.navBarCont}>
@@ -296,7 +294,7 @@ const Navbar = () => {
 
                       return (
                         <div key={index} className={styles.pages}>
-                          <span>{item.p1}</span>
+                          <span onClick={() => OnNavigate("/about")}>{item.p1}</span>
 
                           <span onClick={() => OnNavigate("/contact")}>{item.p2}</span>
 

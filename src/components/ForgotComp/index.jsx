@@ -2,6 +2,7 @@ import React from "react";
 import styles from './index.module.css';
 import Container from '../../ui/Container';
 import pass from '../../assets/forgot_password.svg'
+import { Link } from "react-router-dom";
 const Forgotpass = () => {
     return <Container>
         <div className={styles.cont}>
@@ -32,7 +33,9 @@ const Forgotpass = () => {
                     </div>
 
                 </div>
+               <Link to="/resetpass">
                 <button> reset password</button>
+               </Link>
             </div>
         </div>
     </Container>

@@ -15,11 +15,14 @@ import PageNoTFound from "./pages/Resetpass";
 import PrivacyPolicy from "./pages/Privacy";
 import TermsAndConditions from "./pages/Terms";
 import Invoice from "./pages/Invoice";
+import About from "./pages/About";
+import PageNOT from "./pages/PageNotFonud";
 
 function App() {
   return (
     <Routes>
       <Route path="/myprofile" element={<Public element={<MyProfile />} />} />
+      <Route path="/about" element={<Public element={<About />} />} />
       <Route path="/BlogCategoryGrid" element={<Public element={<BlogCatGrid />} />} />
       <Route path="/SinglePostRight" element={<Public element={<SinglePostRight />} />} />
       <Route path="/" element={<Navigate to="/home" />} />
@@ -29,7 +32,7 @@ function App() {
       <Route path="/register" element={<Public element={<Register></Register>} />} />
       <Route path="/forgotpass" element={<Public element={<Forgotpass></Forgotpass>} />} />
       <Route path="/resetpass" element={<Public element={<ResetPass></ResetPass>} />} />
-      <Route path="*" element={<Public element={<PageNoTFound></PageNoTFound>} />} />
+      <Route path="*" element={<Public element={<PageNOT></PageNOT>} />} />
       <Route path="/privacy" element={<Public element={<PrivacyPolicy />} />} />
       <Route path="/TemsAndCondition" element={<Public element={<TermsAndConditions />} />} />
       <Route path="/invoice" element={<Public element={<Invoice />} />} />

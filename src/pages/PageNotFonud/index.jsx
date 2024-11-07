@@ -1,9 +1,9 @@
 import React from "react";
 import Container from "../../ui/Container";
 import PagesNoTFound from "../../components/PageNOT";
-const ResetPass = () => {
+const PageNOT = () => {
     return <Container>
         <PagesNoTFound />
     </Container>;
 };
-export default ResetPass;
+export default PageNOT;

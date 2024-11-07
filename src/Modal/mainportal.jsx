@@ -1,11 +1,15 @@
 import React, { Fragment } from "react";
 import { createPortal } from "react-dom";
 import styles from "./modal.module.css";
-
+import { useDispatch } from "react-redux";
+import { uiActions } from "../Store/ui";
 const Overlay = () => {
-  return <div className={styles.overlay}></div>;
+  const dispatch=useDispatch();
+ const closeModal=()=>{
+  dispatch(uiActions.OnModalClose());
+ }
+  return <div onClick={closeModal} className={styles.overlay}></div>;
 };
-
 const Modal = (props) => {
   return (
     <div className={styles.modalCont}>
@@ -13,7 +17,6 @@ const Modal = (props) => {
     </div>
   );
 };
-
 const Mainportal = ({ children }) => {
   return (
     <Fragment>
@@ -22,5 +25,4 @@ const Mainportal = ({ children }) => {
     </Fragment>
   );
 };
-
 export default Mainportal;

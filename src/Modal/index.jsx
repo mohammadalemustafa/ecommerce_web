@@ -2,12 +2,18 @@ import React from "react";
 import styles from "./index.module.css";
 import { IoCloseOutline } from "react-icons/io5";
 import { first_poster } from "../data/first_poster";
+import { useDispatch } from "react-redux";
+import { uiActions } from "../Store/ui";
 
 const Modal = () => {
+  const dispatch=useDispatch();
+  const closeModal=()=>{
+    dispatch(uiActions.OnModalClose());
+  }
   return (
     <div className={styles.Container}>
       <div className={styles.modal_content}>
-        <div className={styles.close}>
+        <div onClick={closeModal} className={styles.close}>
           <IoCloseOutline size={20} />
         </div>
         <div className={styles.modal_body}>

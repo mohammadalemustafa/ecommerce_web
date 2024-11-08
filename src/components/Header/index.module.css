@@ -25,7 +25,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 5px;
   border-bottom: 1px solid #ececec;
 }
 
@@ -45,4 +45,10 @@
   display: flex;
   align-items: center;
   column-gap: 10px;
+}
+.span1{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
 }

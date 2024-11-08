@@ -32,6 +32,9 @@ const colourStyles = {
     backgroundColor: "white",
     minHeight: "30 !important",
     minWidth: 120,
+    height:"30px",
+    paddingBottom:"50px",
+    textAlign:"center",
   }),
   option: (styles, { isSelected }) => {
     return { ...styles, backgroundColor: isSelected ? "#3bb77e" : "white" };
@@ -55,6 +58,9 @@ const colourStylesLocation = {
     ...styles,
     backgroundColor: "white",
     minHeight: "30 !important",
+    height:"50px",
+    textAlign:"center",
+    alignItems:"center",
     minWidth: 250,
   }),
   singleValue: (styles, { data }) => ({ ...styles, ...dot() }),
@@ -62,7 +68,6 @@ const colourStylesLocation = {
 
 const Header = ({ onHover }) => {
   const token = useSelector((state) => state.auth.token);
-
   const dispatch = useDispatch();
 
   return (

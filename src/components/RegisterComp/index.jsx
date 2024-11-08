@@ -1,11 +1,9 @@
 import React from "react";
 import styles from "./index.module.css";
 import Container from "../../ui/Container";
-import img from "../../assets/login-1.png";
-import { BiBook, BiBookBookmark } from "react-icons/bi";
+import { BiBookBookmark } from "react-icons/bi";
 import Rfrom from "../RegisterFrom";
 import { FaApple, FaFacebookSquare, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import { useGenerateCode } from "../../hooks/useGenerateCode";
 const RegisterComp = ({ onClick }) => {
   const { stringCode } = useGenerateCode();
@@ -14,15 +12,14 @@ const RegisterComp = ({ onClick }) => {
       <div className={styles.cont}>
         <div className={styles.right}>
           <h1>Create an Account</h1>
-          {/* <Link to="/login"> */}
           <p>
             Already have an account? <span onClick={onClick}>login</span>
           </p>
           {/* </Link> */}
-          <input type="text" name="" id="password" placeholder="Username" />
-          <input type="email" name="email" id="" placeholder="Enter Email" />
-          <input type="password" name="" id="password" placeholder="password" />
-          <input type="password" name="" id="password" placeholder="confirm password" />
+          <input className={styles.forminput}  type="text" name="" id="password" placeholder="Username" />
+          <input className={styles.forminput} type="email" name="email" id="" placeholder="Enter Email" />
+          <input className={styles.forminput} type="password" name="" id="password" placeholder="password" />
+          <input className={styles.forminput} type="password" name="" id="password" placeholder="confirm password" />
           <div className={styles.securityCode}>
             <input type="text" name="" id="" placeholder="security code" />
             <div className={styles.code}>

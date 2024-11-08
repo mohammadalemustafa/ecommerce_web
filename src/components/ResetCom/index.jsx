@@ -7,7 +7,6 @@ const ResetComp = () => {
         <div className={styles.cont}>
             <div className={styles.right}>
                 <div className={styles.imgCont}>
-
                     <img src={pass} alt="" />
                 </div>
                 <h1>Set new password</h1>

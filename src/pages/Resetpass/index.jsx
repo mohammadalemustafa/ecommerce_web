@@ -1,12 +1,11 @@
 import React from "react";
 import Container from "../../ui/Container";
 import ResetComp from "../../components/ResetCom";
-import PagesNoTFound from "../../components/PageNOT";
-const PageNoTFound = () => {
+const ResetPass = () => {
     return <Container>
         <div>
-            <PagesNoTFound />
+            <ResetComp />
         </div>;
     </Container>;
 };
-export default PageNoTFound;
+export default ResetPass;

@@ -2,14 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const uiSlice = createSlice({
   name: "ui",
-  initialState: { modalOpen: true},
+  initialState: { modalOpen: true, loginModal: false },
   reducers: {
     onModalOpen: (state, action) => {
       state.modalOpen = !state.modalOpen;
     },
-    OnModalClose:(state,action)=>{
-      state.modalOpen=false;
-    }
+    onOpenLoginModal: (state, action) => {
+      state.loginModal = action.payload;
+    },
   },
 });
 

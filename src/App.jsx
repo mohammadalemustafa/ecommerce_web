@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Public from "./routes/Public";
 import Home from "./pages/Home";
@@ -17,8 +17,21 @@ import TermsAndConditions from "./pages/Terms";
 import Invoice from "./pages/Invoice";
 import About from "./pages/About";
 import PageNOT from "./pages/PageNotFonud";
+import { useDispatch } from "react-redux";
+import { authAction } from "./Store/auth";
 
 function App() {
+  const dispatch = useDispatch();
+
+  let token = {
+    name: "Mustafa",
+    token: false,
+  };
+
+  useEffect(() => {
+    dispatch(authAction.onAddToken(token));
+  }, []);
+
   return (
     <Routes>
       <Route path="/myprofile" element={<Public element={<MyProfile />} />} />
@@ -28,8 +41,8 @@ function App() {
       <Route path="/" element={<Navigate to="/home" />} />
       <Route path="/home" element={<Public element={<Home />} />} />
       <Route path="/contact" element={<Public element={<Contact></Contact>} />} />
-      <Route path="/login" element={<Public element={<Login></Login>} />} />
-      <Route path="/register" element={<Public element={<Register></Register>} />} />
+      {/* <Route path="/login" element={<Public element={<Login></Login>} />} /> */}
+      {/* <Route path="/register" element={<Public element={<Register></Register>} />} /> */}
       <Route path="/forgotpass" element={<Public element={<Forgotpass></Forgotpass>} />} />
       <Route path="/resetpass" element={<Public element={<ResetPass></ResetPass>} />} />
       <Route path="*" element={<Public element={<PageNOT></PageNOT>} />} />

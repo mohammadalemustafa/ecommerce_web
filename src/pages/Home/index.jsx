@@ -13,7 +13,8 @@ import HotProducts from "../../components/HotProducts";
 import { products } from "../../data/Hotp.js";
 import Modal from "../../Modal/index.jsx";
 import Mainportal from "../../Modal/mainportal.jsx";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { uiActions } from "../../Store/ui.js";
 
 const bannerData = [
   {
@@ -47,12 +48,17 @@ const responsive = {
 };
 
 const Home = () => {
+  const dispatch = useDispatch();
   const isModalOpen = useSelector((state) => state.ui.modalOpen);
+  const onClose = () => {
+    dispatch(uiActions.onModalOpen());
+  };
+
   return (
     <>
       {isModalOpen && (
-        <Mainportal>
-          <Modal />
+        <Mainportal onClose={onClose}>
+          <Modal onClose={onClose} />
         </Mainportal>
       )}
       <Container>

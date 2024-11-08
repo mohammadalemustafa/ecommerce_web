@@ -13,6 +13,11 @@ import Icon from "../../ui/Icon";
 import Select2 from "../../widgets/Select2";
 import Location from "../../widgets/Location";
 import SearchBar from "../SearchBar";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import SubmitButton from "../../widgets/SubmitButton/Index";
+import SubsBtn from "../../ui/SubsBtn";
+import { uiActions } from "../../Store/ui";
 
 const icons = [
   { id: 1, name: "Compare", counter: "3", icon: <GiRecycle size={30} /> },
@@ -56,6 +61,10 @@ const colourStylesLocation = {
 };
 
 const Header = ({ onHover }) => {
+  const token = useSelector((state) => state.auth.token);
+
+  const dispatch = useDispatch();
+
   return (
     <header className={styles.header}>
       <Container>
@@ -92,7 +101,9 @@ const Header = ({ onHover }) => {
         </div>
         <div className={styles.content}>
           <div>
-            <img src={logo} alt="logo" />
+            <Link to="/">
+              <img src={logo} alt="logo" />
+            </Link>
           </div>
           <SearchBar />
           <Location
@@ -101,12 +112,22 @@ const Header = ({ onHover }) => {
             isSearchable={false}
             defaultValue={countries[1]}
           />
+
           <div className={styles.iconCont}>
-            {icons.map((it) => (
-              <Icon onHover={onHover} key={it.id} counter={it.counter} name={it.name}>
-                {it.icon}
-              </Icon>
-            ))}
+            {token.token ? (
+              icons.map((it) => (
+                <Icon onHover={onHover} key={it.id} counter={it.counter} name={it.name}>
+                  {it.icon}
+                </Icon>
+              ))
+            ) : (
+              <SubsBtn
+                onClick={(e) => {
+                  dispatch(uiActions.onOpenLoginModal(true));
+                }}
+                name="Login"
+              />
+            )}
           </div>
         </div>
       </Container>

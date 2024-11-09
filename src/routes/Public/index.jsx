@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { uiActions } from "../../Store/ui";
 import RegisterComp from "../../components/RegisterComp";
 import Forgotpass from "../../components/ForgotComp";
+import ResetComp from "../../components/ResetCom";
 const Public = ({ element, onHover }) => {
   const [scr, setScr] = useState("login");
   const dispatch = useDispatch();
@@ -34,8 +35,11 @@ const Public = ({ element, onHover }) => {
     case "register":
       screen = <RegisterComp onClick={() => onChangeScreen("login")} />;
       break;
+      case "resetpin":
+        screen = <ResetComp />;
+        break;
     default:
-      screen = <Forgotpass onClick={onChangeScreen} />;
+      screen = <Forgotpass onClick={()=>onChangeScreen("resetpin")} />;
   }
   return (
     <main>

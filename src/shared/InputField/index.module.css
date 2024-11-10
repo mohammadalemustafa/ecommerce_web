@@ -9,7 +9,6 @@ form{
 .input:focus{
     outline: none;
 }
-
 input{
     border: 1px solid #ececec;
     border-radius: 10px;
@@ -21,18 +20,12 @@ input{
     border: none;
     border-radius: 12px;
 }
-
-
-
-
 button{
     padding: 10px 20px;
     background: white;
     border: none;
     border-radius: 12px;
 }
-
-
 button:hover{
     background: #3BB77E;
     color: white;

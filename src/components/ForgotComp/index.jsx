@@ -4,7 +4,7 @@ import Container from "../../ui/Container";
 import pass from "../../assets/forgot_password.svg";
 import { Link } from "react-router-dom";
 import { useGenerateCode } from "../../hooks/useGenerateCode";
-const Forgotpass = () => {
+const Forgotpass = ({onClick}) => {
   const { stringCode } = useGenerateCode();
   return (
     <Container>
@@ -38,9 +38,9 @@ const Forgotpass = () => {
               <spaxn>learn</spaxn>
             </div>
           </div>
-          <Link to="/resetpass">
-            <button> reset password</button>
-          </Link>
+          {/* <Link to="/resetpass"> */}
+            <button onClick={onClick}> reset password</button>
+          {/* </Link> */}
         </div>
       </div>
     </Container>

@@ -16,7 +16,10 @@ import { uiActions } from "../../Store/ui";
 import RegisterComp from "../../components/RegisterComp";
 import Forgotpass from "../../components/ForgotComp";
 import ResetComp from "../../components/ResetCom";
+import { useGenerateCode } from "../../hooks/useGenerateCode";
+
 const Public = ({ element, onHover }) => {
+  const { stringCode } = useGenerateCode();
   const [scr, setScr] = useState("login");
   const dispatch = useDispatch();
   const loginModal = useSelector((state) => state.ui.loginModal);
@@ -33,13 +36,13 @@ const Public = ({ element, onHover }) => {
       screen = <LoginComp onClick={() => onChangeScreen("register")} onGoToForgot={() => onChangeScreen("forgot")} />;
       break;
     case "register":
-      screen = <RegisterComp onClick={() => onChangeScreen("login")} />;
+      screen = <RegisterComp stringCode={stringCode} onClick={() => onChangeScreen("login")} />;
       break;
-      case "resetpin":
-        screen = <ResetComp />;
-        break;
+    case "resetpin":
+      screen = <ResetComp />;
+      break;
     default:
-      screen = <Forgotpass onClick={()=>onChangeScreen("resetpin")} />;
+      screen = <Forgotpass onClick={() => onChangeScreen("resetpin")} />;
   }
   return (
     <main>
@@ -53,8 +56,8 @@ const Public = ({ element, onHover }) => {
           title1: "Stay home & get your daily needs from our shop",
           title2: "Start You'r Daily Shopping with   Nest Mart",
           desc: "Sign up for the daily newsletter",
-          img:banner,
-          img2:bannerbg,
+          img: banner,
+          img2: bannerbg,
         }}
       />
       <AboutpCart cartdata={carddata} />

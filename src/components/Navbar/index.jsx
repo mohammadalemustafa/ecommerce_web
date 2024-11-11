@@ -191,7 +191,7 @@ const Navbar = () => {
             </li>
 
             <li>
-              <span onMouseLeave={onmouseleave} className={styles.megamanu} onMouseEnter={handleMouse}>
+              <div onMouseLeave={onmouseleave} className={styles.megamanu} onMouseEnter={handleMouse}>
                 {" "}
                 Mega menu
                 {mouse && (
@@ -253,7 +253,7 @@ const Navbar = () => {
                     <Manubanner data={manuBannerData} />
                   </div>
                 )}
-              </span>
+              </div>
               <span>
                 {" "}
                 <FaAngleDown size="10px"></FaAngleDown>

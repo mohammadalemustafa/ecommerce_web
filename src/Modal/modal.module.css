@@ -20,7 +20,18 @@
   justify-content: center;
   border-radius: 25px;
   z-index: 101;
+  animation: translate .3s ease-in 0s 1;
   overflow-y: auto;
+}
+@keyframes translate {
+ 0%{
+  left: 0px;
+
+ }
+ 100%{
+  left:50% ;
+
+ }
 }
 
 .close {

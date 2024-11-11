@@ -45,14 +45,14 @@ const RegisterComp = ({ onClick, stringCode }) => {
   };
 
   useEffect(() => {
-    axios.get("https://ecommerce-web-69896-default-rtdb.firebaseio.com/users.json").then((res) => {
+    axios.get("https://ecommerce-web-5425b-default-rtdb.firebaseio.com/users.json").then((res) => {
       console.log(res);
     });
   }, []);
 
   const onSubmitData = () => {
     const config = {
-      url: "https://ecommerce-web-69896-default-rtdb.firebaseio.com/users.json",
+      url: "https://ecommerce-web-5425b-default-rtdb.firebaseio.com/users.json",
       method: "POST",
       data: state,
     };

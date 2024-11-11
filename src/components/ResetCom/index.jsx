@@ -20,7 +20,7 @@ const ResetComp = () => {
                     <div className={styles.r1}>
                         <h1>Password must:</h1>
                         <p>Be between 9 and 64 characters</p>
-                        <p>Include at least tow of the following:</p>
+                        <p>Include at least two of the following:</p>
                         <li>An uppercase character</li>
                         <li>A lowercase character</li>
                         <li>A number</li>

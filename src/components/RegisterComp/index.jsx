@@ -5,7 +5,6 @@ import { BiBookBookmark } from "react-icons/bi";
 import Rfrom from "../RegisterFrom";
 import { FaApple, FaFacebookSquare, FaGoogle } from "react-icons/fa";
 import axios from "axios";
-
 const reducerFunc = (state, action) => {
   switch (action.type) {
     case "DATA":
@@ -29,19 +28,13 @@ const RegisterComp = ({ onClick, stringCode }) => {
     userType: 1,
     termsAccepted: false,
   });
-
   console.log(state);
-
   const onGetData = (e) => {
     let id = e.target.id;
-
     let val = !e.target.checked ? e.target.value : e.target.checked;
-
     const newData = { ...state, [id]: val };
-
     dispatch({ type: "DATA", payload: newData });
   };
-
   const onUserType = (e) => {
     let id = e.target.id;
     let val = e.target.checked;

@@ -10,8 +10,9 @@ const colourStylesLocation = {
     minHeight: "30 !important",
     minWidth: 150,
     border: "none",
-    outline: "none",
+    height:"50px",
 
+    outline: "none",
     ":focus-visible": {
       outline: "none !important",
       border: "1px solid transparent",

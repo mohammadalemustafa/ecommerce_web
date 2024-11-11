@@ -3,8 +3,11 @@
   width: 100%;
   margin: 50px auto;
   gap: 40px;
-  /* height: 100vh; */
+  height: 95vh;
   display: flex;
+  border-radius: 15px;
+  justify-content: center;
+
   align-items: center;
   background-color: white;
 }

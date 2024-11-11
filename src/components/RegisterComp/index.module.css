@@ -1,18 +1,17 @@
 .cont {
   display: flex;
-  width: 100%;
-  margin: 50px auto;
+  padding: 50px;
+  margin-top: 250px;
   gap: 40px;
   background-color: white;
+  border-radius: 15px;
 }
 
 .left {
   display: flex;
-  width: 40%;
   flex-direction: column;
   border-width: 1px;
   border: 1px solid whitesmoke;
-  height: 500px;
   border-radius: 10px;
   padding: 20px;
   justify-content: space-between;
@@ -25,7 +24,6 @@
 }
 
 .left div {
-  width: 80%;
   margin: 0 auto;
   border-radius: 10px;
 }
@@ -38,34 +36,36 @@
 }
 
 .right > h1 {
-  font-size: xx-large;
+  font-size: large;
 }
 
 .right > p > span {
   color: var(--primaryColor);
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .rememberpass > span {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
 }
 
 .s {
   color: #253d4e !important;
-  font-size: 16x;
-  font-weight: 800;
+  font-size: 12px;
+  font-weight: 400;
+  display: flex;
+  justify-content:start;
+  width: 50%;
 }
 
-.right input {
+.right .forminput {
   border: 1px solid #ececec;
   border-radius: 10px;
   height: 64px;
   box-shadow: none;
   padding-left: 20px;
-  font-size: 16px;
+  font-size: 13px;
 }
 
 .securityCode {
@@ -101,7 +101,6 @@
   justify-content: center;
   align-items: center;
   display: inline-block;
-
   height: 64px;
   line-height: 64px;
   font-size: 24px;
@@ -119,9 +118,9 @@
 }
 
 .right button {
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 500;
-  padding: 20px 40px;
+   padding: 15px;
   width: 50%;
   color: #ffffff;
   border: none;

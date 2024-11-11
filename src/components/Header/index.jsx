@@ -32,9 +32,9 @@ const colourStyles = {
     backgroundColor: "white",
     minHeight: "30 !important",
     minWidth: 120,
-    height:"30px",
-    paddingBottom:"50px",
-    textAlign:"center",
+    height: "30px",
+    paddingBottom: "50px",
+    textAlign: "center",
   }),
   option: (styles, { isSelected }) => {
     return { ...styles, backgroundColor: isSelected ? "#3bb77e" : "white" };
@@ -58,9 +58,9 @@ const colourStylesLocation = {
     ...styles,
     backgroundColor: "white",
     minHeight: "30 !important",
-    height:"50px",
-    textAlign:"center",
-    alignItems:"center",
+    height: "50px",
+    textAlign: "center",
+    alignItems: "center",
     minWidth: 250,
   }),
   singleValue: (styles, { data }) => ({ ...styles, ...dot() }),
@@ -119,7 +119,7 @@ const Header = ({ onHover }) => {
           />
 
           <div className={styles.iconCont}>
-            {token.token ? (
+            {token ? (
               icons.map((it) => (
                 <Icon onHover={onHover} key={it.id} counter={it.counter} name={it.name}>
                   {it.icon}

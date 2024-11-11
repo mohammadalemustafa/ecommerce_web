@@ -19,32 +19,28 @@ import About from "./pages/About";
 import PageNOT from "./pages/PageNotFonud";
 import { useDispatch, useSelector } from "react-redux";
 import { authAction } from "./Store/auth";
+import Loader from "./Loader/loader";
 
 function App() {
   const dispatch = useDispatch();
   const token = JSON.parse(localStorage.getItem("login"));
   const isStateChange = useSelector((state) => state.auth.isStateChange);
-
   const getData = async () => {
-    const res = await fetch("https://ecommerce-web-69896-default-rtdb.firebaseio.com/users.json");
+    const res = await fetch("https://ecommerce-web-5425b-default-rtdb.firebaseio.com/users.json");
     let data = await res.json();
-
+  console.log(data)
     let newArr = [];
     for (const d in data) {
       newArr.push(data[d]);
     }
-
     dispatch(authAction.onGetAllUser(newArr));
   };
-
   useEffect(() => {
     getData();
   }, []);
-
   useEffect(() => {
     dispatch(authAction.onAddToken(token));
   }, [isStateChange]);
-
   return (
     <Routes>
       <Route path="/myprofile" element={<Public element={<MyProfile />} />} />

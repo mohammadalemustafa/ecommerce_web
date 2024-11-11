@@ -2,7 +2,16 @@ import React from "react";
 import styles from "./index.module.css";
 import Container from "../../ui/Container";
 import pass from "../../assets/reset_password.svg";
-const ResetComp = () => {
+const ResetComp = ({changeScreen}) => {
+
+  // used it for pop
+
+  // Swal.fire({
+  //   icon: "error",
+  //   title: "Oops...",
+  //   text:`${err.message}`,
+  //   footer: '<a href="#">Why do I have this issue?</a>'
+  // });
   return (
     <Container>
       <div className={styles.cont}>
@@ -28,8 +37,11 @@ const ResetComp = () => {
               <li>A special character</li>
             </div>
           </div>
-
+          <div style={{display:"flex",columnGap:"5px"
+          }}>
           <button> reset password</button>
+          <button onClick={changeScreen}>back</button>
+          </div>
         </div>
       </div>
     </Container>

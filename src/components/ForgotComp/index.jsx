@@ -2,8 +2,8 @@ import React, { useReducer } from "react";
 import styles from "./index.module.css";
 import Container from "../../ui/Container";
 import pass from "../../assets/forgot_password.svg";
-import { useGenerateCode } from "../../hooks/useGenerateCode";
 import { useSelector } from "react-redux";
+import Swal from "sweetalert2";
 
 const reducerFn = (state, action) => {
   switch (action.type) {
@@ -14,10 +14,8 @@ const reducerFn = (state, action) => {
       return state;
   }
 };
-
 const Forgotpass = ({ onClick, stringCode }) => {
   const userdata = useSelector((state) => state.auth.userdata);
-
   const [state, dispatch] = useReducer(reducerFn, {
     username: "",
     sCode: "",
@@ -27,22 +25,25 @@ const Forgotpass = ({ onClick, stringCode }) => {
   const onGetUser = (e) => {
     let id = e.target.id;
     let val = e.target.checked ? e.target.checked : e.target.value;
-
     let newData = { [id]: val };
-
     dispatch({ type: "FORGOT", payload: newData });
   };
   console.log(state);
   console.log(userdata);
-
   const onVerifyUser = () => {
     const isExisting = userdata.find((it) => it.username === state.username || it.email === state.username);
-
     if (isExisting) {
-      onClick();
+      onClick("resetpin");
+    }
+    else{
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "please enter valid email or password!",
+        footer: '<a href="#">Why do I have this issue?</a>'
+      });
     }
   };
-
   return (
     <Container>
       <div className={styles.cont}>
@@ -76,7 +77,11 @@ const Forgotpass = ({ onClick, stringCode }) => {
             </div>
           </div>
           {/* <Link to="/resetpass"> */}
+          <div style={{display:"flex" ,columnGap:"5px"}}>
+
           <button onClick={onVerifyUser}> reset password</button>
+          <button onClick={()=>onClick("login")}>back</button>
+          </div>
           {/* </Link> */}
         </div>
       </div>

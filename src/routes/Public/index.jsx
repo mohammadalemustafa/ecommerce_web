@@ -17,6 +17,7 @@ import RegisterComp from "../../components/RegisterComp";
 import Forgotpass from "../../components/ForgotComp";
 import ResetComp from "../../components/ResetCom";
 import { useGenerateCode } from "../../hooks/useGenerateCode";
+import Loader from "../../Loader/loader";
 
 const Public = ({ element, onHover }) => {
   const { stringCode } = useGenerateCode();
@@ -30,6 +31,9 @@ const Public = ({ element, onHover }) => {
   const onChangeScreen = (s) => {
     setScr(s);
   };
+  const changeScreen=()=>{
+    setScr("forgot")
+  }
   let screen = "";
   switch (scr) {
     case "login":
@@ -42,13 +46,14 @@ const Public = ({ element, onHover }) => {
       );
       break;
     case "register":
-      screen = <RegisterComp stringCode={stringCode} onClick={() => onChangeScreen("login")} />;
+      screen = <RegisterComp   stringCode={stringCode} onClick={() => onChangeScreen("login")} />;
       break;
     case "resetpin":
-      screen = <ResetComp />;
+      screen = <ResetComp changeScreen={changeScreen}/>;
       break;
+
     default:
-      screen = <Forgotpass stringCode={stringCode} onClick={() => onChangeScreen("resetpin")} />;
+      screen = <Forgotpass stringCode={stringCode} onClick={(s) => onChangeScreen(s)} />;
   }
   return (
     <main>

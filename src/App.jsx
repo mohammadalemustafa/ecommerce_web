@@ -17,20 +17,33 @@ import TermsAndConditions from "./pages/Terms";
 import Invoice from "./pages/Invoice";
 import About from "./pages/About";
 import PageNOT from "./pages/PageNotFonud";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { authAction } from "./Store/auth";
 
 function App() {
   const dispatch = useDispatch();
+  const token = JSON.parse(localStorage.getItem("login"));
+  const isStateChange = useSelector((state) => state.auth.isStateChange);
 
-  let token = {
-    name: "Mustafa",
-    token: false,
+  const getData = async () => {
+    const res = await fetch("https://ecommerce-web-69896-default-rtdb.firebaseio.com/users.json");
+    let data = await res.json();
+
+    let newArr = [];
+    for (const d in data) {
+      newArr.push(data[d]);
+    }
+
+    dispatch(authAction.onGetAllUser(newArr));
   };
 
   useEffect(() => {
-    dispatch(authAction.onAddToken(token));
+    getData();
   }, []);
+
+  useEffect(() => {
+    dispatch(authAction.onAddToken(token));
+  }, [isStateChange]);
 
   return (
     <Routes>

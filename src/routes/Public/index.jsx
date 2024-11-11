@@ -33,7 +33,13 @@ const Public = ({ element, onHover }) => {
   let screen = "";
   switch (scr) {
     case "login":
-      screen = <LoginComp onClick={() => onChangeScreen("register")} onGoToForgot={() => onChangeScreen("forgot")} />;
+      screen = (
+        <LoginComp
+          stringCode={stringCode}
+          onClick={() => onChangeScreen("register")}
+          onGoToForgot={() => onChangeScreen("forgot")}
+        />
+      );
       break;
     case "register":
       screen = <RegisterComp stringCode={stringCode} onClick={() => onChangeScreen("login")} />;
@@ -42,7 +48,7 @@ const Public = ({ element, onHover }) => {
       screen = <ResetComp />;
       break;
     default:
-      screen = <Forgotpass onClick={() => onChangeScreen("resetpin")} />;
+      screen = <Forgotpass stringCode={stringCode} onClick={() => onChangeScreen("resetpin")} />;
   }
   return (
     <main>

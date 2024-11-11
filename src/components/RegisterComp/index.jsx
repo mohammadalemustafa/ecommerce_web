@@ -44,12 +44,6 @@ const RegisterComp = ({ onClick, stringCode }) => {
     dispatch({ type: "USER", payload: newData });
   };
 
-  useEffect(() => {
-    axios.get("https://ecommerce-web-69896-default-rtdb.firebaseio.com/users.json").then((res) => {
-      console.log(res);
-    });
-  }, []);
-
   const onSubmitData = () => {
     const config = {
       url: "https://ecommerce-web-69896-default-rtdb.firebaseio.com/users.json",

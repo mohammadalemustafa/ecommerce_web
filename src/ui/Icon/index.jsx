@@ -2,6 +2,7 @@ import React, { useReducer } from "react";
 import styles from "./index.module.css";
 import AccountDrop from "../../components/AccountDropd";
 import CartDrop from "../../components/CartDrop";
+
 const Icon = ({ children, counter, name }) => {
   const reducer = (state, action) => {
     if (action.type === "ACCOUNT_HOVER") {

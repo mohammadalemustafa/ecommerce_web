@@ -5,9 +5,8 @@ import { BiBookBookmark } from "react-icons/bi";
 import Rfrom from "../RegisterFrom";
 import  axios from 'axios';
 import { FaApple, FaFacebookSquare, FaGoogle } from "react-icons/fa";
-
-const reducerfunc=(state,action)=>{
-  switch(action.type){
+const reducerFunc = (state, action) => {
+  switch (action.type) {
     case "DATA":
       return {...state,...action.payload , termsAccepted:action.payload.termsAccepted=="on" ? false:true};
       case "USER":
@@ -18,37 +17,25 @@ const reducerfunc=(state,action)=>{
 }
 
 const RegisterComp = ({ onClick, stringCode }) => {
-
- const [state,dispatch]= useReducer(reducerfunc,{
-    username:"",
-    email:"",
-    password:"",
-    cpassword:"",
-    sCode:"",
-    userType:1,
-    termsAccepted:false
-  })
-
-
-  console.log(state)
-
-  useEffect(()=>{
-    axios.get("https://registerdata-a73ff-default-rtdb.firebaseio.com/users.json").then(res=>{
-      console.log(res)
-    })
-  },[])
-  const onGetData=(e)=>{
-    const id = e.target.id;
-    const val = !e.target.checked ? e.target.value:e.target.checked;
-
-    const newData = {...state,[id]:val}
-    dispatch({type:"DATA" ,payload:newData})
-
-  }
-
-  const onUserData=(e)=>{
-    const id = e.target.id;
-    const val = e.target.checked;
+  const [state, dispatch] = useReducer(reducerFunc, {
+    username: "",
+    email: "",
+    password: "",
+    cpassword: "",
+    sCode: "",
+    userType: 1,
+    termsAccepted: false,
+  });
+  console.log(state);
+  const onGetData = (e) => {
+    let id = e.target.id;
+    let val = !e.target.checked ? e.target.value : e.target.checked;
+    const newData = { ...state, [id]: val };
+    dispatch({ type: "DATA", payload: newData });
+  };
+  const onUserType = (e) => {
+    let id = e.target.id;
+    let val = e.target.checked;
 
     const newData = {[id]:val};
     dispatch({type:"USER", payload:newData})

@@ -83,7 +83,6 @@
     position: relative;
     top: 2px;
     font-size: large;
-
 }
 
 .iconCont {
@@ -146,6 +145,18 @@
     align-items: center;
     padding: 10px;
     color: var(--typoColor);
+
+}
+@keyframes transitionmrga {
+    0%{
+        transform: translateY(400px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+
+    }
 }
 
 .megadrop {
@@ -159,8 +170,12 @@
     position: absolute;
     top: 100%;
     left: 20px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
     border-radius: 10px;
     z-index: 1;
+animation: transitionmrga .5s ease-in 0s 1;
+
 }
 
 .left {
@@ -217,7 +232,20 @@
     background-color: white;
     border: .5px solid #d1f5e5;
     border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     position: absolute;
     top: 40px;
     z-index: 1;
+animation: transition .5s ease-in 0s 1;
+}
+@keyframes transition {
+    0%{
+        transform: translateY(-400px);
+        opacity: .0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+
+    }
 }

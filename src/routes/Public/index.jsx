@@ -20,6 +20,7 @@ import { useGenerateCode } from "../../hooks/useGenerateCode";
 import Loader from "../../Loader/loader";
 
 const Public = ({ element, onHover }) => {
+  const [fpDta, setfpDta] = useState({});
   const { stringCode } = useGenerateCode();
   const [scr, setScr] = useState("login");
   const dispatch = useDispatch();
@@ -28,12 +29,17 @@ const Public = ({ element, onHover }) => {
     setScr("login");
     dispatch(uiActions.onOpenLoginModal(false));
   };
-  const onChangeScreen = (s) => {
+  const onChangeScreen = (s, dta) => {
+    if (dta) {
+      setfpDta(dta);
+    }
+    console.log(dta);
+
     setScr(s);
   };
-  const changeScreen=()=>{
-    setScr("forgot")
-  }
+  const changeScreen = () => {
+    setScr("forgot");
+  };
   let screen = "";
   switch (scr) {
     case "login":
@@ -46,14 +52,14 @@ const Public = ({ element, onHover }) => {
       );
       break;
     case "register":
-      screen = <RegisterComp   stringCode={stringCode} onClick={() => onChangeScreen("login")} />;
+      screen = <RegisterComp stringCode={stringCode} onClick={() => onChangeScreen("login")} />;
       break;
     case "resetpin":
-      screen = <ResetComp changeScreen={changeScreen}/>;
+      screen = <ResetComp fpDta={fpDta} changeScreen={changeScreen} />;
       break;
 
     default:
-      screen = <Forgotpass stringCode={stringCode} onClick={(s) => onChangeScreen(s)} />;
+      screen = <Forgotpass stringCode={stringCode} onClick={(s, fpd) => onChangeScreen(s, fpd)} />;
   }
   return (
     <main>

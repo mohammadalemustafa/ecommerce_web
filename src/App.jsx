@@ -26,9 +26,9 @@ function App() {
   const token = JSON.parse(localStorage.getItem("login"));
   const isStateChange = useSelector((state) => state.auth.isStateChange);
   const getData = async () => {
-    const res = await fetch("https://ecommerce-web-5425b-default-rtdb.firebaseio.com/users.json");
+    const res = await fetch("https://ecommerce-web-69896-default-rtdb.firebaseio.com/users.json");
     let data = await res.json();
-  console.log(data)
+
     let newArr = [];
     for (const d in data) {
       newArr.push(data[d]);

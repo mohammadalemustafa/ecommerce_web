@@ -1,17 +1,59 @@
-import React from "react";
+import React, { useReducer } from "react";
 import styles from "./index.module.css";
 import Container from "../../ui/Container";
 import pass from "../../assets/reset_password.svg";
-const ResetComp = ({changeScreen}) => {
+import axios from "axios";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-  // used it for pop
+const reducerFn = (state, action) => {
+  switch (action.type) {
+    case "NEWPASS":
+      return { ...state, ...action.payload };
 
-  // Swal.fire({
-  //   icon: "error",
-  //   title: "Oops...",
-  //   text:`${err.message}`,
-  //   footer: '<a href="#">Why do I have this issue?</a>'
-  // });
+    default:
+      return state;
+  }
+};
+
+const ResetComp = ({ changeScreen, fpDta }) => {
+  const navigate = useNavigate();
+  const userdata = useSelector((state) => state.auth.userdata);
+  const [state, dispatch] = useReducer(reducerFn, {
+    password: "",
+    cpassword: "",
+  });
+
+  const onGetNewPassword = (e) => {
+    let id = e.target.id;
+    let val = e.target.value;
+
+    let newData = { [id]: val };
+
+    dispatch({ type: "NEWPASS", payload: newData });
+  };
+
+  const onGenerateNewPassword = () => {
+    let isExistingUser = userdata.find((it) => it.email === fpDta.email);
+    let copyData = isExistingUser && { ...isExistingUser };
+
+    if (isExistingUser) {
+      copyData["password"] = state.password;
+    }
+
+    const config = {
+      url: "https://ecommerce-web-69896-default-rtdb.firebaseio.com/users.json",
+      method: "PUT",
+      data: copyData,
+    };
+
+    axios(config)
+      .then((res) => {
+        navigate("/");
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <Container>
       <div className={styles.cont}>
@@ -23,8 +65,14 @@ const ResetComp = ({changeScreen}) => {
           <p>Please create a new password that you don’t use on any other site.</p>
           <div className={styles.inputCont}>
             <div>
-              <input type="password" name="email" id="" placeholder="password" />
-              <input type="password" name="email" id="" placeholder="Confirm password" />
+              <input onChange={onGetNewPassword} type="password" name="password" id="password" placeholder="password" />
+              <input
+                onChange={onGetNewPassword}
+                type="password"
+                name="confirmpassword"
+                id="cpassword"
+                placeholder="Confirm password"
+              />
             </div>
 
             <div className={styles.r1}>
@@ -37,10 +85,9 @@ const ResetComp = ({changeScreen}) => {
               <li>A special character</li>
             </div>
           </div>
-          <div style={{display:"flex",columnGap:"5px"
-          }}>
-          <button> reset password</button>
-          <button onClick={changeScreen}>back</button>
+          <div style={{ display: "flex", columnGap: "5px" }}>
+            <button onClick={onGenerateNewPassword}> reset password</button>
+            <button onClick={changeScreen}>back</button>
           </div>
         </div>
       </div>

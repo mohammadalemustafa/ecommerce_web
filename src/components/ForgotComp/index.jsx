@@ -28,19 +28,18 @@ const Forgotpass = ({ onClick, stringCode }) => {
     let newData = { [id]: val };
     dispatch({ type: "FORGOT", payload: newData });
   };
-  console.log(state);
-  console.log(userdata);
+
   const onVerifyUser = () => {
     const isExisting = userdata.find((it) => it.username === state.username || it.email === state.username);
+    debugger;
     if (isExisting) {
-      onClick("resetpin");
-    }
-    else{
+      onClick("resetpin", isExisting);
+    } else {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "please enter valid email or password!",
-        footer: '<a href="#">Why do I have this issue?</a>'
+        text: "please enter valid email!",
+        footer: '<a href="#">Why do I have this issue?</a>',
       });
     }
   };
@@ -77,10 +76,9 @@ const Forgotpass = ({ onClick, stringCode }) => {
             </div>
           </div>
           {/* <Link to="/resetpass"> */}
-          <div style={{display:"flex" ,columnGap:"5px"}}>
-
-          <button onClick={onVerifyUser}> reset password</button>
-          <button onClick={()=>onClick("login")}>back</button>
+          <div style={{ display: "flex", columnGap: "5px" }}>
+            <button onClick={onVerifyUser}> reset password</button>
+            <button onClick={() => onClick("login")}>back</button>
           </div>
           {/* </Link> */}
         </div>

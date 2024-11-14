@@ -28,7 +28,6 @@ function App() {
   const getData = async () => {
     const res = await fetch("https://ecommerce-web-5425b-default-rtdb.firebaseio.com/users.json");
     let data = await res.json();
-    console.log(data)
     let newArr = [];
     for (const d in data) {
       newArr.push(data[d]);

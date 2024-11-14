@@ -21,29 +21,60 @@ const Forgotpass = ({ onClick, stringCode }) => {
     sCode: "",
     termsAccepted: false,
   });
-
   const onGetUser = (e) => {
     let id = e.target.id;
     let val = e.target.checked ? e.target.checked : e.target.value;
     let newData = { [id]: val };
     dispatch({ type: "FORGOT", payload: newData });
   };
-  console.log(state);
-  console.log(userdata);
   const onVerifyUser = () => {
-    const isExisting = userdata.find((it) => it.username === state.username || it.email === state.username);
-    if (isExisting) {
-      onClick("resetpin");
-    }
-    else {
+    if (state.username === "") {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "please enter valid email or password!",
-        footer: '<a href="#">Why do I have this issue?</a>'
+        text: "please enter  email!",
+        footer: '<a href="#">Why do I have this issue?</a>',
       });
     }
-  };
+    else if (!state.username.includes("@") || !state.username.includes(".")) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "please enter valid email!",
+        footer: '<a href="#">Why do I have this issue?</a>',
+      });
+    }
+    else if (state.sCode === "") {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "enter security code",
+        footer: '<a href="#">Why do I have this issue?</a>',
+      })
+    }
+    else if (state.sCode !== stringCode.join('')) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "enter valid security code",
+        footer: '<a href="#">Why do I have this issue?</a>',
+      })
+    }
+    else {
+      const isExisting = userdata.find((it) => it.username === state.username || it.email === state.username);
+      debugger;
+      if (isExisting) {
+        onClick("resetpin", isExisting);
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "please enter valid email!",
+          footer: '<a href="#">Why do I have this issue?</a>',
+        });
+      }
+    };
+  }
   return (
     <Container>
       <div className={styles.cont}>
@@ -55,7 +86,7 @@ const Forgotpass = ({ onClick, stringCode }) => {
           <p>
             Not to worry, we got you! Let’s get you a new password. Please enter your email address or your Username.
           </p>
-          <input onChange={onGetUser} type="email" name="email" id="username" placeholder="Enter Email or Username" />
+          <input onChange={onGetUser} type="email" name="email" id="username" placeholder="Enter Email" />
           <div className={styles.securityCode}>
             <input onChange={onGetUser} type="text" name="" id="sCode" placeholder="security code" />
             <div className={styles.code}>
@@ -65,7 +96,7 @@ const Forgotpass = ({ onClick, stringCode }) => {
               <span>{stringCode[3]}</span>
             </div>
           </div>
-          <div className={styles.rememberpass}>
+          {/* <div className={styles.rememberpass}>
             <div>
               <span>
                 <input onChange={onGetUser} type="checkbox" id="termsAccepted" />
@@ -75,10 +106,9 @@ const Forgotpass = ({ onClick, stringCode }) => {
             <div>
               <spaxn>learn</spaxn>
             </div>
-          </div>
+          </div> */}
           {/* <Link to="/resetpass"> */}
           <div style={{ display: "flex", columnGap: "5px" }}>
-
             <button onClick={onVerifyUser}> reset password</button>
             <button onClick={() => onClick("login")}>back</button>
           </div>

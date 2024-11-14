@@ -1,4 +1,4 @@
-import React, {  useReducer } from "react";
+import React, { useReducer } from "react";
 import styles from "./index.module.css";
 import img from "../../assets/login-1.png";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,31 +25,44 @@ const LoginComp = ({ onClick, onGoToForgot, stringCode }) => {
   const onGetData = (e) => {
     let id = e.target.id;
     let val = e.target.checked ? e.target.checked : e.target.value;
+
     let newData = { [id]: val };
     dispatch({ type: "LOGIN", payload: newData });
   };
+
   const onLoginUser = () => {
-    if(state.username===""&&state.password===""){
-      Swal.fire("please fill all the filled!");
-    }
-    else{
+    if (state.username.includes("@") && !state.username.includes(".")) {
+      Swal.fire("Please Enter Valid Email");
+    } else if (state.username === "") {
+      Swal.fire("Please Enter Username");
+    } else if (state.username.length < 3) {
+      Swal.fire("Please Enter Valid Username");
+    } else if (state.password.length < 6) {
+      Swal.fire("Invalid Credentials!");
+    } else if (state.sCode === "") {
+      Swal.fire("Please Enter Security Code");
+    } else if (state.sCode !== stringCode.join("")) {
+      Swal.fire("Invalid Security Code");
+    } else {
       const isExistinguser = userdata.find((it) => it.email === state.username && it.password === state.password);
       if (isExistinguser) {
         const { password, cpassword, ...rest } = isExistinguser;
         localStorage.setItem("login", JSON.stringify(rest));
         dispatchAction(uiActions.onOpenLoginModal(false));
         dispatchAction(authAction.onAuthChange());
-      }
-      else{
+        // if(state.remember){
+        //   localStorage.setItem("userdetails", isExistinguser)
+        // }
+      } else {
         Swal.fire({
           icon: "error",
           title: "Oops...",
           text: "User not exist!",
-          footer: '<a href="#">Why do I have this issue?</a>'
+          footer: '<a href="#">Why do I have this issue?</a>',
         });
       }
-    };
-  }
+    }
+  };
   return (
     <>
       <div className={styles.cont}>
@@ -89,5 +102,4 @@ const LoginComp = ({ onClick, onGoToForgot, stringCode }) => {
     </>
   );
 };
-
 export default LoginComp;

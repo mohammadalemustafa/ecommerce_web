@@ -102,5 +102,4 @@ const LoginComp = ({ onClick, onGoToForgot, stringCode }) => {
     </>
   );
 };
-
 export default LoginComp;

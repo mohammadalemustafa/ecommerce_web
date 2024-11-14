@@ -19,9 +19,9 @@ const reducerFunc = (state, action) => {
       return state;
   }
 };
-const RegisterComp = ({ onClick,stringCode }) => {
-  const [loading,setLoading]=useState(false);
-  const dispatchAction=useDispatch();
+const RegisterComp = ({ onClick, stringCode }) => {
+  const [loading, setLoading] = useState(false);
+  const dispatchAction = useDispatch();
   const [state, dispatch] = useReducer(reducerFunc, {
     username: "",
     email: "",
@@ -31,7 +31,6 @@ const RegisterComp = ({ onClick,stringCode }) => {
     userType: 1,
     termsAccepted: false,
   });
-  console.log(state);
   const onGetData = (e) => {
     let id = e.target.id;
     let val = !e.target.checked ? e.target.value : e.target.checked;
@@ -45,31 +44,62 @@ const RegisterComp = ({ onClick,stringCode }) => {
     dispatch({ type: "USER", payload: newData });
   };
   const onSubmitData = () => {
-    if(state.username===""&&state.email===""&& state.password===""&& state.cpassword===""&& state.termsAccepted==false){
-      Swal.fire("All the filled required!");
-}
-else{
-  const config = {
-    url: "https://ecommerce-web-5425b-default-rtdb.firebaseio.com/users.json",
-    method: "POST",
-    data: state,
-  };
-  axios(config)
-  .then((res) => {
-    setLoading(true);
-    dispatchAction(uiActions.onOpenLoginModal(false));
-    console.log(res);
-  })
-  .catch((err) => {
+    if (state.username === "") {
+      Swal.fire("Please Enter Username")
+    }
+    else if (state.username.length < 3) {
+      Swal.fire("Please Enter Valid Username");
+    }
+    else if (state.email === "") {
+      Swal.fire("Please Enter  Email");
+    }
+    else if (state.email.includes("@") && !state.email.includes(".")) {
+      Swal.fire("Please Enter Valid Email");
+    }
+    else if (state.password === "") {
+      Swal.fire("please enter password!");
+    }
+    else if (state.password.length < 6) {
+      Swal.fire("password must be atleast 6 characters!");
+    }
+    else if (state.cpassword === "") {
+      Swal.fire("please confirm your password!");
+    }
+    else if (state.cpassword !== state.password) {
+      Swal.fire("password should be same!");
+    }
+    else if (state.sCode === "") {
+      Swal.fire("Please Enter Security Code");
+    }
+    else if (state.sCode.length != 4) {
+      Swal.fire("Please enter valid security code");
+    }
+    else if (!state.termsAccepted) {
+      Swal.fire("Are you agry with terms and conditions");
+    }
+    else {
+      const config = {
+        // url: "https://ecommerce-web-5425b-default-rtdb.firebaseio.com/users.json",
+        url: "https://ecommerce-web-69896-default-rtdb.firebaseio.com/users.json",
+        method: "POST",
+        data: state,
+      };
+      axios(config)
+        .then((res) => {
+          setLoading(true);
+          dispatchAction(uiActions.onOpenLoginModal(false));
+          console.log(res);
+        })
+        .catch((err) => {
           Swal.fire({
-    icon: "error",
-    title: "Oops...",
-    text:`${err.message}`,
-    footer: '<a href="#">Why do I have this issue?</a>'
-  });
-  });
-};
-}
+            icon: "error",
+            title: "Oops...",
+            text: `${err.message}`,
+            footer: '<a href="#">Why do I have this issue?</a>'
+          });
+        });
+    };
+  }
   return (
     <Container>
       <div className={styles.cont}>
@@ -78,7 +108,6 @@ else{
           <p>
             Already have an account? <span onClick={onClick}>login</span>
           </p>
-          {/* </Link> */}
           <input
             className={styles.forminput}
             onChange={onGetData}
@@ -111,7 +140,6 @@ else{
             id="cpassword"
             placeholder="confirm password"
           />
-
           <div className={styles.securityCode}>
             <input onChange={onGetData} type="text" name="" id="sCode" placeholder="security code" />
             <div className={styles.code}>
@@ -121,10 +149,9 @@ else{
               <span>{stringCode[3]}</span>
             </div>
           </div>
-
           <div className={styles.rememberpass}>
             <span>
-              <input onChange={onUserType} type="radio" name="chech" id="customer" checked={state.customer} />
+              <input onChange={onUserType} type="radio" name="chech" id="customer" checked={true} />
               <span className={styles.s}>I am a customer</span>
             </span>
             <span>
@@ -132,13 +159,11 @@ else{
               <span className={styles.s}>I am a vendor</span>
             </span>
           </div>
-
           <div className={styles.rememberpass}>
             <span>
               <input onChange={onGetData} type="checkbox" name="" id="termsAccepted" checked={state.termsAccepted} />
               <span>I agree to terms & Policy.</span>
             </span>
-
             <span>
               <span>
                 <BiBookBookmark></BiBookBookmark>

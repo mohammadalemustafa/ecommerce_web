@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import { createPortal } from "react-dom";
 import styles from "./modal.module.css";
 import { IoCloseOutline } from "react-icons/io5";
-
 const Overlay = ({ onClose }) => {
   return <div onClick={onClose} className={styles.overlay}></div>;
 };

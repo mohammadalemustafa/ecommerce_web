@@ -80,7 +80,7 @@ const RegisterComp = ({ onClick, stringCode }) => {
     else {
       const config = {
         // url: "https://ecommerce-web-5425b-default-rtdb.firebaseio.com/users.json",
-        url: "https://ecommerce-web-5425b-default-rtdb.firebaseio.com/users.json",
+        url: "https://ecommerce-web-69896-default-rtdb.firebaseio.com/users.json",
         method: "POST",
         data: state,
       };

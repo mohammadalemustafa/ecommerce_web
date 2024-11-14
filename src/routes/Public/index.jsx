@@ -31,7 +31,7 @@ const Public = ({ element, onHover }) => {
   const onChangeScreen = (s) => {
     setScr(s);
   };
-  const changeScreen=()=>{
+  const changeScreen = () => {
     setScr("forgot")
   }
   let screen = "";
@@ -46,10 +46,10 @@ const Public = ({ element, onHover }) => {
       );
       break;
     case "register":
-      screen = <RegisterComp   stringCode={stringCode} onClick={() => onChangeScreen("login")} />;
+      screen = <RegisterComp stringCode={stringCode} onClick={() => onChangeScreen("login")} />;
       break;
     case "resetpin":
-      screen = <ResetComp changeScreen={changeScreen}/>;
+      screen = <ResetComp changeScreen={changeScreen} />;
       break;
 
     default:

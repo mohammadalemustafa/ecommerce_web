@@ -35,7 +35,7 @@ const Forgotpass = ({ onClick, stringCode }) => {
     if (isExisting) {
       onClick("resetpin");
     }
-    else{
+    else {
       Swal.fire({
         icon: "error",
         title: "Oops...",
@@ -77,10 +77,10 @@ const Forgotpass = ({ onClick, stringCode }) => {
             </div>
           </div>
           {/* <Link to="/resetpass"> */}
-          <div style={{display:"flex" ,columnGap:"5px"}}>
+          <div style={{ display: "flex", columnGap: "5px" }}>
 
-          <button onClick={onVerifyUser}> reset password</button>
-          <button onClick={()=>onClick("login")}>back</button>
+            <button onClick={onVerifyUser}> reset password</button>
+            <button onClick={() => onClick("login")}>back</button>
           </div>
           {/* </Link> */}
         </div>

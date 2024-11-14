@@ -1,0 +1,26 @@
+.vendortop{
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+
+}
+.vendortop> h1{
+    font-size: 60px;
+    margin-bottom: 40px;
+}
+.vendorsearch{
+    position: relative;
+    & input{
+        padding: 15px;
+        border: 1px solid rgb(214, 213, 213) !important;
+        box-shadow: 0px 0px 10px 3px rgb(224, 224, 224);
+        border-radius: 30px;
+    }
+    & i{
+        position: absolute;
+        top: 55%;
+        transform: translateY(-50%);
+        right: 20px;
+    }
+}

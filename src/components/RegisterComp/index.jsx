@@ -1,22 +1,27 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import styles from "./index.module.css";
 import Container from "../../ui/Container";
 import { BiBookBookmark } from "react-icons/bi";
 import Rfrom from "../RegisterFrom";
-import  axios from 'axios';
 import { FaApple, FaFacebookSquare, FaGoogle } from "react-icons/fa";
+import axios from "axios";
+import Swal from "sweetalert2";
+import { uiActions } from "../../Store/ui";
+import { useDispatch } from "react-redux";
 const reducerFunc = (state, action) => {
   switch (action.type) {
     case "DATA":
-      return {...state,...action.payload , termsAccepted:action.payload.termsAccepted=="on" ? false:true};
-      case "USER":
-        return{...state,userType:action.payload.customer ? 1 :2}
-      default:
+      return { ...state, ...action.payload, termsAccepted: action.payload.termsAccepted === "on" ? false : true };
+
+    case "USER":
+      return { ...state, userType: action.payload.customer ? 1 : 2 };
+    default:
       return state;
   }
-}
-
-const RegisterComp = ({ onClick, stringCode }) => {
+};
+const RegisterComp = ({ onClick,stringCode }) => {
+  const [loading,setLoading]=useState(false);
+  const dispatchAction=useDispatch();
   const [state, dispatch] = useReducer(reducerFunc, {
     username: "",
     email: "",
@@ -36,23 +41,35 @@ const RegisterComp = ({ onClick, stringCode }) => {
   const onUserType = (e) => {
     let id = e.target.id;
     let val = e.target.checked;
-
-    const newData = {[id]:val};
-    dispatch({type:"USER", payload:newData})
-  }
-
-  const onhandlesubmit=()=>{
-    const config={
-      data:state,
-      url:"https://registerdata-a73ff-default-rtdb.firebaseio.com/users.json",
-      method:"POST",
-    }
-    axios(config).then(res=>{
-      console.log(res)
-    }).catch(err=>{
-
-    })
-  }
+    const newData = { [id]: val };
+    dispatch({ type: "USER", payload: newData });
+  };
+  const onSubmitData = () => {
+    if(state.username===""&&state.email===""&& state.password===""&& state.cpassword===""&& state.termsAccepted==false){
+      Swal.fire("All the filled required!");
+}
+else{
+  const config = {
+    url: "https://ecommerce-web-5425b-default-rtdb.firebaseio.com/users.json",
+    method: "POST",
+    data: state,
+  };
+  axios(config)
+  .then((res) => {
+    setLoading(true);
+    dispatchAction(uiActions.onOpenLoginModal(false));
+    console.log(res);
+  })
+  .catch((err) => {
+          Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text:`${err.message}`,
+    footer: '<a href="#">Why do I have this issue?</a>'
+  });
+  });
+};
+}
   return (
     <Container>
       <div className={styles.cont}>

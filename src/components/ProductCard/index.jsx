@@ -29,6 +29,7 @@ const ProductCard = ({ it, module }) => {
   }, [it.tag]);
 
   return (
+    
     <div onMouseEnter={onChangeImage} onMouseLeave={onChangeImage} className={styles.productCard}>
       {it.tag && (
         <div style={{ backgroundColor: bg }} className={styles.tag}>

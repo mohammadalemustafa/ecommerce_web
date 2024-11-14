@@ -17,21 +17,40 @@ import TermsAndConditions from "./pages/Terms";
 import Invoice from "./pages/Invoice";
 import About from "./pages/About";
 import PageNOT from "./pages/PageNotFonud";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { authAction } from "./Store/auth";
+import Loader from "./Loader/loader";
+import ShopGrid from "./components/ShopGrid/Index";
+import Shoplist from "./components/ShopList/Index";
+import ShopWide from "./components/ShopWide/Index";
+import VendorTop from "./components/Venders/VenderTop/Index";
+import VendorGrid from "./components/Venders/Index";
+import VendorList from "./components/Venders/VendorList/Index";
+import VendorDetails1 from "./components/Venders/VendorDetail1/Index";
+import VendorDetail2 from "./components/Venders/VendorDetail2/Index";
+import VendorDashboard from "./components/VendorDashboard/Index";
+import VendorGuid from "./components/Venders/VendorGuid/Index";
 
 function App() {
   const dispatch = useDispatch();
+  const token = JSON.parse(localStorage.getItem("login"));
+  const isStateChange = useSelector((state) => state.auth.isStateChange);
+  const getData = async () => {
+    const res = await fetch("https://ecommerce-web-69896-default-rtdb.firebaseio.com/users.json");
+    let data = await res.json();
 
-  let token = {
-    name: "Mustafa",
-    token: false,
+    let newArr = [];
+    for (const d in data) {
+      newArr.push(data[d]);
+    }
+    dispatch(authAction.onGetAllUser(newArr));
   };
-
+  useEffect(() => {
+    getData();
+  }, []);
   useEffect(() => {
     dispatch(authAction.onAddToken(token));
-  }, []);
-
+  }, [isStateChange]);
   return (
     <Routes>
       <Route path="/myprofile" element={<Public element={<MyProfile />} />} />
@@ -49,6 +68,17 @@ function App() {
       <Route path="/privacy" element={<Public element={<PrivacyPolicy />} />} />
       <Route path="/TemsAndCondition" element={<Public element={<TermsAndConditions />} />} />
       <Route path="/invoice" element={<Public element={<Invoice />} />} />
+      <Route path="/shopgrid" element={<Public element={<ShopGrid />} />} />
+      <Route path="/shoplist" element={<Public element={<Shoplist />} />} />
+      <Route path="/shopwide" element={<Public element={<ShopWide />} />} />
+      <Route path="/vendorgrid" element={<Public element={<VendorGrid />} />} />
+      <Route path="/vendorlist" element={<Public element={<VendorList />} />} />
+      <Route path="/vendordetail1" element={<Public element={<VendorDetails1 />} />} />
+      <Route path="/vendordetail2" element={<Public element={<VendorDetail2 />} />} />
+      <Route path="/vendordashboard" element={<Public element={<VendorDashboard />} />} />
+      <Route path="/vendorguid" element={<Public element={<VendorGuid />} />} />
+
+
     </Routes>
   );
 }

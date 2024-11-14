@@ -1,0 +1,26 @@
+.catogory{
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    margin-right: 20px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 5px 0 rgb(229, 228, 228);
+}
+
+.borderbottom{
+    background-color: lightgray;
+    width: 100%;
+    height: 1px;
+    padding: 0%;
+    margin: 20px 0;
+
+    position: relative;
+}
+.borderbottom > i{
+    top: -2px;
+    position: absolute;
+    display: inline-block;
+    background-color: var(--primaryColor);
+    height: 2px;
+    width: 40%;
+}

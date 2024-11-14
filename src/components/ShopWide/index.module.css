@@ -1,0 +1,11 @@
+.shopwidepopularcart{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom:20px ;
+}
+.shopWideContainer{
+    padding: 20px;
+    margin-bottom: 80px;
+
+}

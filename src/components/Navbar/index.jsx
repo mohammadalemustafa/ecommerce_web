@@ -142,9 +142,9 @@ const Navbar = () => {
 
                       return (
                         <div key={index} className={styles.pages}>
-                          <span>{item.p1}</span>
-                          <span>{item.p2}</span>
-                          <span>{item.p3}</span>
+                          <span onClick={() => OnNavigate("/shopgrid")}>{item.p1}</span>
+                          <span onClick={() => OnNavigate("/shoplist")}>{item.p2}</span>
+                          <span onClick={() => OnNavigate("/shopwide")}>{item.p3}</span>
                           <span>{item.p4}</span>
                           <span>{item.p5}</span>
                           <span>{item.p6}</span>
@@ -172,12 +172,12 @@ const Navbar = () => {
                     {vendorsdata.map((item, index) => {
                       return (
                         <div key={index} className={styles.pages}>
-                          <span>{item.p1}</span>
-                          <span>{item.p2}</span>
-                          <span>{item.p3}</span>
-                          <span>{item.p4}</span>
-                          <span>{item.p5}</span>
-                          <span>{item.p6}</span>
+                          <span onClick={() => OnNavigate("/vendorgrid")}>{item.p1}</span>
+                          <span  onClick={() => OnNavigate("/vendorlist")}>{item.p2}</span>
+                          <span onClick={() => OnNavigate("/vendordetail1")}>{item.p3}</span>
+                          <span  onClick={() => OnNavigate("/vendordetail2")}>{item.p4}</span>
+                          <span  onClick={() => OnNavigate("/vendordashboard")}>{item.p5}</span>
+                          <span  onClick={() => OnNavigate("/vendorguid")}>{item.p6}</span>
                         </div>
                       );
                     })}

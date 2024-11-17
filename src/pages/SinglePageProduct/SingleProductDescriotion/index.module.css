@@ -1,0 +1,10 @@
+.listCont{
+padding: 20px 30px;
+background-color: white;
+border: 2px solid rgb(245, 241, 241);
+border-radius: 1rem;
+}
+.btnCont{
+display: flex;
+column-gap: 20px;
+}

@@ -20,6 +20,7 @@ import { blogData } from "../../data/blog";
 import { vendorsdata } from "../../data/vendors";
 import { shopdata } from "../../data/shop";
 import { Link, useNavigate } from "react-router-dom";
+import { motion } from 'framer-motion'
 export const additionaldata = [
   { id: 11, name: "Milks and Dairies", logo: icon1 },
   { id: 12, name: "Milks and Dairies", logo: icon2 },
@@ -136,27 +137,31 @@ const Navbar = () => {
               <span className={styles.pagesnav}>
                 Shop
                 {shophover && (
-                  <div className={styles.pasesdrop}>
+                  <motion.div className={styles.pasesdrop}
+                    initial={{ top: -20 }}
+                    animate={
+                      { top: 30 }
+                    }
+                  >
                     {shopdata.map((item, index) => {
                       console.log(item);
 
                       return (
                         <div key={index} className={styles.pages}>
-                          <span>{item.p1}</span>
-                          <span>{item.p2}</span>
-                          <span>{item.p3}</span>
-                          <span>{item.p4}</span>
-                          <span>{item.p5}</span>
-                          <span>{item.p6}</span>
-                          <span>{item.p7}</span>
-                          <span>{item.p8}</span>
-                          <span>{item.p9}</span>
-                          <span onClick={() => OnNavigate("/invoice")}>{item.p10}</span>
-                          <span>{item.p11}</span>
-                        </div>
-                      );
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }} >{item.p1}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }} >{item.p2}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }} >{item.p3}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }} onClick={() => OnNavigate("/singleProduct")}>{item.p4}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }}  >{item.p5}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }} >{item.p6}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }} >{item.p7}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }} >{item.p8}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }} >{item.p9}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }} onClick={() => OnNavigate("/invoice")}>{item.p10}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }} >{item.p11}</motion.span>
+                        </div>);
                     })}
-                  </div>
+                  </motion.div>
                 )}
               </span>
               <span>
@@ -165,25 +170,28 @@ const Navbar = () => {
               </span>
             </li>
             <li onMouseEnter={Vendors} onMouseLeave={Vendors}>
-              <span className={styles.pagesnav}>
+              <div className={styles.pagesnav}>
                 Vendors
                 {vendor && (
-                  <div className={styles.pasesdrop}>
+                  <motion.div initial={{ top: -20 }}
+                    animate={
+                      { top: 30 }
+                    } className={styles.pasesdrop}>
                     {vendorsdata.map((item, index) => {
                       return (
                         <div key={index} className={styles.pages}>
-                          <span>{item.p1}</span>
-                          <span>{item.p2}</span>
-                          <span>{item.p3}</span>
-                          <span>{item.p4}</span>
-                          <span>{item.p5}</span>
-                          <span>{item.p6}</span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.p1}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.p2}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.p3}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.p4}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.p5}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.p6}</motion.span>
                         </div>
                       );
                     })}
-                  </div>
+                  </motion.div>
                 )}
-              </span>
+              </div>
               <span>
                 {" "}
                 <FaAngleDown size="10px"></FaAngleDown>
@@ -195,7 +203,7 @@ const Navbar = () => {
                 {" "}
                 Mega menu
                 {mouse && (
-                  <div className={styles.megadrop}>
+                  <modiv className={styles.megadrop}>
                     <div className={styles.left}>
                       {mega.map((item, index) => {
                         <h1 key={index}>Fruit & Vegetables</h1>;
@@ -204,12 +212,12 @@ const Navbar = () => {
                             <div key={index} className={styles.cont}>
                               <h1>Fruit & Vegetables</h1>
                               <div>
-                                <span>{item.d1}</span>
-                                <span>{item.d2}</span>
-                                <span>{item.d3}</span>
-                                <span>{item.d4}</span>
-                                <span>{item.d5}</span>
-                                <span>{item.d6}</span>
+                                <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.d1}</motion.span>
+                                <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.d2}</motion.span>
+                                <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.d3}</motion.span>
+                                <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.d4}</motion.span>
+                                <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.d5}</motion.span>
+                                <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.d6}</motion.span>
                               </div>
                             </div>
                           );
@@ -221,12 +229,12 @@ const Navbar = () => {
                             <div key={index} className={styles.cont}>
                               <h1>Breakfast & Dairy</h1>
                               <div>
-                                <span>{item.d1}</span>
-                                <span>{item.d2}</span>
-                                <span>{item.d3}</span>
-                                <span>{item.d4}</span>
-                                <span>{item.d5}</span>
-                                <span>{item.d6}</span>
+                                <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.d1}</motion.span>
+                                <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.d2}</motion.span>
+                                <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.d3}</motion.span>
+                                <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.d4}</motion.span>
+                                <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.d5}</motion.span>
+                                <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.d6}</motion.span>
                               </div>
                             </div>
                           );
@@ -238,12 +246,12 @@ const Navbar = () => {
                             <div key={index} className={styles.cont}>
                               <h1>Meat & Seafood</h1>
                               <div>
-                                <span>{item.d1}</span>
-                                <span>{item.d2}</span>
-                                <span>{item.d3}</span>
-                                <span>{item.d4}</span>
-                                <span>{item.d5}</span>
-                                <span>{item.d6}</span>
+                                <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.d1}</motion.span>
+                                <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.d2}</motion.span>
+                                <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.d3}</motion.span>
+                                <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.d4}</motion.span>
+                                <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.d5}</motion.span>
+                                <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.d6}</motion.span>
                               </div>
                             </div>
                           );
@@ -251,7 +259,7 @@ const Navbar = () => {
                       })}
                     </div>
                     <Manubanner data={manuBannerData} />
-                  </div>
+                  </modiv>
                 )}
               </div>
               <span>
@@ -267,12 +275,12 @@ const Navbar = () => {
                     {blogData.map((item, index) => {
                       return (
                         <div key={index} className={styles.pages}>
-                          <span onClick={() => OnNavigate("/BlogCategoryGrid")}>{item.p1}</span>
-                          <span>{item.p2}</span>
-                          <span>{item.p3}</span>
-                          <span>{item.p4}</span>
-                          <span onClick={() => OnNavigate("/SinglePostRight")}>{item.p5}</span>
-                          <span>{item.p6}</span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }} onClick={() => OnNavigate("/BlogCategoryGrid")}>{item.p1}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.p2}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.p3}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.p4}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }} onClick={() => OnNavigate("/SinglePostRight")}>{item.p5}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.p6}</motion.span>
                         </div>
                       );
                     })}
@@ -288,26 +296,29 @@ const Navbar = () => {
               <span className={styles.pagesnav}>
                 Pages
                 {hoveronpages && (
-                  <div className={styles.pasesdrop}>
+                  <div initial={{ top: -20 }}
+                    animate={
+                      { top: 30 }
+                    } className={styles.pasesdrop}>
                     {pageslist.map((item, index) => {
                       console.log(item);
 
                       return (
                         <div key={index} className={styles.pages}>
-                          <span onClick={() => OnNavigate("/about")}>{item.p1}</span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }} onClick={() => OnNavigate("/about")}>{item.p1}</motion.span>
 
-                          <span onClick={() => OnNavigate("/contact")}>{item.p2}</span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }} onClick={() => OnNavigate("/contact")}>{item.p2}</motion.span>
 
-                          <span onClick={() => OnNavigate("/myprofile")}>{item.p3}</span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }} onClick={() => OnNavigate("/myprofile")}>{item.p3}</motion.span>
 
-                          <span onClick={() => OnNavigate("/login")}>{item.p4}</span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }} onClick={() => OnNavigate("/login")}>{item.p4}</motion.span>
 
-                          <span onClick={() => OnNavigate("/register")}>{item.p5}</span>
-                          <span onClick={() => OnNavigate("/forgotpass")}>{item.p6}</span>
-                          <span onClick={() => OnNavigate("/resetpass")}>{item.p7}</span>
-                          <span>{item.p8}</span>
-                          <span onClick={() => OnNavigate("/privacy")}>{item.p9}</span>
-                          <span onClick={() => OnNavigate("/TemsAndCondition")}>{item.p10}</span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }} onClick={() => OnNavigate("/register")}>{item.p5}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }} onClick={() => OnNavigate("/forgotpass")}>{item.p6}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }} onClick={() => OnNavigate("/resetpass")}>{item.p7}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.p8}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }} onClick={() => OnNavigate("/privacy")}>{item.p9}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }} onClick={() => OnNavigate("/TemsAndCondition")}>{item.p10}</motion.span>
                         </div>
                       );
                     })}
@@ -336,7 +347,7 @@ const Navbar = () => {
         </div>
       </div>
       ;
-    </Container>
+    </Container >
   );
 };
 

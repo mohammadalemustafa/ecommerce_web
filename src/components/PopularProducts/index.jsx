@@ -26,7 +26,6 @@ const PopularProducts = () => {
   const onGetMenu = (n) => {
     setActive(n);
   };
-
   const menuLists = [
     { id: 1, name: "All", active: "all" },
     { id: 2, name: "Milks & Diaries", active: "milks" },

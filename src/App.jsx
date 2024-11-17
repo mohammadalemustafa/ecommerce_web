@@ -20,6 +20,7 @@ import PageNOT from "./pages/PageNotFonud";
 import { useDispatch, useSelector } from "react-redux";
 import { authAction } from "./Store/auth";
 import Loader from "./Loader/loader";
+import SingleProducts from "./pages/SinglePageProduct";
 
 function App() {
   const dispatch = useDispatch();
@@ -50,7 +51,7 @@ function App() {
       <Route path="/" element={<Navigate to="/home" />} />
       <Route path="/home" element={<Public element={<Home />} />} />
       <Route path="/contact" element={<Public element={<Contact></Contact>} />} />
-      {/* <Route path="/login" element={<Public element={<Login></Login>} />} /> */}
+      <Route path="/singleProduct" element={<Public element={<SingleProducts></SingleProducts>} />} />
       {/* <Route path="/register" element={<Public element={<Register></Register>} />} /> */}
       <Route path="/forgotpass" element={<Public element={<Forgotpass></Forgotpass>} />} />
       <Route path="/resetpass" element={<Public element={<ResetPass></ResetPass>} />} />

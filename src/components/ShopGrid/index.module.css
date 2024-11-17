@@ -1,0 +1,19 @@
+.shopgridcontainer{
+    display: flex;
+    justify-content: space-between;
+}
+.shoprigntcontainer{
+    margin-bottom: 60px;
+    width: 76%;
+    padding-right: 5px;
+}
+.shopdealyear{
+    padding-top: 20px;
+}
+
+.shoppopularproduct{
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}

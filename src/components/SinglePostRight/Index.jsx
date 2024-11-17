@@ -13,16 +13,7 @@ const SinglePostRight = () => {
   return (
     <>
       <SinglePost/>
-      <Banner2 it={{
-        id: 1,
-        title1: "Don’t miss amazing",
-        title2: "grocery deals",
-        desc: "Sign up for the daily newsletter",
-        img: banner,
-        img2:bannerbg
-      }} />
-      <AboutpCart cartdata={carddata} />
-      <Secondlast productsdata={secondlastdata} />
+      
       
     </>
   )

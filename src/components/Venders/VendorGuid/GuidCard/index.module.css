@@ -1,0 +1,31 @@
+.guidcontainer{
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+.guidcontainer:hover{
+    box-shadow:  0 0 5px 0 lightgray;
+}
+.guidimg{
+    width: 50%;
+    margin: 0 auto;
+}
+.guidcontainer{
+    & h2{
+        font-size: 25px;
+        margin: 15px 0;
+        color: var(--textColor);
+    }
+    & p{
+        font-size: 16px;
+        margin: 15px 0;
+        color: var(--typoColor);
+    }
+    & span{
+        color: var(--primaryColor);
+    }
+    & span:hover{
+        color: var(--yellowColor);
+    }
+}

@@ -98,7 +98,7 @@ const MyAccount = () => {
         </div>
         <div className={styles.rightcontentcontainer}>
             {active==="Dashboard" && <Dashboard/>}
-            {active==="Orders" && <Orders/>}
+            {active==="Orders" && <Orders name="Your Orders"/>}
             {active==="Track" && <TrackOrder/>}
             {active==="Address" && <Address/>}
             {active==="Account" && <Account/>}

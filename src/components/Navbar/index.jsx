@@ -147,7 +147,7 @@ const Navbar = () => {
                       console.log(item);
 
                       return (
-                        <div key={index} className={styles.pages}>
+                      <div>
                           <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }} >{item.p1}</motion.span>
                           <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }} >{item.p2}</motion.span>
                           <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }} >{item.p3}</motion.span>
@@ -180,6 +180,12 @@ const Navbar = () => {
                     {vendorsdata.map((item, index) => {
                       return (
                         <div key={index} className={styles.pages}>
+                          <span onClick={() => OnNavigate("/vendorgrid")}>{item.p1}</span>
+                          <span  onClick={() => OnNavigate("/vendorlist")}>{item.p2}</span>
+                          <span onClick={() => OnNavigate("/vendordetail1")}>{item.p3}</span>
+                          <span  onClick={() => OnNavigate("/vendordetail2")}>{item.p4}</span>
+                          <span  onClick={() => OnNavigate("/vendordashboard")}>{item.p5}</span>
+                          <span  onClick={() => OnNavigate("/vendorguid")}>{item.p6}</span>
                           <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.p1}</motion.span>
                           <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.p2}</motion.span>
                           <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.p3}</motion.span>

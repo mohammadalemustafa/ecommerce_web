@@ -1,0 +1,13 @@
+.shopgriddropdown{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px;
+    height: 4rem;
+    & p{
+        color: var(--textColor);
+        & span{
+            color: var(--primaryColor);
+        }
+    }
+}

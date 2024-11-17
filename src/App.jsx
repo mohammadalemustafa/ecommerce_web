@@ -20,6 +20,15 @@ import PageNOT from "./pages/PageNotFonud";
 import { useDispatch, useSelector } from "react-redux";
 import { authAction } from "./Store/auth";
 import Loader from "./Loader/loader";
+import ShopGrid from "./components/ShopGrid/Index";
+import Shoplist from "./components/ShopList/Index";
+import ShopWide from "./components/ShopWide/Index";
+import VendorGrid from "./components/Venders/Index";
+import VendorList from "./components/Venders/VendorList/Index";
+import VendorDetails1 from "./components/Venders/VendorDetail1/Index";
+import VendorDetail2 from "./components/Venders/VendorDetail2/Index";
+import VendorDashboard from "./components/VendorDashboard/Index";
+import VendorGuid from "./components/Venders/VendorGuid/Index";
 import SingleProducts from "./pages/SinglePageProduct";
 
 function App() {
@@ -59,6 +68,17 @@ function App() {
       <Route path="/privacy" element={<Public element={<PrivacyPolicy />} />} />
       <Route path="/TemsAndCondition" element={<Public element={<TermsAndConditions />} />} />
       <Route path="/invoice" element={<Public element={<Invoice />} />} />
+      <Route path="/shopgrid" element={<Public element={<ShopGrid />} />} />
+      <Route path="/shoplist" element={<Public element={<Shoplist />} />} />
+      <Route path="/shopwide" element={<Public element={<ShopWide />} />} />
+      <Route path="/vendorgrid" element={<Public element={<VendorGrid />} />} />
+      <Route path="/vendorlist" element={<Public element={<VendorList />} />} />
+      <Route path="/vendordetail1" element={<Public element={<VendorDetails1 />} />} />
+      <Route path="/vendordetail2" element={<Public element={<VendorDetail2 />} />} />
+      <Route path="/vendordashboard" element={<Public element={<VendorDashboard />} />} />
+      <Route path="/vendorguid" element={<Public element={<VendorGuid />} />} />
+
+
     </Routes>
   );
 }

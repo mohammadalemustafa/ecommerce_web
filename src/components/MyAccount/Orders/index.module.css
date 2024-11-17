@@ -2,17 +2,20 @@
     font-size: 30px;
     margin-bottom: 25px;
 }
-table,tr{
+table,tr,td,th{
     border: 1px solid lightgray;
     border-collapse: collapse;
 }
 th{
     font-weight: bold;
 }
-th,td{
+.recentorders1{
     padding: 10px 25px;
     font-weight: bold;
-
+}
+.recentorders{
+    padding: 10px 60px;
+    font-weight: var(--textColor);
 }
 td{
     font-size: 14px;

@@ -1,0 +1,138 @@
+.imgCont {
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+    height: 260px;
+    min-width: 270px;
+    padding:15px 0;
+    margin-top: 20px;
+  }
+  
+  .productCard {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #ececec;
+    border-radius: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    overflow: hidden;
+    transition: 0.3s ease-in;
+  }
+  
+  .productCard:hover {
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #bce3c9;
+  }
+  
+  .contentCont {
+    padding: 0 20px 20px 20px;
+  }
+  
+  .contentCont h4 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--textColor);
+    transition: 0.3s ease-out;
+  }
+  .contentCont h4:hover {
+    color: var(--primaryColor);
+  }
+  
+  .cat {
+    color: #adadad;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .comp {
+    color: var(--textColor);
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+
+  
+  .tag {
+    font-size: 12px;
+    line-height: 1;
+    border-radius: 15px 0 20px 0;
+    color: #fff;
+    padding: 9px 20px 10px 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #67bcee;
+    z-index: 1;
+  }
+  
+  .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .cPrice {
+    font-size: 30px;
+    font-weight: bold;
+    color: #3bb77e;
+  }
+  
+  .oPrice {
+    font-size: 20px;
+    color: #adadad;
+    margin: 0 0 0 7px;
+    text-decoration: line-through;
+    font-weight: bold;
+  }
+  
+  .cartBtn {
+    position: relative;
+    display: inline-block;
+    padding: 12px 20px 12px 20px;
+    border-radius: 4px;
+    background-color: var(--primaryColor) !important;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.3s ease-in;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    top: 0;
+    margin-top: 10px;
+  }
+  
+  .rating {
+    margin: 5px 0;
+    display: flex;
+    color: var(--textColor);
+
+    align-items: center;
+    column-gap: 30px;
+    & span{
+        color: var(--textColor);
+    }
+  }
+  
+  .cartBtn:hover {
+    color: #fff !important;
+    background-color: #fdc040 !important;
+    top: -5px;
+    transition: all 0.3s ease;
+  }
+  .shoplistbutton{
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    & span{
+        display: flex;
+        align-items: center;
+        color: var(--textColor);
+    }
+  }
+  

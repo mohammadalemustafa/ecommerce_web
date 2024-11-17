@@ -1,11 +1,12 @@
 import React from "react";
-
+import { motion } from 'framer-motion'
 const Button = ({ onClick, className, children }) => {
   return (
-    <button className={className} onClick={onClick}>
+    <motion.button
+      whileHover={{ scale: 1.2 }}
+      className={className} onClick={onClick}>
       {children}
-    </button>
+    </motion.button>
   );
 };
-
 export default Button;

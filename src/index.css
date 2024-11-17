@@ -12,7 +12,6 @@
   box-sizing: border-box;
   font-family: "Quicksand", sans-serif;
   font-size: 16px;
-
 }
 span,h2,h3,img,i{
   cursor: pointer;
@@ -22,7 +21,6 @@ span,h2,h3,img,i{
   color: #3bb77e !important;
   font-weight: 500 !important;
 }
-
 *>a {
   text-decoration: none;
 }

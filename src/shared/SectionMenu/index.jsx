@@ -7,7 +7,7 @@ const SectionMenu = ({ title, onGetMenu, lists, active }) => {
     <div className={styles.pProducts}>
       <SectionTitle title={title} />
       <ul className={styles.ul}>
-        {lists.map((it) => (
+        {lists && lists.map((it) => (
           <li key={it.id} className={active === it.active ? styles.active : ""} onClick={() => onGetMenu(it.active)}>
             {it.name}
           </li>

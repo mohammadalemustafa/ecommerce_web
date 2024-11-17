@@ -23,13 +23,13 @@ import Loader from "./Loader/loader";
 import ShopGrid from "./components/ShopGrid/Index";
 import Shoplist from "./components/ShopList/Index";
 import ShopWide from "./components/ShopWide/Index";
-import VendorTop from "./components/Venders/VenderTop/Index";
 import VendorGrid from "./components/Venders/Index";
 import VendorList from "./components/Venders/VendorList/Index";
 import VendorDetails1 from "./components/Venders/VendorDetail1/Index";
 import VendorDetail2 from "./components/Venders/VendorDetail2/Index";
 import VendorDashboard from "./components/VendorDashboard/Index";
 import VendorGuid from "./components/Venders/VendorGuid/Index";
+import SingleProducts from "./pages/SinglePageProduct";
 
 function App() {
   const dispatch = useDispatch();
@@ -60,7 +60,7 @@ function App() {
       <Route path="/" element={<Navigate to="/home" />} />
       <Route path="/home" element={<Public element={<Home />} />} />
       <Route path="/contact" element={<Public element={<Contact></Contact>} />} />
-      {/* <Route path="/login" element={<Public element={<Login></Login>} />} /> */}
+      <Route path="/singleProduct" element={<Public element={<SingleProducts></SingleProducts>} />} />
       {/* <Route path="/register" element={<Public element={<Register></Register>} />} /> */}
       <Route path="/forgotpass" element={<Public element={<Forgotpass></Forgotpass>} />} />
       <Route path="/resetpass" element={<Public element={<ResetPass></ResetPass>} />} />

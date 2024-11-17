@@ -1,0 +1,12 @@
+.btnCont{
+padding: 10px 30px;
+border: 1px solid rgb(206, 195, 195);
+border-radius: 2rem;
+font-weight: 600;
+color: #7e7e7e;
+
+&:hover{
+color: var(--primaryColor);
+background-color: white;
+}
+}

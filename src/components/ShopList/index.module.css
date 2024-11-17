@@ -1,0 +1,8 @@
+.shoplistcontainer{
+    display: flex;
+}
+.shoprigntcontainer{
+    margin-bottom: 60px;
+    width: 76%;
+    padding-right: 5px;
+}

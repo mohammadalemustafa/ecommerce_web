@@ -1,0 +1,17 @@
+.vendordcl{
+    background-image: url('../../../assets/Vendors/vendorbg.png');
+    padding: 20px; 
+    border-radius: 20px;
+    width: 98%;
+    margin: 20px auto;
+}
+.vendorlistcontentcontainer{
+    display: flex;
+    column-gap: 20px;
+}
+.vendordetal2list{
+    margin-top: 20px;
+}
+.vendordetail2{
+    margin:50px 0 0px 0;
+}

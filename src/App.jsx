@@ -30,6 +30,7 @@ import VendorDetail2 from "./components/Venders/VendorDetail2/Index";
 import VendorDashboard from "./components/VendorDashboard/Index";
 import VendorGuid from "./components/Venders/VendorGuid/Index";
 import SingleProducts from "./pages/SinglePageProduct";
+import CompareProduct from "./components/CompareProduct";
 
 function App() {
   const dispatch = useDispatch();
@@ -77,6 +78,7 @@ function App() {
       <Route path="/vendordetail2" element={<Public element={<VendorDetail2 />} />} />
       <Route path="/vendordashboard" element={<Public element={<VendorDashboard />} />} />
       <Route path="/vendorguid" element={<Public element={<VendorGuid />} />} />
+      <Route path="/compare" element={<Public element={<CompareProduct />} />} />
 
 
     </Routes>

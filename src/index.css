@@ -25,6 +25,9 @@ span,h2,h3,img,i{
   text-decoration: none;
 }
 
+body{
+overflow-x: hidden;
+}
 img {
   height: 100%;
   width: 100%;

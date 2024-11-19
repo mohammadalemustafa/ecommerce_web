@@ -17,6 +17,7 @@ const Icon = ({ children, counter, name }) => {
   const onCartHover = () => {
     dispatch({ type: "CART_HOVER" });
   };
+
   const [state, dispatch] = useReducer(reducer, {
     accountHover: false,
     cartHover: false,
@@ -31,7 +32,7 @@ const Icon = ({ children, counter, name }) => {
       {state.cartHover && <CartDrop />}
       <div className={styles.left}>
         {children}
-        {counter && <p>{counter}</p>}
+        {name !== "Account" && <>{counter > 0 ? <p>{counter}</p> : <p>{0}</p>}</>}
       </div>
       <p className={styles.right}>{name}</p>
     </div>

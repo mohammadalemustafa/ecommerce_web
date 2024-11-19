@@ -35,32 +35,28 @@ const Forgotpass = ({ onClick, stringCode }) => {
         text: "please enter  email!",
         footer: '<a href="#">Why do I have this issue?</a>',
       });
-    }
-    else if (!state.username.includes("@") || !state.username.includes(".")) {
+    } else if (!state.username.includes("@") || !state.username.includes(".")) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "please enter valid email!",
         footer: '<a href="#">Why do I have this issue?</a>',
       });
-    }
-    else if (state.sCode === "") {
+    } else if (state.sCode === "") {
       Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "enter security code",
         footer: '<a href="#">Why do I have this issue?</a>',
-      })
-    }
-    else if (state.sCode !== stringCode.join('')) {
+      });
+    } else if (state.sCode !== stringCode.join("")) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "enter valid security code",
         footer: '<a href="#">Why do I have this issue?</a>',
-      })
-    }
-    else {
+      });
+    } else {
       const isExisting = userdata.find((it) => it.username === state.username || it.email === state.username);
       debugger;
       if (isExisting) {
@@ -73,8 +69,8 @@ const Forgotpass = ({ onClick, stringCode }) => {
           footer: '<a href="#">Why do I have this issue?</a>',
         });
       }
-    };
-  }
+    }
+  };
   return (
     <Container>
       <div className={styles.cont}>

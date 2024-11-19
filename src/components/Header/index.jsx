@@ -19,13 +19,6 @@ import SubmitButton from "../../widgets/SubmitButton/Index";
 import SubsBtn from "../../ui/SubsBtn";
 import { uiActions } from "../../Store/ui";
 
-const icons = [
-  { id: 1, name: "Compare", counter: "3", icon: <GiRecycle size={30} /> },
-  { id: 2, name: "Wishlists", counter: "6", icon: <GoHeart size={30} /> },
-  { id: 3, name: "Cart", counter: "2", icon: <IoCartOutline size={30} /> },
-  { id: 4, name: "Account", counter: null, icon: <LuUser size={30} /> },
-];
-
 const colourStyles = {
   control: (styles) => ({
     ...styles,
@@ -68,7 +61,16 @@ const colourStylesLocation = {
 
 const Header = ({ onHover }) => {
   const token = useSelector((state) => state.auth.token);
+  const count = useSelector((state) => state.cart.cartQty);
+
   const dispatch = useDispatch();
+
+  const icons = [
+    { id: 1, name: "Compare", counter: "3", icon: <GiRecycle size={30} /> },
+    { id: 2, name: "Wishlists", counter: "6", icon: <GoHeart size={30} /> },
+    { id: 3, name: "Cart", counter: count, icon: <IoCartOutline size={30} /> },
+    { id: 4, name: "Account", counter: null, icon: <LuUser size={30} /> },
+  ];
 
   return (
     <header className={styles.header}>

@@ -3,8 +3,11 @@ import CartBtn from "../../ui/CartBtn";
 import styles from "./index.module.css";
 import { BiStar } from "react-icons/bi";
 import { FaStar } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../Store/cart";
 
 const ProductCard = ({ it, module }) => {
+  const dispatch = useDispatch();
   const [change, setChange] = useState(false);
   const [bg, setBg] = useState(false);
 
@@ -28,8 +31,11 @@ const ProductCard = ({ it, module }) => {
     }
   }, [it.tag]);
 
+  const onAddItem = (it) => {
+    dispatch(cartActions.onAddItem(it));
+  };
+
   return (
-    
     <div onMouseEnter={onChangeImage} onMouseLeave={onChangeImage} className={styles.productCard}>
       {it.tag && (
         <div style={{ backgroundColor: bg }} className={styles.tag}>
@@ -43,7 +49,9 @@ const ProductCard = ({ it, module }) => {
         <p className={styles.cat}>{it.name}</p>
         <h4>{it.itemName}</h4>
         <p className={styles.rating}>
-          {[1, 2, 3, 4, 5].map((itm, index) => (itm <= it.rating ? <FaStar key={index} color="#FDC040" /> : <BiStar key={index} />))}
+          {[1, 2, 3, 4, 5].map((itm, index) =>
+            itm <= it.rating ? <FaStar key={index} color="#FDC040" /> : <BiStar key={index} />
+          )}
 
           <span>({it.rating})</span>
         </p>
@@ -56,9 +64,9 @@ const ProductCard = ({ it, module }) => {
             <span className={styles.cPrice}>${it.price}</span>
             <span className={styles.oPrice}>${it.ogPrice}</span>
           </div>
-          {module !== "daily" && <CartBtn name="Add" />}
+          {module !== "daily" && <CartBtn name="Add" onClick={() => onAddItem(it)} />}
         </div>
-        {module === "daily" && <CartBtn name="Add" className={styles.cartBtn} />}
+        {module === "daily" && <CartBtn onClick={() => onAddItem(it)} name="Add" className={styles.cartBtn} />}
       </div>
     </div>
   );

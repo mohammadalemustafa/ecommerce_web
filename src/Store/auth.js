@@ -11,7 +11,6 @@ const authSlice = createSlice({
     onGetAllUser: (state, action) => {
       state.userdata = action.payload;
     },
-
     onAuthChange: (state, action) => {
       state.isStateChange = !state.isStateChange;
     },

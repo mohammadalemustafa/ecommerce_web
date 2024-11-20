@@ -24,12 +24,12 @@ const Icon = ({ children, counter, name }) => {
     accountHover: false,
     cartHover: false,
   });
-  const onClick = () => {
-    navigate('/compare');
+  const onClick = (p) => {
+    navigate(p);
   }
   return (
     <div
-      onClick={name === "Compare" && onClick}
+      onClick={() => name === "Compare" ? onClick('/compare') : name === "Wishlists" ? onClick('/wishlists') : ""}
       onMouseEnter={(!counter && onHover) || (name === "Cart" && onCartHover)}
       onMouseLeave={(!counter && onHover) || (name === "Cart" && onCartHover)}
       className={styles.icon}

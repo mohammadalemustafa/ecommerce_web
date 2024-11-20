@@ -1,9 +1,4 @@
 .tableCont{
-display: flex;
 margin: 20px;
-justify-content: center;
 }
-.tableCont table tr td{
-width: 100%;
-justify-content: center;
-}
+.tableCont table{width: 100%; text-align: center;}

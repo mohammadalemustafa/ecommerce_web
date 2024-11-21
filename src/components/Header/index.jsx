@@ -62,12 +62,13 @@ const colourStylesLocation = {
 const Header = ({ onHover }) => {
   const token = useSelector((state) => state.auth.token);
   const count = useSelector((state) => state.cart.cartQty);
+  const wqty = useSelector((state) => state.cart.Wqty);
 
   const dispatch = useDispatch();
 
   const icons = [
     { id: 1, name: "Compare", counter: "3", icon: <GiRecycle size={30} /> },
-    { id: 2, name: "Wishlists", counter: "6", icon: <GoHeart size={30} /> },
+    { id: 2, name: "Wishlists", counter: wqty, icon: <GoHeart size={30} /> },
     { id: 3, name: "Cart", counter: count, icon: <IoCartOutline size={30} /> },
     { id: 4, name: "Account", counter: null, icon: <LuUser size={30} /> },
   ];
@@ -119,7 +120,6 @@ const Header = ({ onHover }) => {
             isSearchable={false}
             defaultValue={countries[1]}
           />
-
           <div className={styles.iconCont}>
             {token ? (
               icons.map((it) => (
@@ -141,5 +141,4 @@ const Header = ({ onHover }) => {
     </header>
   );
 };
-
 export default Header;

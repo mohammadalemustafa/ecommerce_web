@@ -18,7 +18,7 @@ import Forgotpass from "../../components/ForgotComp";
 import ResetComp from "../../components/ResetCom";
 import { useGenerateCode } from "../../hooks/useGenerateCode";
 import Loader from "../../Loader/loader";
-
+import CompareProduct from "../../components/CompareProduct";
 const Public = ({ element, onHover }) => {
   const [fpDta, setfpDta] = useState({});
   const { stringCode } = useGenerateCode();
@@ -33,13 +33,12 @@ const Public = ({ element, onHover }) => {
     if (dta) {
       setfpDta(dta);
     }
-    console.log(dta);
-
     setScr(s);
   };
   const changeScreen = () => {
     setScr("forgot");
   };
+
   let screen = "";
   switch (scr) {
     case "login":
@@ -57,14 +56,13 @@ const Public = ({ element, onHover }) => {
     case "resetpin":
       screen = <ResetComp fpDta={fpDta} changeScreen={changeScreen} />;
       break;
-
     default:
       screen = <Forgotpass stringCode={stringCode} onClick={(s, fpd) => onChangeScreen(s, fpd)} />;
   }
   return (
     <main>
       {loginModal && <Mainportal onClose={onClose}>{screen}</Mainportal>}
-      <Header onHover={onHover} />
+      <Header />
       <Navbar />
       {element}
       <Banner2

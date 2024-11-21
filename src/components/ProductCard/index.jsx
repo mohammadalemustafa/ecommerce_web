@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CartBtn from "../../ui/CartBtn";
 import styles from "./index.module.css";
-import { BiStar } from "react-icons/bi";
+import { BiHeart, BiStar } from "react-icons/bi";
 import { FaStar } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../Store/cart";
@@ -34,6 +34,9 @@ const ProductCard = ({ it, module }) => {
   const onAddItem = (it) => {
     dispatch(cartActions.onAddItem(it));
   };
+  const addCart = (it) => {
+    dispatch(cartActions.addAtWishlist(it));
+  }
 
   return (
     <div onMouseEnter={onChangeImage} onMouseLeave={onChangeImage} className={styles.productCard}>
@@ -42,6 +45,7 @@ const ProductCard = ({ it, module }) => {
           {it.tag}
         </div>
       )}
+      <div className={styles.wishlist}> <i onClick={() => addCart(it)}><BiHeart size={20} /></i></div>
       <div className={styles.imgCont}>
         <img src={change ? it.img[1] : it.img[0]} alt={it.itemName} />
       </div>

@@ -9,5 +9,4 @@ const AboutCard = () => {
         <span>Read More</span>
     </div>;
 };
-
 export default AboutCard;

@@ -19,6 +19,7 @@ import ResetComp from "../../components/ResetCom";
 import { useGenerateCode } from "../../hooks/useGenerateCode";
 import Loader from "../../Loader/loader";
 import CompareProduct from "../../components/CompareProduct";
+import Sidebar from "../../components/Sidebar";
 const Public = ({ element, onHover }) => {
   const [fpDta, setfpDta] = useState({});
   const { stringCode } = useGenerateCode();
@@ -61,6 +62,7 @@ const Public = ({ element, onHover }) => {
   }
   return (
     <main>
+      <Sidebar />
       {loginModal && <Mainportal onClose={onClose}>{screen}</Mainportal>}
       <Header />
       <Navbar />

@@ -1,0 +1,68 @@
+.sidebarCont{
+height: 100vh;
+overflow-y: scroll;
+background-color: #fff;
+position: absolute;
+width: 350px;
+z-index: 10;
+position: fixed;
+}
+.logo{
+display: flex;
+padding: 10px 20px;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid var(--primaryColor);
+}
+.imgCont{
+width: 150px;
+}
+.serchBarCont{
+padding: 10px 10px;
+}
+.accordion ul{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: start;
+ margin: 0 15px;
+gap: 10px;
+}
+.accordion ul li{
+width: 100%;
+list-style: none;
+padding: 5px;
+display: flex;
+justify-content: space-between;
+color: var(--textColor);
+border-bottom: 1px solid var(--primaryColor);
+
+}
+.accordion ul li span{
+
+    color: var(--primaryColor);
+
+    }
+.sinup{
+
+margin: 10px;
+border: 1px solid var(--primaryColor);
+display: flex;
+justify-content: center;
+flex-direction: column;
+padding-left: 20px;
+gap: 15px;
+}
+.sIcon{
+display: flex;
+flex-direction: column;
+gap: 10px;
+padding: 20px;
+}
+.icons{
+display: flex;
+column-gap: 10px;
+}
+.footer{
+padding: 10px;
+}

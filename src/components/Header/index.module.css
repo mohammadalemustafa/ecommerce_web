@@ -27,6 +27,7 @@
   justify-content: space-between;
   padding: 5px;
   border-bottom: 1px solid #ececec;
+  background-color: white;
 }
 
 .content > p {
@@ -46,9 +47,44 @@
   align-items: center;
   column-gap: 10px;
 }
-.span1{
+.span1 {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
+}
+
+.offerCont {
+  display: none;
+}
+
+.offerContContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3bb77e;
+  height: 50px;
+  color: white;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+@media screen and (max-width: 1025px) {
+  .headerTop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1025px) {
+  .offerCont {
+    display: block;
+  }
+
+  .SearchBarAndLocation {
+    display: none;
+  }
 }

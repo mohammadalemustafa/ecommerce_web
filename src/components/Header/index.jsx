@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from "react-redux";
 import SubmitButton from "../../widgets/SubmitButton/Index";
 import SubsBtn from "../../ui/SubsBtn";
 import { uiActions } from "../../Store/ui";
+import Menu from "../../ui/Menu";
 
 const colourStyles = {
   control: (styles) => ({
@@ -75,8 +76,15 @@ const Header = ({ onHover }) => {
 
   return (
     <header className={styles.header}>
+      <div className={styles.offerCont}>
+        <div className={styles.offerContContent}>
+          <span>
+            Grand opening, <strong>up to 15%</strong> off all items. Only <strong>3 days</strong> left
+          </span>
+        </div>
+      </div>
       <Container>
-        <div className={styles.content}>
+        <div className={`${styles.content} ${styles.headerTop}`}>
           <ul className={styles.left}>
             {leftMenu.map((it) => (
               <Item key={it.id} name={it.name} to={it.to} />
@@ -113,13 +121,15 @@ const Header = ({ onHover }) => {
               <img src={logo} alt="logo" />
             </Link>
           </div>
-          <SearchBar />
-          <Location
-            colourStyles={colourStylesLocation}
-            options={countries}
-            isSearchable={false}
-            defaultValue={countries[1]}
-          />
+          <div className={styles.SearchBarAndLocation}>
+            <SearchBar />
+            <Location
+              colourStyles={colourStylesLocation}
+              options={countries}
+              isSearchable={false}
+              defaultValue={countries[1]}
+            />
+          </div>
           <div className={styles.iconCont}>
             {token ? (
               icons.map((it) => (
@@ -136,6 +146,7 @@ const Header = ({ onHover }) => {
               />
             )}
           </div>
+          <Menu />
         </div>
       </Container>
     </header>

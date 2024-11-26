@@ -17,9 +17,8 @@ import RegisterComp from "../../components/RegisterComp";
 import Forgotpass from "../../components/ForgotComp";
 import ResetComp from "../../components/ResetCom";
 import { useGenerateCode } from "../../hooks/useGenerateCode";
-import Loader from "../../Loader/loader";
-import CompareProduct from "../../components/CompareProduct";
 import Sidebar from "../../components/Sidebar";
+
 const Public = ({ element, onHover }) => {
   const [fpDta, setfpDta] = useState({});
   const { stringCode } = useGenerateCode();
@@ -60,13 +59,16 @@ const Public = ({ element, onHover }) => {
     default:
       screen = <Forgotpass stringCode={stringCode} onClick={(s, fpd) => onChangeScreen(s, fpd)} />;
   }
+  const isSidebarOpen = useSelector((state) => state.ui.isSidebarOpen);
+
   return (
     <main>
-      <Sidebar />
+      {!isSidebarOpen && <Sidebar />}
       {loginModal && <Mainportal onClose={onClose}>{screen}</Mainportal>}
       <Header />
       <Navbar />
       {element}
+      <Footer />
       <Banner2
         it={{
           id: 1,
@@ -79,7 +81,6 @@ const Public = ({ element, onHover }) => {
       />
       <AboutpCart cartdata={carddata} />
       <Secondlast productsdata={secondlastdata} />
-      <Footer />
     </main>
   );
 };

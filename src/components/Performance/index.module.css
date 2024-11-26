@@ -44,3 +44,12 @@
     margin-top: 20px;
     font-weight: 400;
 }
+
+@media screen and (max-width:1024px) {
+    .cont{
+flex-direction: column;
+}
+.left{
+flex-direction: column;
+}
+}

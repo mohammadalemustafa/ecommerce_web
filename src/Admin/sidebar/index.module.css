@@ -1,0 +1,51 @@
+.sidebarCont{
+height: 100vh;
+background-image: linear-gradient(to left,#0da487,var(--primaryColor));
+width: 300px;
+overflow-y: scroll;
+scroll-snap-type: mandatory;
+scroll-behavior: smooth;
+}
+
+.sidebarCont::-webkit-scrollbar{
+display: none;
+  }
+
+.logo{
+ text-align: center;
+ font-size: 3rem;
+/* color: #fff; */
+color: var(--primaryColor);
+font-weight: 900;
+filter: brightness(150%);
+text-transform: uppercase;
+letter-spacing: 2px;
+border-bottom: 2px solid var(--primaryColor);
+}
+
+.ul{
+display: flex;
+flex-direction: column;
+padding: 20px;
+gap: 25px;
+}
+.ul li{
+display: flex;
+justify-content: space-between;
+align-items: center;
+filter: brightness(120%);
+/* column-gap: 20px; */
+color: #fff;
+font-weight: 800;
+text-transform: capitalize;
+padding:5px 10px;
+transition: all .5s linear;
+&:hover{
+background-color: rgba(243, 237, 237,.5);
+}
+}
+.iconCont{
+display: flex;
+column-gap: 20px;
+
+}

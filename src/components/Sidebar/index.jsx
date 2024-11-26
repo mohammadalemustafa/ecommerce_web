@@ -9,10 +9,16 @@ import { sidebardata } from '../../data/sidebardata.js'
 import { FaAngleDoubleDown } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { Iconsdata } from '../../data/Sicons.jsx'
+import { useDispatch } from 'react-redux';
+import { uiActions } from '../../Store/ui.js';
 const Sidebar = () => {
     const Naviagte = useNavigate();
     const onNavigate = (p) => {
         Naviagte(p);
+    }
+    const dispatch = useDispatch();
+    const callDispatch = () => {
+        dispatch(uiActions.onOpenSideBar(true));
     }
     return (
         <motion.div
@@ -24,7 +30,7 @@ const Sidebar = () => {
                 <div className={styles.imgCont}>
                     <img src={logo} alt="" />
                 </div>
-                <IconCont><IoRemove /></IconCont>
+                <span onClick={callDispatch}> <IconCont><IoRemove /></IconCont></span>
             </div>
             <div className={styles.serchBarCont}>
                 <SearchBar sidebar="true" />

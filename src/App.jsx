@@ -28,6 +28,8 @@ const VendorGuid = React.lazy(() => import('./components/Venders/VendorGuid/Inde
 const SingleProducts = React.lazy(() => import('./pages/SinglePageProduct'));
 const CompareProduct = React.lazy(() => import('./components/CompareProduct'));
 const WishList = React.lazy(() => import('./WishList'));
+const Dashboard = React.lazy(() => import('./Admin/Dashboard'));
+const Private = React.lazy(() => import('./Admin/Private'))
 function App() {
   const dispatch = useDispatch();
   const token = JSON.parse(localStorage.getItem("login"));
@@ -77,6 +79,7 @@ function App() {
         <Route path="/vendorguid" element={<Public element={<VendorGuid />} />} />
         <Route path="/compare" element={<Public element={<CompareProduct />} />} />
         <Route path="/wishlists" element={<Public element={<WishList />} />} />
+        <Route path="/admin/dash" element={<Private element={<Dashboard />} />} />
       </Routes>
     </Suspense>
   );

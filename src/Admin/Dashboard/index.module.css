@@ -1,0 +1,40 @@
+.cont{
+display: flex;
+padding: 20px;
+justify-content: space-between;
+
+}
+.chartCont{
+padding: 10px 20px;
+margin-top:20px;
+display: flex;
+justify-content: space-between;
+width: 100%;
+
+}
+.left{
+background-color: white;
+padding: 20px;
+border-radius: 8px;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.right{
+background-color: white;
+border-radius: 8px;
+padding: 20px;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+*{
+    font-family:"Public Sans", sans-serif
+}
+
+
+
+
+
+
+
+
+
+

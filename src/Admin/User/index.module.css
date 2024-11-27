@@ -1,0 +1,76 @@
+.userCont{
+display: flex;
+align-items: center;
+background-color: #fff;
+}
+.formCont{
+width: 90%;
+margin: 0 auto;
+border: 1px solid var(--primaryColor);
+padding: 2rem 3rem;
+display: flex;
+flex-direction: column;
+row-gap: 10px;
+margin: 50px;
+background-color: #fff;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+.heading{
+font-size: 2rem;
+color: var(--textColor);
+font-weight: 400;
+margin-bottom: 20px;
+}
+.formControll{
+background-color: #fff;
+width:100%;
+display: flex;
+justify-content:space-around;
+align-items: center;
+column-gap: 50px;
+margin-bottom: 20px;
+margin: 20px;
+border-radius: 2rem;
+background-color: var(--primaryColor);
+
+}
+.formControll label{
+padding-left:  20px;
+font-size: 2rem;
+color: #fff;
+}
+.formControll  input{
+box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+border: none;
+border-radius: 2rem;
+padding-left: 10px;
+width: 100%;
+padding: 15px;
+}
+input:focus{
+outline-color: var(--primaryColor);
+}
+.formControll input::placeholder{
+color: var(--primaryColor);
+font-size: 1.5rem;
+}
+.btnCont{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.check{
+ display: flex;
+justify-content: start;
+align-items: center;
+border-radius: 2rem;width: 100px;
+column-gap: 50px;
+border-radius: 2rem;
+}
+input[type="checkbox"]{
+width: 100px;
+height: 50px;
+box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+border-radius: 2rem;
+}

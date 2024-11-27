@@ -10,8 +10,7 @@ const uiSlice = createSlice({
       state.loginModal = action.payload;
     },
     onOpenSideBar: (state, action) => {
-      state.isSidebarOpen = action.payload;
-
+      state.isSidebarOpen = !state.isSidebarOpen;
     },
   },
 });

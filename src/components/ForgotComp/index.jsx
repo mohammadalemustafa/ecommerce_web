@@ -14,6 +14,7 @@ const reducerFn = (state, action) => {
       return state;
   }
 };
+
 const Forgotpass = ({ onClick, stringCode }) => {
   const userdata = useSelector((state) => state.auth.userdata);
   const [state, dispatch] = useReducer(reducerFn, {

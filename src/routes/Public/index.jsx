@@ -18,7 +18,6 @@ import Forgotpass from "../../components/ForgotComp";
 import ResetComp from "../../components/ResetCom";
 import { useGenerateCode } from "../../hooks/useGenerateCode";
 import Sidebar from "../../components/Sidebar";
-
 const Public = ({ element, onHover }) => {
   const [fpDta, setfpDta] = useState({});
   const { stringCode } = useGenerateCode();
@@ -60,7 +59,6 @@ const Public = ({ element, onHover }) => {
       screen = <Forgotpass stringCode={stringCode} onClick={(s, fpd) => onChangeScreen(s, fpd)} />;
   }
   const isSidebarOpen = useSelector((state) => state.ui.isSidebarOpen);
-
   return (
     <main>
       {!isSidebarOpen && <Sidebar />}

@@ -141,7 +141,7 @@ const RegisterComp = ({ onClick, stringCode }) => {
             placeholder="confirm password"
           />
           <div className={styles.securityCode}>
-            <input  type="text" onChange={onGetData} name="" id="sCode" placeholder="security code" />
+            <input type="text" onChange={onGetData} name="" id="sCode" placeholder="security code" />
             <div className={styles.code}>
               <span>{stringCode[0]}</span>
               <span>{stringCode[1]}</span>
@@ -155,13 +155,13 @@ const RegisterComp = ({ onClick, stringCode }) => {
               <span className={styles.s}>I am a customer</span>
             </span>
             <span>
-              <input onChange={onUserData} checked={state.customer}  type="radio" name="chech" id="vendor" />
+              <input onChange={onUserData} checked={state.customer} type="radio" name="chech" id="vendor" />
               <span className={styles.s}>I am a vendor</span>
             </span>
           </div>
           <div className={styles.rememberpass}>
             <span>
-              <input onChange={onGetData} type="checkbox" checked={state.termsAccepted} name="" id="termsAccepted"  />
+              <input onChange={onGetData} type="checkbox" checked={state.termsAccepted} name="" id="termsAccepted" />
               <span>I agree to terms & Policy.</span>
             </span>
             <span>

@@ -18,7 +18,7 @@ const Sidebar = () => {
     }
     const dispatch = useDispatch();
     const callDispatch = () => {
-        dispatch(uiActions.onOpenSideBar(true));
+        dispatch(uiActions.onOpenSideBar());
     }
     return (
         <motion.div

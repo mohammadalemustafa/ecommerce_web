@@ -35,11 +35,11 @@ const DailyBS = () => {
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 4,
+      items: 2,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 3,
+      items: 1,
     },
   };
 

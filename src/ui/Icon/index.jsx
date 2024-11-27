@@ -29,11 +29,23 @@ const Icon = ({ children, counter, name }) => {
     >
       {state.accountHover && <AccountDrop />}
       {state.cartHover && <CartDrop />}
+      { name =="Account" ?
+      <>
       <div className={styles.left}>
         {children}
-        {counter && <p>{counter}</p>}
       </div>
       <p className={styles.right}>{name}</p>
+      </>
+      :
+      <>
+      <div className={styles.left}>
+        {children}
+        {counter >0 ? <p>{counter}</p>:<p>0</p>}
+      </div>
+      <p className={styles.right}>{name}</p>
+      </>
+      }
+
     </div>
   );
 };

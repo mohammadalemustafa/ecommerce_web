@@ -8,6 +8,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { uiActions } from "../../Store/ui";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 const reducerFunc = (state, action) => {
   switch (action.type) {
     case "DATA":
@@ -22,6 +23,8 @@ const reducerFunc = (state, action) => {
 const RegisterComp = ({ onClick, stringCode }) => {
   const [loading, setLoading] = useState(false);
   const dispatchAction = useDispatch();
+
+  const navigate=useNavigate()
   const [state, dispatch] = useReducer(reducerFunc, {
     username: "",
     email: "",
@@ -87,6 +90,7 @@ const RegisterComp = ({ onClick, stringCode }) => {
       axios(config)
         .then((res) => {
           setLoading(true);
+          Swal.fire("Your Registration Successfully")
           dispatchAction(uiActions.onOpenLoginModal(false));
           console.log(res);
         })
@@ -155,7 +159,7 @@ const RegisterComp = ({ onClick, stringCode }) => {
               <span className={styles.s}>I am a customer</span>
             </span>
             <span>
-              <input onChange={onUserData} checked={state.customer}  type="radio" name="chech" id="vendor" />
+              <input onChange={onUserType} checked={state.customer}  type="radio" name="chech" id="vendor" />
               <span className={styles.s}>I am a vendor</span>
             </span>
           </div>
@@ -171,7 +175,7 @@ const RegisterComp = ({ onClick, stringCode }) => {
               <span className={styles.l}>Learn more</span>
             </span>
           </div>
-          <button onClick={onhandlesubmit} >submit & register </button>
+          <button onClick={onSubmitData} >submit & register </button>
           <p className={styles.p}>
             Note:Your personal data will be used to support your experience throughout this website, to manage access to
             your account, and for other purposes described in our privacy policy

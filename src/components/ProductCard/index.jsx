@@ -3,11 +3,14 @@ import CartBtn from "../../ui/CartBtn";
 import styles from "./index.module.css";
 import { BiStar } from "react-icons/bi";
 import { FaStar } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { cartAction } from "../../Store/cart";
 
 const ProductCard = ({ it, module }) => {
   const [change, setChange] = useState(false);
   const [bg, setBg] = useState(false);
 
+  const dispatch=useDispatch()
   const onChangeImage = () => {
     setChange(!change);
   };
@@ -28,6 +31,9 @@ const ProductCard = ({ it, module }) => {
     }
   }, [it.tag]);
 
+  const onAddProduct=()=>{
+    dispatch(cartAction.onhandleCounter())
+  }
   return (
     
     <div onMouseEnter={onChangeImage} onMouseLeave={onChangeImage} className={styles.productCard}>
@@ -56,9 +62,9 @@ const ProductCard = ({ it, module }) => {
             <span className={styles.cPrice}>${it.price}</span>
             <span className={styles.oPrice}>${it.ogPrice}</span>
           </div>
-          {module !== "daily" && <CartBtn name="Add" />}
+          {module !== "daily" && <CartBtn onclick={onAddProduct} name="Add" />}
         </div>
-        {module === "daily" && <CartBtn name="Add" className={styles.cartBtn} />}
+        {module === "daily" && <CartBtn onclick={onAddProduct} name="Add" className={styles.cartBtn} />}
       </div>
     </div>
   );

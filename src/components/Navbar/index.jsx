@@ -147,10 +147,10 @@ const Navbar = () => {
                       console.log(item);
 
                       return (
-                      <div>
-                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }} >{item.p1}</motion.span>
-                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }} >{item.p2}</motion.span>
-                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }} >{item.p3}</motion.span>
+                      <div key={item.id} className={styles.pages}>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }}  onClick={() => OnNavigate("/shopgrid")}>{item.p1}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }}  onClick={() => OnNavigate("/shoplist")}>{item.p2}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }}  onClick={() => OnNavigate("/shopwide")}>{item.p3}</motion.span>
                           <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }} onClick={() => OnNavigate("/singleProduct")}>{item.p4}</motion.span>
                           <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }}  >{item.p5}</motion.span>
                           <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0, }} >{item.p6}</motion.span>
@@ -180,18 +180,12 @@ const Navbar = () => {
                     {vendorsdata.map((item, index) => {
                       return (
                         <div key={index} className={styles.pages}>
-                          <span onClick={() => OnNavigate("/vendorgrid")}>{item.p1}</span>
-                          <span  onClick={() => OnNavigate("/vendorlist")}>{item.p2}</span>
-                          <span onClick={() => OnNavigate("/vendordetail1")}>{item.p3}</span>
-                          <span  onClick={() => OnNavigate("/vendordetail2")}>{item.p4}</span>
-                          <span  onClick={() => OnNavigate("/vendordashboard")}>{item.p5}</span>
-                          <span  onClick={() => OnNavigate("/vendorguid")}>{item.p6}</span>
-                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.p1}</motion.span>
-                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.p2}</motion.span>
-                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.p3}</motion.span>
-                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.p4}</motion.span>
-                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.p5}</motion.span>
-                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}>{item.p6}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }} onClick={() => OnNavigate("/vendorgrid")}>{item.p1}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }}  onClick={() => OnNavigate("/vendorlist")}>{item.p2}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }} onClick={() => OnNavigate("/vendordetail1")}>{item.p3}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }} onClick={() => OnNavigate("/vendordetail2")}>{item.p4}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }} onClick={() => OnNavigate("/vendordashboard")}>{item.p5}</motion.span>
+                          <motion.span whileHover={{ color: "#3bb77e", scale: 1.2, originX: 0 }} onClick={() => OnNavigate("/vendorguid")}>{item.p6}</motion.span>
                         </div>
                       );
                     })}

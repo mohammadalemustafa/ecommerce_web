@@ -68,6 +68,7 @@ const colourStylesLocation = {
 
 const Header = ({ onHover }) => {
   const token = useSelector((state) => state.auth.token);
+  const count = useSelector(state=>state.cart.counter)
   const dispatch = useDispatch();
 
   return (
@@ -121,7 +122,7 @@ const Header = ({ onHover }) => {
           <div className={styles.iconCont}>
             {token ? (
               icons.map((it) => (
-                <Icon onHover={onHover} key={it.id} counter={it.counter} name={it.name}>
+                <Icon onHover={onHover} key={it.id} counter={count} name={it.name}>
                   {it.icon}
                 </Icon>
               ))

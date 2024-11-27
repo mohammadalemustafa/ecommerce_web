@@ -1,0 +1,1 @@
+export const sidebardata=["home","shop","vendor","mega manu","blog","pages","languages"];

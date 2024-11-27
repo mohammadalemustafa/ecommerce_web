@@ -48,3 +48,17 @@
 .cimgCont img {
     margin: 20px;
 }
+
+
+@media screen and (max-width:1024px) {
+.cont{
+flex-direction: column;
+}
+.imgCont{
+width: 100%;
+margin: 0 auto;
+}
+.rightContent{
+width: 100%;
+}
+}

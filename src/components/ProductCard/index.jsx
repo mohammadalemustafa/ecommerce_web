@@ -5,8 +5,10 @@ import { BiHeart, BiStar } from "react-icons/bi";
 import { FaStar } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../Store/cart";
+import { useLocation } from "react-router-dom";
 
 const ProductCard = ({ it, module }) => {
+  const [path, setPath] = useState(false);
   const dispatch = useDispatch();
   const [change, setChange] = useState(false);
   const [bg, setBg] = useState(false);
@@ -14,6 +16,7 @@ const ProductCard = ({ it, module }) => {
   const onChangeImage = () => {
     setChange(!change);
   };
+  const { pathname } = useLocation();
 
   useEffect(() => {
     switch (it.tag.toLowerCase()) {
@@ -28,6 +31,9 @@ const ProductCard = ({ it, module }) => {
         break;
       default:
         setBg("#f59758");
+    }
+    if (pathname === "/wishlists") {
+      setPath(true);
     }
   }, [it.tag]);
 
@@ -45,7 +51,7 @@ const ProductCard = ({ it, module }) => {
           {it.tag}
         </div>
       )}
-      <div className={styles.wishlist}> <i onClick={() => addCart(it)}><BiHeart size={20} /></i></div>
+      {!path ? <div className={styles.wishlist}> <i onClick={() => addCart(it)}><BiHeart size={20} /></i></div> : ""}
       <div className={styles.imgCont}>
         <img src={change ? it.img[1] : it.img[0]} alt={it.itemName} />
       </div>

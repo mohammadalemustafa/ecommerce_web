@@ -469,18 +469,18 @@ const Navbar = () => {
                       })}
                     </div>
                   )}
-                </span>
+                </span >
                 <span>
                   {" "}
                   <FaAngleDown size="10px"></FaAngleDown>
                 </span>
-              </li>
+              </li >
               <li>
                 <span>Contact</span>
                 <span> </span>
               </li>
-            </ul>
-          </div>
+            </ul >
+          </div >
           <div className={styles.right}>
             <div className={styles.imgCont}>
               <img src={hicon} alt="" />
@@ -490,9 +490,9 @@ const Navbar = () => {
               <span>24/7 Support Center</span>
             </div>
           </div>
-        </div>
-      </Container>
-    </div>
+        </div >
+      </Container >
+    </div >
   );
 };
 

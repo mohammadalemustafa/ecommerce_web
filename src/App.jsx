@@ -3,6 +3,9 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { authAction } from "./Store/auth";
 import Loader from "./Loader/loader";
+import User from "./Admin/User";
+import AllUsers from "./Admin/AllUsers";
+import Role from "./Admin/Roll";
 const Home = React.lazy(() => import('./pages/Home'));
 const Public = React.lazy(() => import('./routes/Public'));
 const MyProfile = React.lazy(() => import('./pages'));
@@ -28,6 +31,8 @@ const VendorGuid = React.lazy(() => import('./components/Venders/VendorGuid/Inde
 const SingleProducts = React.lazy(() => import('./pages/SinglePageProduct'));
 const CompareProduct = React.lazy(() => import('./components/CompareProduct'));
 const WishList = React.lazy(() => import('./WishList'));
+const Dashboard = React.lazy(() => import('./Admin/Dashboard'));
+const Private = React.lazy(() => import('./Admin/Private'))
 function App() {
   const dispatch = useDispatch();
   const token = JSON.parse(localStorage.getItem("login"));
@@ -35,7 +40,6 @@ function App() {
   const getData = async () => {
     const res = await fetch("https://ecommerce-web-69896-default-rtdb.firebaseio.com/users.json");
     let data = await res.json();
-
     let newArr = [];
     for (const d in data) {
       newArr.push(data[d]);
@@ -59,7 +63,6 @@ function App() {
         <Route path="/home" element={<Public element={<Home />} />} />
         <Route path="/contact" element={<Public element={<Contact></Contact>} />} />
         <Route path="/singleProduct" element={<Public element={<SingleProducts></SingleProducts>} />} />
-        {/* <Route path="/register" element={<Public element={<Register></Register>} />} /> */}
         <Route path="/forgotpass" element={<Public element={<Forgotpass></Forgotpass>} />} />
         <Route path="/resetpass" element={<Public element={<ResetPass></ResetPass>} />} />
         <Route path="*" element={<Public element={<PageNOT></PageNOT>} />} />
@@ -77,6 +80,10 @@ function App() {
         <Route path="/vendorguid" element={<Public element={<VendorGuid />} />} />
         <Route path="/compare" element={<Public element={<CompareProduct />} />} />
         <Route path="/wishlists" element={<Public element={<WishList />} />} />
+        <Route path="/admin/dash" element={<Private element={<Dashboard />} />} />
+        <Route path="/add/user" element={<Private element={<User />} />} />
+        <Route path="/alluser" element={<Private element={<AllUsers />} />} />
+        <Route path="/roll" element={<Private element={<Role />} />} />
       </Routes>
     </Suspense>
   );

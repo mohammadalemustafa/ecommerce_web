@@ -1,0 +1,40 @@
+
+.heading1{
+    color: black !important;
+    font-size: 2rem;
+    border-bottom: 2px solid var(--primaryColor);
+    }
+    .select{
+    width: 70%;
+    padding: 10px;
+    background-color: rgba(248, 241, 241,.3);
+    width: 270px;
+    margin-top: 20px;
+     outline: none;
+    margin-bottom: 20px;
+    border: 1px solid var(--primaryColor);
+    }
+.tableCont{
+    border-radius: 8px;
+    width:90%;
+    text-align: center;
+    font-family: serif;
+    overflow-x: scroll;
+    }
+
+    .tableCont thead th,td{
+    padding: 5px;
+    font-family: serif;
+    color: var(--textColor)
+    }
+    .tableCont>table{
+width: 500px;
+    border:1px solid  #ecf3fa;
+    }
+    .tableCont::-webkit-scrollbar{
+    display: none;
+    }
+    .tableCont table td{
+    color: var(--typoColor);
+    margin-bottom: 20px;
+    }

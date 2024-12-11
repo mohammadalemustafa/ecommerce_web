@@ -1,0 +1,15 @@
+.btn{
+    width: 200px;
+    height: 48px;
+    border-radius: 2rem;
+    background-color: var(--primaryColor);
+    border: 1px solid var(--primaryColor);
+    color: #fff;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    font-size: 1.5rem;
+    transition: all .3s linear;
+    &:hover{
+    transform: scale(1.3);
+    box-shadow: none;
+    }
+    }

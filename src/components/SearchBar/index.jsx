@@ -10,7 +10,7 @@ const colourStylesLocation = {
     minHeight: "30 !important",
     minWidth: 150,
     border: "none",
-    height:"50px",
+    height: "50px",
 
     outline: "none",
     ":focus-visible": {
@@ -20,10 +20,10 @@ const colourStylesLocation = {
   }),
 };
 
-const SearchBar = () => {
+const SearchBar = ({ sidebar }) => {
   return (
     <div className={styles.searchBar}>
-      <Select2 colourStyles={colourStylesLocation} />
+      {!sidebar ? <Select2 colourStyles={colourStylesLocation} /> : ""}
       <div className={styles.inputCont}>
         <input type="search" placeholder="Search for item..." />
         <FaSearch className={styles.icon} />

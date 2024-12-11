@@ -1,8 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-
 const uiSlice = createSlice({
   name: "ui",
-  initialState: { modalOpen: true, loginModal: false },
+  initialState: { modalOpen: true, loginModal: false,isSidebarOpen:false },
   reducers: {
     onModalOpen: (state, action) => {
       state.modalOpen = !state.modalOpen;
@@ -10,8 +9,10 @@ const uiSlice = createSlice({
     onOpenLoginModal: (state, action) => {
       state.loginModal = action.payload;
     },
+    onOpenSideBar: (state, action) => {
+      state.isSidebarOpen = !state.isSidebarOpen;
+    },
   },
 });
-
 export const uiActions = uiSlice.actions;
 export default uiSlice.reducer;

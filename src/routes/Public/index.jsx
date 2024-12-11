@@ -17,8 +17,7 @@ import RegisterComp from "../../components/RegisterComp";
 import Forgotpass from "../../components/ForgotComp";
 import ResetComp from "../../components/ResetCom";
 import { useGenerateCode } from "../../hooks/useGenerateCode";
-import Loader from "../../Loader/loader";
-
+import Sidebar from "../../components/Sidebar";
 const Public = ({ element, onHover }) => {
   const [fpDta, setfpDta] = useState({});
   const { stringCode } = useGenerateCode();
@@ -33,13 +32,12 @@ const Public = ({ element, onHover }) => {
     if (dta) {
       setfpDta(dta);
     }
-    console.log(dta);
-
     setScr(s);
   };
   const changeScreen = () => {
     setScr("forgot");
   };
+
   let screen = "";
   switch (scr) {
     case "login":
@@ -57,16 +55,18 @@ const Public = ({ element, onHover }) => {
     case "resetpin":
       screen = <ResetComp fpDta={fpDta} changeScreen={changeScreen} />;
       break;
-
     default:
       screen = <Forgotpass stringCode={stringCode} onClick={(s, fpd) => onChangeScreen(s, fpd)} />;
   }
+  const isSidebarOpen = useSelector((state) => state.ui.isSidebarOpen);
   return (
     <main>
+      {!isSidebarOpen && <Sidebar />}
       {loginModal && <Mainportal onClose={onClose}>{screen}</Mainportal>}
-      <Header onHover={onHover} />
+      <Header />
       <Navbar />
       {element}
+      <Footer />
       <Banner2
         it={{
           id: 1,
@@ -79,7 +79,6 @@ const Public = ({ element, onHover }) => {
       />
       <AboutpCart cartdata={carddata} />
       <Secondlast productsdata={secondlastdata} />
-      <Footer />
     </main>
   );
 };

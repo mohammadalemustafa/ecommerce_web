@@ -8,7 +8,7 @@ const Store = configureStore({
   reducer: {
     ui: ui,
     auth: auth,
-    cart:cart
+    cart: cart,
   },
 });
 

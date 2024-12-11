@@ -114,3 +114,4 @@
   top: -5px;
   transition: all 0.3s ease;
 }
+.wishlist{display: flex;justify-content: end; margin:10px 20px;}

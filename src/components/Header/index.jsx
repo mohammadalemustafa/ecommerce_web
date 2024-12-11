@@ -133,7 +133,7 @@ const Header = ({ onHover }) => {
           <div className={styles.iconCont}>
             {token ? (
               icons.map((it) => (
-                <Icon onHover={onHover} key={it.id} counter={it.counter} name={it.name}>
+                <Icon onHover={onHover} key={it.id} counter={count} name={it.name}>
                   {it.icon}
                 </Icon>
               ))

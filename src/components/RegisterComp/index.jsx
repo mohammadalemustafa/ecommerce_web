@@ -159,7 +159,7 @@ const RegisterComp = ({ onClick, stringCode }) => {
               <span className={styles.s}>I am a customer</span>
             </span>
             <span>
-              <input onChange={onUserData} checked={state.customer} type="radio" name="chech" id="vendor" />
+              <input onChange={onUserType} checked={state.customer} type="radio" name="chech" id="vendor" />
               <span className={styles.s}>I am a vendor</span>
             </span>
           </div>

@@ -1,0 +1,11 @@
+.outlinebtn{
+    padding: 5px 10px;
+    border: 1px solid var(--primaryColor);
+    color: var(--primaryColor);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.outlinebtn:hover{
+    background-color: var(--primaryColor);
+    color: white;
+}

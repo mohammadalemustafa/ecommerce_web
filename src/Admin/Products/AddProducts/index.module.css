@@ -1,0 +1,70 @@
+.addproductcontainer{
+    padding: 25px;
+}
+
+.AddProducts{
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 20px 0 gray;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+}
+.apleftmenucontainer{
+    border-right: 1px dashed var(--typoColor);
+    width: 30%;
+
+    & h2{
+        font-size: 25px;
+        padding-left:20px ;
+        padding-bottom: 10px;
+    }
+}
+.aprightcontentcontainer{
+    width: 70%;
+}
+.appsidemenucontainer{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    border: 1px solid lightgray;
+    margin: 10px 0px 10px 20px;
+    padding: 13px 20px;
+    border-radius: 10px;
+    width: 80%;
+}
+.apname{
+    font-size: medium;
+    font-weight: 700;
+    color: var(--typoColor);
+}
+.aplogo{
+    color: lightgray;
+}
+.active{
+    background-color: var(--primaryColor);
+    display: flex;
+    align-items: center;
+    border: 1px solid lightgray;
+    column-gap: 20px;
+    margin: 10px 0px 10px 20px;
+    padding: 13px 20px;
+    border-radius: 10px;
+    width: 80%;
+    cursor: pointer;
+}
+
+.active>.apname{
+    color: white;
+}
+.appsidemenucontainer>.apname:hover{
+    color:blue ;
+}
+.aprightcontentcontainer{
+    margin:30px 40px 20px 0px;
+    height: 500px;
+    padding: 5px;
+    overflow-y: scroll;
+}

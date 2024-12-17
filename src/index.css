@@ -1,6 +1,8 @@
 :root {
   --primaryColor: #3bb77e;
+  --secondaryColor:#58b98cf0;
   --textColor: #253d4e;
+  --headingColor:#000000d6;
   --typoColor: #7e7e7e;
   --yellowColor:rgb(231, 183, 12);
   --shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);

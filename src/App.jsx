@@ -6,6 +6,8 @@ import Loader from "./Loader/loader";
 import User from "./Admin/User";
 import AllUsers from "./Admin/AllUsers";
 import Role from "./Admin/Roll";
+import AddProducts from "./Admin/Products/AddProducts/Index";
+import AllProducts from "./Admin/Products/AllProducts/Index";
 const Home = React.lazy(() => import('./pages/Home'));
 const Public = React.lazy(() => import('./routes/Public'));
 const MyProfile = React.lazy(() => import('./pages'));
@@ -84,6 +86,8 @@ function App() {
         <Route path="/add/user" element={<Private element={<User />} />} />
         <Route path="/alluser" element={<Private element={<AllUsers />} />} />
         <Route path="/roll" element={<Private element={<Role />} />} />
+        <Route path="/add/products" element={<Private element={<AddProducts />} />} />
+        <Route path="/all/products" element={<Private element={<AllProducts />} />} />
       </Routes>
     </Suspense>
   );

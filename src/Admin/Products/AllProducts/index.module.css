@@ -29,7 +29,7 @@
         display:inline-flex;
         align-items: center;
         justify-content: center;
-        width: 2rem;
+        width: 3rem;
         border-radius: 10px;
         border: 1px solid var(--primaryColor);
     }
@@ -67,4 +67,116 @@
     background-color: white;
     color: black;
     font-weight: 600;
+}
+.allproducttablecontainer{
+    width: 950px;
+    border-radius: 10px;
+        border: 1px solid var(--typoColor);   
+    overflow-x: scroll;
+
+    thead{
+        background-color: rgb(234, 233, 233);
+    }
+    & tr:nth-child(even){
+        background-color: rgb(234, 233, 233);
+
+    }
+
+    & table{
+        width: auto;
+        border: none;
+        border-radius: 10px;
+    }
+    & th{
+        padding: 20px 25px;
+    }
+   & td{
+    padding: 10px 20px;
+   }
+    & td{
+       text-align: center;
+
+    }
+    & tr{
+        box-shadow: 0 -8px 10px 0 gray;
+    }
+   
+    & table,tr,td,th{
+        border-collapse: collapse;
+
+    }
+    & td:last-child{
+        display: flex;
+        padding-top: 30px;
+        align-items: last baseline;
+    }
+    & td:nth-child(6){
+        width: 150px;
+        word-break:keep-all ;
+    }
+    & td>span{
+        display: inline-block;
+        padding: 5px 10px;
+        display: flex;
+        word-wrap:normal;
+        border: 1px solid var(--primaryColor);
+        border-radius: 20px;
+    }
+    
+    & td{
+        
+        & .toggleborder {
+            border: 2px solid #f0ebeb;
+            border-radius: 130px;
+            padding: 1px 2px;
+            background: linear-gradient(to bottom right, white, rgba(220,220,220,.5)), white;
+            box-shadow: 0 0 0 2px #fbfbfb;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+           }
+           
+           .toggleborder:last-child {
+            margin-bottom: 0;
+           }
+           
+           .toggleborder input[type="checkbox"] {
+            display: none;
+           }
+           
+           .toggleborder label {
+            position: relative;
+            display: inline-block;
+            width: 55px;
+            height: 15px;
+            background: white;
+            border-radius: 80px;
+            cursor: pointer;
+            box-shadow: inset 0 0 16px rgba(0,0,0,.3);
+            transition: background .5s;
+           }
+           
+           .toggleborder input[type="checkbox"]:checked + label {
+            background: #13d162;
+           }
+           
+           .handle {
+            position: absolute;
+            top: -9px;
+            left: -10px;
+            width: 30px;
+            height: 30px;
+            border: 1px solid #e5e5e5;
+            background: repeating-radial-gradient(circle at 50% 50%, rgba(200,200,200,.2) 0%, rgba(200,200,200,.2) 2%, transparent 2%, transparent 3%, rgba(200,200,200,.2) 3%, transparent 3%), conic-gradient(white 0%, silver 10%, white 35%, silver 45%, white 60%, silver 70%, white 80%, silver 95%, white 100%);
+            border-radius: 50%;
+            box-shadow: 3px 5px 10px 0 rgba(0,0,0,.4);
+            transition: left .4s;
+           }
+           
+           .toggleborder input[type="checkbox"]:checked + label > .handle {
+            left: calc(100% - 35px + 20px);
+           }
+       
+    }
+   
 }
